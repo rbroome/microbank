@@ -1,4 +1,4 @@
-package com.broome.micro.bank.TransactionService;
+package com.broome.micro.bank.transactionservice;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

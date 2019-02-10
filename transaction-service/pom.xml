@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.broome.micro.bank</groupId>
-	<artifactId>TransactionService</artifactId>
+	<artifactId>transaction-service</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>TransactionService</name>
+	<name>transaction-service</name>
 	<description>Demo project for Spring Boot</description>
 
 	<properties>

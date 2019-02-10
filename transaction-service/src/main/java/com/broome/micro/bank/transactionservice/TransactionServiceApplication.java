@@ -1,4 +1,4 @@
-package com.broome.micro.bank.TransactionService;
+package com.broome.micro.bank.transactionservice;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
