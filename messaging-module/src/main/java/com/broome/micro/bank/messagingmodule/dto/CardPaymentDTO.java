@@ -4,34 +4,19 @@ import java.math.BigDecimal;
 
 public class CardPaymentDTO {
 	
-	private String fromAccount;
-	private String message;
+	
 	private BigDecimal amount;
+	private long cardNumber;
+	private String pinCode;
 	
 	public CardPaymentDTO() {}
 	
-	public CardPaymentDTO(String fromAccount, String message, BigDecimal amount) {
-		super();
-		this.fromAccount = fromAccount;
-		this.message = message;
-		this.amount = amount;
+	public CardPaymentDTO(BigDecimal amount,long cardNumber, String pincode) {
+		this.amount=amount;
+		this.setCardNumber(cardNumber);
+		this.setPinCode(pincode);
 	}
-
-	public String getFromAccount() {
-		return fromAccount;
-	}
-
-	public void setFromAccount(String fromAccount) {
-		this.fromAccount = fromAccount;
-	}
-
-	public String getMessage() {
-		return message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
-	}
+	
 
 	public BigDecimal getAmount() {
 		return amount;
@@ -39,6 +24,22 @@ public class CardPaymentDTO {
 
 	public void setAmount(BigDecimal amount) {
 		this.amount = amount;
+	}
+
+	public long getCardNumber() {
+		return cardNumber;
+	}
+
+	public void setCardNumber(long cardNumber) {
+		this.cardNumber = cardNumber;
+	}
+
+	public String getPinCode() {
+		return pinCode;
+	}
+
+	public void setPinCode(String pinCode) {
+		this.pinCode = pinCode;
 	}
 	
 	

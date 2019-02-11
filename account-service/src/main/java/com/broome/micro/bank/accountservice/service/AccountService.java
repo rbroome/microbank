@@ -13,6 +13,8 @@ import org.springframework.stereotype.Service;
 
 import com.broome.micro.bank.accountservice.domain.Account;
 import com.broome.micro.bank.accountservice.repo.AccountRepository;
+import com.broome.micro.bank.messagingmodule.dto.CardDTO;
+import com.broome.micro.bank.messagingmodule.messenger.CardMessenger;
 import com.broome.micro.bank.messagingmodule.messenger.TransactionMessenger;
 
 @Service
@@ -94,5 +96,9 @@ public class AccountService {
 		BigDecimal total = account.getAmount().add(pending).subtract(amount);
 		return total.compareTo(BigDecimal.ZERO) > -1;
 
+	}
+	
+	public String createCardForAccount(CardDTO card) {
+		return CardMessenger.createCard(card);
 	}
 }

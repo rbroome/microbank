@@ -63,7 +63,7 @@ public abstract class TransactionMessenger {
 		
 	}
 	
-	public static void addTransaction(CardPaymentDTO payment) {
+	public static void addTransaction(TransactionDTO payment) {
 		RestTemplate restTemplate = new RestTemplate();
 		HttpHeaders headers = new HttpHeaders();
 		headers.setContentType(MediaType.APPLICATION_JSON);

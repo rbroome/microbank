@@ -15,7 +15,9 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.broome.micro.bank.accountservice.domain.Account;
 import com.broome.micro.bank.accountservice.dto.AccountDTO;
+import com.broome.micro.bank.accountservice.dto.CreateCardDTO;
 import com.broome.micro.bank.accountservice.service.AccountService;
+import com.broome.micro.bank.messagingmodule.dto.CardDTO;
 import com.broome.micro.bank.messagingmodule.dto.TransactionDTO;
 
 @RestController
@@ -86,5 +88,14 @@ public class AccountController {
 		else
 			return ResponseEntity.notFound().build();
 		
+	}
+	@RequestMapping(value = "/accounts/{accountNumber}/createCard", method = RequestMethod.POST)
+	public String createCardForAccount(@PathVariable String accountNumber,@RequestBody CreateCardDTO card) {
+		CardDTO newCard = new CardDTO();
+		newCard.setAccountNumber(accountNumber);
+		newCard.setBlocked(false);
+		newCard.setPinCode(card.getPinCode());
+		newCard.setUserId(card.getUserId());
+		return accountService.createCardForAccount(newCard);
 	}
 }
