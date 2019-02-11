@@ -17,6 +17,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
+import com.broome.micro.bank.messagingmodule.dto.TransactionDTO;
+import com.broome.micro.bank.messagingmodule.messenger.AccountMessenger;
 import com.broome.micro.bank.transactionservice.domain.Transaction;
 import com.broome.micro.bank.transactionservice.domain.TransactionStatus;
 import com.broome.micro.bank.transactionservice.domain.TransactionType;
@@ -60,61 +62,20 @@ public class TransactionService {
 		if(transaction.getFromAccount().equalsIgnoreCase("123")) {
 			return;
 		}
-		if(auth2(transaction)==200) {
+		if(AccountMessenger.authorizeAmount(convertToDTO(transaction))==200) {
 			return;
 		}else {
 			throw new RuntimeException("Forbidden");
 		}
 	}
 	
-	private int authorizeAmount(Transaction transaction) {
-		RestTemplate restTemplate = new RestTemplate();
-		HttpHeaders headers = new HttpHeaders();
-		headers.setContentType(MediaType.APPLICATION_JSON);
+	private TransactionDTO convertToDTO(Transaction transaction) {
+		TransactionDTO dto = new TransactionDTO(transaction.getFromAccount(), 
+				transaction.getToAccount(), transaction.getAmount(), transaction.getMessage(), transaction.getType().name()
+				, transaction.getDate());
 		
-		
-		
-		String url = "http://localhost:8080/accounts/"+transaction.getFromAccount()+"/auth/";
-		
-		HttpEntity<String> entity = new HttpEntity<String>(null,headers);
-		
-		
-		ResponseEntity<String> response = restTemplate.exchange(url, HttpMethod.POST, entity, String.class);
-		LOGGER.info("BODY:"+response);
-		
-		return response.getStatusCodeValue();
-
-		
+		return dto;
 	}
-	
-	
-	private int auth2(Transaction transaction) {
-		RestTemplate restTemplate = new RestTemplate();
-		HttpHeaders headers = new HttpHeaders();
-		headers.setContentType(MediaType.APPLICATION_JSON);
-		
-		JSONObject map = new JSONObject();
-		try {
-			map.put("fromAccount", transaction.getFromAccount());
-			map.put("toAccount", transaction.getToAccount());
-			map.put("amount", transaction.getAmount());
-			map.put("message", transaction.getMessage());
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
-		String url = "http://localhost:8080/accounts/"+transaction.getFromAccount()+"/auth/";
-		
-		HttpEntity<String> entity = new HttpEntity<String>(map.toString(),headers);
-		
-		ResponseEntity<String> response = restTemplate.exchange(url, HttpMethod.POST, entity, String.class);
-		LOGGER.info("BODY:"+response);
-		return response.getStatusCodeValue();
-
-		
-	}
-
 	
 	//TEMP
 	public void commitTransaction(String accountNumber) {
