@@ -12,10 +12,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.broome.micro.bank.accountservice.domain.Account;
+import com.broome.micro.bank.accountservice.dto.BlockCardDTO;
+import com.broome.micro.bank.accountservice.dto.CardDTO;
+import com.broome.micro.bank.accountservice.dto.CreateCardDTO;
+import com.broome.micro.bank.accountservice.dto.TransactionDTO;
 import com.broome.micro.bank.accountservice.repo.AccountRepository;
-import com.broome.micro.bank.messagingmodule.dto.CardDTO;
-import com.broome.micro.bank.messagingmodule.messenger.CardMessenger;
-import com.broome.micro.bank.messagingmodule.messenger.TransactionMessenger;
+import com.broome.micro.bank.accountservice.restclient.CardClient;
+import com.broome.micro.bank.accountservice.restclient.TransactionClient;
 
 @Service
 public class AccountService {
@@ -23,6 +26,10 @@ public class AccountService {
 	private static final Logger LOGGER = LoggerFactory.getLogger(AccountService.class);
 
 	AccountRepository accountRepository;
+	@Autowired
+	TransactionClient transactionClient;
+	@Autowired
+	CardClient cardClient;
 
 	@Autowired
 	public AccountService(AccountRepository accountRepository) {
@@ -41,7 +48,7 @@ public class AccountService {
 	}
 
 	private BigDecimal calculatePendingAmount(Account account) {
-		List<com.broome.micro.bank.messagingmodule.dto.TransactionDTO> transactions = TransactionMessenger
+		List<TransactionDTO> transactions = transactionClient
 				.getTransactions(account.getAccountNumber().toString());
 
 		BigDecimal amount = transactions.stream()
@@ -71,13 +78,14 @@ public class AccountService {
 		acc.setAmount(acc.getAmount().add(calculatePendingAmount(acc)));
 		acc.setPendingAmount(BigDecimal.ZERO);
 		accountRepository.save(acc);
-		TransactionMessenger.commitTransactions(acc.getAccountNumber().toString());
+		transactionClient.commitTransactions(acc.getAccountNumber().toString());
 
 	}
 
-	public List<com.broome.micro.bank.messagingmodule.dto.TransactionDTO> getTransactionsForAccount(Account account) {
+	public List<TransactionDTO> getTransactionsForAccount(Account account) {
 		// Verify user and account then:
-		return TransactionMessenger.getTransactions(account.getAccountNumber().toString());
+		
+		return transactionClient.getTransactions(account.getAccountNumber().toString());
 	}
 
 	public Account addAccount(Long userId, String name) {
@@ -90,6 +98,9 @@ public class AccountService {
 	}
 
 	public boolean isAmountApproved(BigDecimal amount, Long accountNumber) {
+		//TODO: remove, just to test for being able to adding amounts to accounts
+		if(accountNumber == 123)
+			return true;
 		Account account = getAccount(accountNumber);
 		BigDecimal pending = calculatePendingAmount(account);
 
@@ -98,11 +109,19 @@ public class AccountService {
 
 	}
 	
-	public String createCardForAccount(CardDTO card) {
-		return CardMessenger.createCard(card);
+	public CardDTO createCardForAccount(CardDTO card) {
+		CreateCardDTO cardC = new CreateCardDTO();
+		cardC.setPinCode(card.getPinCode());
+		cardC.setUserId(card.getUserId());
+		
+		return cardClient.createCard(card);
 	}
 
 	public String blockCardForAccount(String accountNumber, String userId, String cardNumber) {
-		return CardMessenger.blockCard(accountNumber,userId,cardNumber);
+		BlockCardDTO blockCard = new BlockCardDTO();
+		blockCard.setAccountNumber(accountNumber);
+		blockCard.setCardNumber(cardNumber);
+		blockCard.setUserId(userId);
+		return cardClient.blockCard(blockCard);
 	}
 }

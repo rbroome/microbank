@@ -5,29 +5,25 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-import org.json.JSONObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpEntity;
-import org.springframework.http.HttpHeaders;
-import org.springframework.http.HttpMethod;
-import org.springframework.http.MediaType;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
-import org.springframework.web.client.RestTemplate;
 
-import com.broome.micro.bank.messagingmodule.dto.TransactionDTO;
-import com.broome.micro.bank.messagingmodule.messenger.AccountMessenger;
 import com.broome.micro.bank.transactionservice.domain.Transaction;
 import com.broome.micro.bank.transactionservice.domain.TransactionStatus;
 import com.broome.micro.bank.transactionservice.domain.TransactionType;
+import com.broome.micro.bank.transactionservice.dto.TransactionDTO;
 import com.broome.micro.bank.transactionservice.repo.TransactionRepository;
+import com.broome.micro.bank.transactionservice.restclient.AccountClient;
 
 @Service
 public class TransactionService {
 
 	private TransactionRepository transactionRepository;
+	
+	@Autowired
+	private AccountClient accountClient;
 
 	private static final Logger LOGGER = LoggerFactory.getLogger(TransactionService.class);
 
@@ -59,10 +55,15 @@ public class TransactionService {
 	}
 	
 	public void checkTransactionAllowed(Transaction transaction) {
+		//TODO: Add a good way to veryidy if it is ok to transger money.
+		String hmm = accountClient.authorizeAmount(transaction.getFromAccount(),convertToDTO(transaction));
+		LOGGER.info("TRANSACTION OK?? " +hmm);
+		//For test, not needed
 		if(transaction.getFromAccount().equalsIgnoreCase("123")) {
 			return;
 		}
-		if(AccountMessenger.authorizeAmount(convertToDTO(transaction))==200) {
+		//TODO: Add a good way to veryidy if it is ok to transger money.
+		if(true) {
 			return;
 		}else {
 			throw new RuntimeException("Forbidden");
@@ -77,7 +78,7 @@ public class TransactionService {
 		return dto;
 	}
 	
-	//TEMP
+	//Used to simulate that transactions is commited, should be done by a "job"
 	public void commitTransaction(String accountNumber) {
 		getPendingTransactions(accountNumber).forEach(t -> commit(t));;
 		

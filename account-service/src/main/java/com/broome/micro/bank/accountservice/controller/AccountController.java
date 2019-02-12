@@ -16,10 +16,10 @@ import org.springframework.web.bind.annotation.RestController;
 import com.broome.micro.bank.accountservice.domain.Account;
 import com.broome.micro.bank.accountservice.dto.AccountDTO;
 import com.broome.micro.bank.accountservice.dto.BlockCardDTO;
+import com.broome.micro.bank.accountservice.dto.CardDTO;
 import com.broome.micro.bank.accountservice.dto.CreateCardDTO;
+import com.broome.micro.bank.accountservice.dto.TransactionDTO;
 import com.broome.micro.bank.accountservice.service.AccountService;
-import com.broome.micro.bank.messagingmodule.dto.CardDTO;
-import com.broome.micro.bank.messagingmodule.dto.TransactionDTO;
 
 @RestController
 @RequestMapping("/")
@@ -91,7 +91,7 @@ public class AccountController {
 		
 	}
 	@RequestMapping(value = "/accounts/{accountNumber}/createCard", method = RequestMethod.POST)
-	public String createCardForAccount(@PathVariable String accountNumber,@RequestBody CreateCardDTO card) {
+	public CardDTO createCardForAccount(@PathVariable String accountNumber,@RequestBody CreateCardDTO card) {
 		CardDTO newCard = new CardDTO();
 		newCard.setAccountNumber(accountNumber);
 		newCard.setBlocked(false);
@@ -101,8 +101,8 @@ public class AccountController {
 	}
 	
 	@RequestMapping(path="/accounts/{accountNumber}/blockCard",method = RequestMethod.PATCH)
-	public String updatePinCode(@PathVariable String accountNumber, @RequestBody BlockCardDTO blockCard) {
+	public String blockCard(@PathVariable String accountNumber, @RequestBody BlockCardDTO blockCard) {
 		
-		return accountService.blockCardForAccount(accountNumber,blockCard.getUserId(),blockCard.getUserId());
+		return accountService.blockCardForAccount(accountNumber,blockCard.getUserId(),blockCard.getCardNumber());
 	}
 }
