@@ -101,4 +101,8 @@ public class AccountService {
 	public String createCardForAccount(CardDTO card) {
 		return CardMessenger.createCard(card);
 	}
+
+	public String blockCardForAccount(String accountNumber, String userId, String cardNumber) {
+		return CardMessenger.blockCard(accountNumber,userId,cardNumber);
+	}
 }

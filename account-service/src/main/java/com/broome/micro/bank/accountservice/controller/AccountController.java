@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.broome.micro.bank.accountservice.domain.Account;
 import com.broome.micro.bank.accountservice.dto.AccountDTO;
+import com.broome.micro.bank.accountservice.dto.BlockCardDTO;
 import com.broome.micro.bank.accountservice.dto.CreateCardDTO;
 import com.broome.micro.bank.accountservice.service.AccountService;
 import com.broome.micro.bank.messagingmodule.dto.CardDTO;
@@ -97,5 +98,11 @@ public class AccountController {
 		newCard.setPinCode(card.getPinCode());
 		newCard.setUserId(card.getUserId());
 		return accountService.createCardForAccount(newCard);
+	}
+	
+	@RequestMapping(path="/accounts/{accountNumber}/blockCard",method = RequestMethod.PATCH)
+	public String updatePinCode(@PathVariable String accountNumber, @RequestBody BlockCardDTO blockCard) {
+		
+		return accountService.blockCardForAccount(accountNumber,blockCard.getUserId(),blockCard.getUserId());
 	}
 }
