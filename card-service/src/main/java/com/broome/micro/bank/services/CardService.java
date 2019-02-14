@@ -33,21 +33,25 @@ public class CardService {
 	public Card createNew(String accountNumber, String userId) throws NoSuchElementException {
 		// Look if user is valid and is owner of account. Otherwise throw exeption
 
-		// If User is valid and account is owned by user create card.
+		// TODO: If User is valid and account is owned by user create card.
 		// "Randomly" create a pincode:
 		String pinCode = "1234";
-		return cardRepository.save(new Card(pinCode, accountNumber, userId, false));
+		if (accountNumber != null && accountNumber.length() > 0)
+			return cardRepository.save(new Card(pinCode, accountNumber, userId, false));
+		return null;
 	}
 
 	public void blockCard(String userId, long cardnumber, String accountNumber) {
 		// Look if user is owner of card and and account then block it.
 		Card card = verifyCardWithAccountNumber(cardnumber, userId, accountNumber);
-		card.setBlocked(false);
+		card.setBlocked(true);
 		cardRepository.save(card);
 	}
 
 	public List<Card> findCards(String userId) {
-		return cardRepository.findByUserId(userId).orElse(new ArrayList<>());
+		List<Card> cards = cardRepository.findByUserId(userId).orElse(new ArrayList<>());
+		cards.forEach(card -> LOGGER.info("CARDNUMBER: " + card.getCardNumber() + " PIN: " + card.getPinCode()));
+		return cards;
 	}
 
 	public Card updatePincode(long cardNumber, String oldPinCode, String newPinCode) {
@@ -68,34 +72,50 @@ public class CardService {
 				.orElseThrow(() -> new NoSuchElementException());
 	}
 
-	public void processPayment(CardPaymentDTO cardPayment) {
+	public TransactionDTO processPayment(CardPaymentDTO cardPayment) {
 		// Verify pin etc then add the transaction.
-		TransactionDTO transaction = createTransaction(cardPayment);
-
-		transactionClient.addTransaction(transaction);
-	}
-
-	private TransactionDTO createTransaction(CardPaymentDTO cardPayment) {
-		TransactionDTO transaction = new TransactionDTO();
+		LOGGER.info("Starting to process transaction");
 		// Verify pincode
 		Card card = verifyCard(cardPayment.getCardNumber(), cardPayment.getPinCode());
-		if (card.getBlocked() != true) {
-			transaction.setAmount(cardPayment.getAmount());
-
-			transaction.setType("CardTransaction");
-			transaction.setFromAccount(card.getAccountNumber());
-			transaction.setMessage("SOME STORE");
-			// Dummy Account
-			transaction.setToAccount("123");
+		LOGGER.info("Found card with pincode {} and cardNr {} ",card.getPinCode(),card.getCardNumber());
+		LOGGER.info("pin is oK");
+		TransactionDTO transaction = createTransaction(cardPayment, card.getAccountNumber());
+		if(card.getAccountNumber()==null) {
+			transaction.setStatus("DECLINED");
+			return transaction;
+		}else if (card.getBlocked() == false) {
+			LOGGER.info("card {} is not blocked",cardPayment.getCardNumber());
+			TransactionDTO response = transactionClient.addTransaction(transaction);
+			return response;
+		}else{
+			LOGGER.info("Card is blocked");
+			transaction.setStatus("BLOCKED");
 			return transaction;
 		}
-		//TODO: throw exception
-		return null;
+	}
+
+	private TransactionDTO createTransaction(CardPaymentDTO cardPayment, String accountNumber) {
+		TransactionDTO transaction = new TransactionDTO();
+		transaction.setAmount(cardPayment.getAmount());
+
+		transaction.setType("CardTransaction");
+		transaction.setFromAccount(accountNumber);
+		transaction.setMessage("SOME STORE");
+		// Dummy Account
+		transaction.setToAccount("123");
+		LOGGER.info("RETURNING TRANSACTION");
+		return transaction;
+
 	}
 
 	private Card verifyCard(long cardNumber, String pincode) {
 		Optional<Card> card = cardRepository.findByCardNumberAndPinCode(cardNumber, pincode);
-		return card.orElseThrow(() -> new NoSuchElementException());
+		return card.orElse(new Card());
+	}
+
+	public void removeEverything() {
+		LOGGER.info("CLEANING IN SERVICE");
+		cardRepository.deleteAll();
 	}
 
 }

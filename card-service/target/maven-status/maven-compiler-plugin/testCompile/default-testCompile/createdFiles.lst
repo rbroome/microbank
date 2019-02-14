@@ -1,0 +1,5 @@
+com/broome/micro/bank/BaseIntegrationTest.class
+com/broome/micro/bank/helper/RestCommunication.class
+com/broome/micro/bank/CardStepDefinitions.class
+com/broome/micro/bank/CardCucumberIntegrationTest.class
+com/broome/micro/bank/helper/RestCommunication$1.class

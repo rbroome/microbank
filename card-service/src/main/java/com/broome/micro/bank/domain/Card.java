@@ -83,6 +83,16 @@ public class Card {
 		this.blocked = blocked;
 	}
 	
+	@Override
+	public String toString() {
+		return "pinCode;"+pinCode+"\n" + 
+		"accountNumber;"+accountNumber+"\n" + 
+		"userId:"+userId+"\n" + 
+		"blocked:"+blocked+"\n"+
+		"cardNumber"+cardNumber;
+		
+	}
+	
 	
 
 }

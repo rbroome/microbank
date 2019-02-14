@@ -11,5 +11,5 @@ import com.broome.micro.bank.dto.TransactionDTO;
 public interface TransactionClient {
 
 	@RequestMapping(method=RequestMethod.POST,value="/transactions/")
-	String addTransaction(@RequestBody TransactionDTO transaction);
+	TransactionDTO addTransaction(@RequestBody TransactionDTO transaction);
 }
