@@ -10,7 +10,9 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.HttpEntity;
+import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
+import org.springframework.http.MediaType;
 import org.springframework.web.client.RestTemplate;
 
 import com.broome.micro.bank.BaseIntegrationTest;
@@ -22,10 +24,13 @@ import com.broome.micro.bank.restclient.TransactionClient;
 import com.broome.micro.bank.services.CardService;
 
 @Ignore
-public class RestCommunication extends BaseIntegrationTest{
+public class CardIntegrationTest extends BaseIntegrationTest{
 	
-	private static final Logger log = LoggerFactory.getLogger(RestCommunication.class);
+	private static final Logger log = LoggerFactory.getLogger(CardIntegrationTest.class);
 	static final String OK_ACCOUNT = "37730001";
+	private static String OK_HEADER_AUTH="eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsInVzZXJJZCI6IjEiLCJleHAiOjE1NTExMTcyNDV9.rpnO6mjtxmoOFDzC_yE-D8sgQJZz8BaKEvVSrNwiz3St_Q05Y05z-Ixf0TdtI4Avm9t04oqbWkQxb5r4x19VbQ";
+	private static String BAD_HEADER_AUTH="eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsInVzZXJJZCI6IjEiLCJleHAiOjE1N2222yNDV9.rpnO6mjtxmoOFDzC_yE-D8sgQJZz8BaKEvVSrNwiz3St_Q05Y05z-Ixf0TdtI4Avm9t04oqbWkQxb1bQ";
+
 	
 	private final String SERVER_URL= "http://localhost";
 	private final String CARD_ENDPOINT = "/cards";
@@ -39,7 +44,7 @@ public class RestCommunication extends BaseIntegrationTest{
 	@Autowired
 	private CardService cardService;
 	
-	public RestCommunication() {
+	public CardIntegrationTest() {
 		restTemplate = new RestTemplate();
 	}
 	
@@ -50,19 +55,32 @@ public class RestCommunication extends BaseIntegrationTest{
 	
 	public Card addCard(String userId,String accountNumber) {
 		Card card = new Card();
-		card.setUserId(userId);
+		
 		card.setAccountNumber(accountNumber);
-		Card returnedCard = 
-		restTemplate.postForEntity(cardsEndpoint(), card, Card.class).getBody();
+		HttpEntity<Card> entity = setHeaders(card,userId);
+		Card returnedCard = restTemplate.exchange(cardsEndpoint(), HttpMethod.POST,entity,Card.class).getBody();
 		return returnedCard;
 		
 	}
+	
 	public List<Card> getCardsForUser(String userId){
+		HttpEntity<String> entity = setHeaders(null,userId);
 		List<Card> cardResponse=
-		restTemplate.exchange(cardsEndpoint()+"/"+userId,HttpMethod.GET,null, new ParameterizedTypeReference<List<Card>>() {
+		restTemplate.exchange(cardsEndpoint()+"/"+userId,HttpMethod.GET,entity, new ParameterizedTypeReference<List<Card>>() {
         }).getBody();
-		log.info("got cards:"+cardResponse);
+		log.info("got cards:"+cardResponse.size());
 		return cardResponse;
+	}
+	
+	private <T> HttpEntity<T> setHeaders(T type ,String userId){
+		HttpHeaders headers = new HttpHeaders();
+		headers.setContentType(MediaType.APPLICATION_JSON);
+		if(userId.equalsIgnoreCase("1")) {
+			headers.add("Authorization", "Bearer "+OK_HEADER_AUTH);
+		}else {
+			headers.add("Authorization", "Bearer "+BAD_HEADER_AUTH);
+		}
+		return new HttpEntity<>(type,headers);
 	}
 	
 	public Card changePin(String userId,String cardNumber,String oldPin,String newPin) {
@@ -70,15 +88,10 @@ public class RestCommunication extends BaseIntegrationTest{
 	}
 	public Card blockCard(String userId,long cardNumber) {
 		BlockCardDTO blockCard = new BlockCardDTO(String.valueOf(cardNumber), userId, OK_ACCOUNT);
-		put(cardsEndpoint()+"/block", blockCard);
+		HttpEntity<BlockCardDTO> entity = setHeaders(blockCard, userId);
+		restTemplate.exchange(cardsEndpoint()+"/block", HttpMethod.PUT,entity,Card.class);
 		List<Card> cards = getCardsForUser(userId);
 		return cards.get(0);
-	}
-	
-	private void put(String url, BlockCardDTO card) {
-	    HttpEntity<BlockCardDTO> entity = new HttpEntity<BlockCardDTO>(card);
-	    restTemplate.exchange(url, HttpMethod.PUT,entity,Card.class);
-	    
 	}
 	
 	public TransactionDTO doPayment(String userId,BigDecimal amount,String pin,long cardnumber) {

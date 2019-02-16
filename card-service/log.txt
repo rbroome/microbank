@@ -30,20 +30,20 @@
 [INFO]  T E S T S
 [INFO] -------------------------------------------------------
 [INFO] Running com.broome.micro.bank.CardCucumberIntegrationTest
-12:34:20.683 [main] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating TestContextBootstrapper for test class [com.broome.micro.bank.CardStepDefinitions] from class [org.springframework.boot.test.context.SpringBootTestContextBootstrapper]
-12:34:20.698 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.broome.micro.bank.CardStepDefinitions], using SpringBootContextLoader
-12:34:20.702 [main] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [com.broome.micro.bank.CardStepDefinitions]: class path resource [com/broome/micro/bank/CardStepDefinitions-context.xml] does not exist
-12:34:20.703 [main] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [com.broome.micro.bank.CardStepDefinitions]: class path resource [com/broome/micro/bank/CardStepDefinitionsContext.groovy] does not exist
-12:34:20.703 [main] INFO org.springframework.test.context.support.AbstractContextLoader - Could not detect default resource locations for test class [com.broome.micro.bank.CardStepDefinitions]: no resource found for suffixes {-context.xml, Context.groovy}.
-12:34:20.704 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.broome.micro.bank.CardStepDefinitions]: CardStepDefinitions does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-12:34:20.779 [main] DEBUG org.springframework.test.context.support.ActiveProfilesUtils - Could not find an 'annotation declaring class' for annotation type [org.springframework.test.context.ActiveProfiles] and class [com.broome.micro.bank.CardStepDefinitions]
-12:34:20.865 [main] DEBUG org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider - Identified candidate component class: file [/Users/robin/tutorial/microbank/card-service/target/classes/com/broome/micro/bank/CardServiceApplication.class]
-12:34:20.866 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.broome.micro.bank.CardServiceApplication for test class com.broome.micro.bank.CardStepDefinitions
-12:34:20.993 [main] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - @TestExecutionListeners is not present for class [com.broome.micro.bank.CardStepDefinitions]: using defaults.
-12:34:20.995 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
-12:34:21.014 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@544d57e, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@55c53a33, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@53b7f657, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@797b0699, org.springframework.test.context.support.DirtiesContextTestExecutionListener@5a37d3ed, org.springframework.test.context.transaction.TransactionalTestExecutionListener@26df6e3a, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@4a3631f8, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@6b58b9e9, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@f14a7d4, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@52e7a6b2, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@29a5f4e7, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@79c97cb]
-12:34:21.046 [main] DEBUG org.springframework.test.context.support.TestPropertySourceUtils - Adding inlined properties to environment: {spring.jmx.enabled=false, org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true, server.port=0}
-2019-02-14 12:34:22.228  INFO 50147 --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$bdaefa3] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+17:59:23.906 [main] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating TestContextBootstrapper for test class [com.broome.micro.bank.CardStepDefinitions] from class [org.springframework.boot.test.context.SpringBootTestContextBootstrapper]
+17:59:23.933 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.broome.micro.bank.CardStepDefinitions], using SpringBootContextLoader
+17:59:23.938 [main] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [com.broome.micro.bank.CardStepDefinitions]: class path resource [com/broome/micro/bank/CardStepDefinitions-context.xml] does not exist
+17:59:23.940 [main] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [com.broome.micro.bank.CardStepDefinitions]: class path resource [com/broome/micro/bank/CardStepDefinitionsContext.groovy] does not exist
+17:59:23.941 [main] INFO org.springframework.test.context.support.AbstractContextLoader - Could not detect default resource locations for test class [com.broome.micro.bank.CardStepDefinitions]: no resource found for suffixes {-context.xml, Context.groovy}.
+17:59:23.942 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.broome.micro.bank.CardStepDefinitions]: CardStepDefinitions does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+17:59:24.013 [main] DEBUG org.springframework.test.context.support.ActiveProfilesUtils - Could not find an 'annotation declaring class' for annotation type [org.springframework.test.context.ActiveProfiles] and class [com.broome.micro.bank.CardStepDefinitions]
+17:59:24.101 [main] DEBUG org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider - Identified candidate component class: file [/Users/robin/tutorial/microbank/card-service/target/classes/com/broome/micro/bank/CardServiceApplication.class]
+17:59:24.102 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.broome.micro.bank.CardServiceApplication for test class com.broome.micro.bank.CardStepDefinitions
+17:59:24.256 [main] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - @TestExecutionListeners is not present for class [com.broome.micro.bank.CardStepDefinitions]: using defaults.
+17:59:24.257 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+17:59:24.296 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@53b7f657, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@797b0699, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@5a37d3ed, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@26df6e3a, org.springframework.test.context.support.DirtiesContextTestExecutionListener@4a3631f8, org.springframework.test.context.transaction.TransactionalTestExecutionListener@6b58b9e9, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@f14a7d4, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@52e7a6b2, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@29a5f4e7, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@79c97cb, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@2d9caaeb, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@42a15bdc]
+17:59:24.351 [main] DEBUG org.springframework.test.context.support.TestPropertySourceUtils - Adding inlined properties to environment: {spring.jmx.enabled=false, org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true, server.port=0}
+2019-02-16 17:59:25.740  INFO 84204 --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$a3bb6c8d] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
 
   .   ____          _            __ _ _
  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
@@ -53,56 +53,56 @@
  =========|_|==============|___/=/_/_/_/
  :: Spring Boot ::        (v2.1.2.RELEASE)
 
-2019-02-14 12:34:22.406  INFO 50147 --- [           main] c.broome.micro.bank.CardStepDefinitions  : No active profile set, falling back to default profiles: default
-2019-02-14 12:34:23.129  INFO 50147 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
-2019-02-14 12:34:23.245  INFO 50147 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 103ms. Found 1 repository interfaces.
-2019-02-14 12:34:23.873  INFO 50147 --- [           main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=0fea3598-3e15-31bc-9ec9-c93a6ef0b7a3
-2019-02-14 12:34:24.525  INFO 50147 --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$efc0eca6] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2019-02-14 12:34:24.587  INFO 50147 --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$bdaefa3] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2019-02-14 12:34:25.231  INFO 50147 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 0 (http)
-2019-02-14 12:34:25.281  INFO 50147 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2019-02-14 12:34:25.282  INFO 50147 --- [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.14]
-2019-02-14 12:34:25.301  INFO 50147 --- [           main] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/Users/robin/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.]
-2019-02-14 12:34:25.509  INFO 50147 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2019-02-14 12:34:25.509  INFO 50147 --- [           main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 3091 ms
-2019-02-14 12:34:26.010  INFO 50147 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2019-02-14 12:34:26.224  INFO 50147 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2019-02-14 12:34:26.367  INFO 50147 --- [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+2019-02-16 17:59:25.995  INFO 84204 --- [           main] c.broome.micro.bank.CardStepDefinitions  : No active profile set, falling back to default profiles: default
+2019-02-16 17:59:26.880  INFO 84204 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-02-16 17:59:27.001  INFO 84204 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 108ms. Found 1 repository interfaces.
+2019-02-16 17:59:27.694  INFO 84204 --- [           main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=0fea3598-3e15-31bc-9ec9-c93a6ef0b7a3
+2019-02-16 17:59:28.266  INFO 84204 --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$87a16990] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-02-16 17:59:28.322  INFO 84204 --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$a3bb6c8d] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-02-16 17:59:28.894  INFO 84204 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 0 (http)
+2019-02-16 17:59:28.936  INFO 84204 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-02-16 17:59:28.937  INFO 84204 --- [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.14]
+2019-02-16 17:59:28.953  INFO 84204 --- [           main] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/Users/robin/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.]
+2019-02-16 17:59:29.192  INFO 84204 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-02-16 17:59:29.192  INFO 84204 --- [           main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 3187 ms
+2019-02-16 17:59:29.629  INFO 84204 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2019-02-16 17:59:29.853  INFO 84204 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2019-02-16 17:59:30.009  INFO 84204 --- [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
 	name: default
 	...]
-2019-02-14 12:34:26.465  INFO 50147 --- [           main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.3.7.Final}
-2019-02-14 12:34:26.468  INFO 50147 --- [           main] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
-2019-02-14 12:34:26.540  INFO 50147 --- [           main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
-2019-02-14 12:34:26.781  INFO 50147 --- [           main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2019-02-16 17:59:30.107  INFO 84204 --- [           main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.3.7.Final}
+2019-02-16 17:59:30.109  INFO 84204 --- [           main] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
+2019-02-16 17:59:30.174  INFO 84204 --- [           main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2019-02-16 17:59:30.387  INFO 84204 --- [           main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
 Hibernate: drop table card if exists
 Hibernate: drop sequence if exists seq
 Hibernate: create sequence seq start with 123456 increment by 100
 Hibernate: create table card (card_number bigint not null, account_number varchar(255), blocked boolean, pin_code varchar(255), user_id varchar(255), primary key (card_number))
-2019-02-14 12:34:27.731  INFO 50147 --- [           main] o.h.t.schema.internal.SchemaCreatorImpl  : HHH000476: Executing import script 'org.hibernate.tool.schema.internal.exec.ScriptSourceInputNonExistentImpl@194037f9'
-2019-02-14 12:34:27.735  INFO 50147 --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2019-02-14 12:34:28.387  WARN 50147 --- [           main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
-2019-02-14 12:34:28.388  INFO 50147 --- [           main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
-2019-02-14 12:34:28.398  WARN 50147 --- [           main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
-2019-02-14 12:34:28.398  INFO 50147 --- [           main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
-2019-02-14 12:34:28.975  INFO 50147 --- [           main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2019-02-14 12:34:29.065  WARN 50147 --- [           main] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2019-02-14 12:34:30.492  INFO 50147 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 50304 (http) with context path ''
-2019-02-14 12:34:30.494  INFO 50147 --- [           main] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 50304
-2019-02-14 12:34:30.508  INFO 50147 --- [           main] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
-2019-02-14 12:34:30.574  INFO 50147 --- [           main] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
-2019-02-14 12:34:30.657  INFO 50147 --- [           main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON encoding codec LegacyJacksonJson
-2019-02-14 12:34:30.657  INFO 50147 --- [           main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON decoding codec LegacyJacksonJson
-2019-02-14 12:34:30.930  INFO 50147 --- [           main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML encoding codec XStreamXml
-2019-02-14 12:34:30.930  INFO 50147 --- [           main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML decoding codec XStreamXml
-2019-02-14 12:34:31.204  INFO 50147 --- [           main] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2019-02-14 12:34:31.241  INFO 50147 --- [           main] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
-2019-02-14 12:34:31.241  INFO 50147 --- [           main] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
-2019-02-14 12:34:31.241  INFO 50147 --- [           main] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
-2019-02-14 12:34:31.241  INFO 50147 --- [           main] com.netflix.discovery.DiscoveryClient    : Application is null : false
-2019-02-14 12:34:31.241  INFO 50147 --- [           main] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
-2019-02-14 12:34:31.241  INFO 50147 --- [           main] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
-2019-02-14 12:34:31.242  INFO 50147 --- [           main] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
-2019-02-14 12:34:31.367 ERROR 50147 --- [           main] c.n.d.s.t.d.RedirectingEurekaHttpClient  : Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://localhost:8761/eureka/}
+2019-02-16 17:59:31.189  INFO 84204 --- [           main] o.h.t.schema.internal.SchemaCreatorImpl  : HHH000476: Executing import script 'org.hibernate.tool.schema.internal.exec.ScriptSourceInputNonExistentImpl@3451fc88'
+2019-02-16 17:59:31.194  INFO 84204 --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2019-02-16 17:59:31.809  WARN 84204 --- [           main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2019-02-16 17:59:31.809  INFO 84204 --- [           main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2019-02-16 17:59:31.819  WARN 84204 --- [           main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2019-02-16 17:59:31.819  INFO 84204 --- [           main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2019-02-16 17:59:32.414  INFO 84204 --- [           main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-02-16 17:59:32.493  WARN 84204 --- [           main] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2019-02-16 17:59:34.028  INFO 84204 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 52758 (http) with context path ''
+2019-02-16 17:59:34.029  INFO 84204 --- [           main] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 52758
+2019-02-16 17:59:34.039  INFO 84204 --- [           main] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2019-02-16 17:59:34.113  INFO 84204 --- [           main] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2019-02-16 17:59:34.195  INFO 84204 --- [           main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON encoding codec LegacyJacksonJson
+2019-02-16 17:59:34.195  INFO 84204 --- [           main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON decoding codec LegacyJacksonJson
+2019-02-16 17:59:34.391  INFO 84204 --- [           main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML encoding codec XStreamXml
+2019-02-16 17:59:34.392  INFO 84204 --- [           main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML decoding codec XStreamXml
+2019-02-16 17:59:34.668  INFO 84204 --- [           main] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-02-16 17:59:34.704  INFO 84204 --- [           main] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2019-02-16 17:59:34.704  INFO 84204 --- [           main] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2019-02-16 17:59:34.705  INFO 84204 --- [           main] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2019-02-16 17:59:34.705  INFO 84204 --- [           main] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2019-02-16 17:59:34.705  INFO 84204 --- [           main] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2019-02-16 17:59:34.705  INFO 84204 --- [           main] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2019-02-16 17:59:34.705  INFO 84204 --- [           main] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2019-02-16 17:59:34.804 ERROR 84204 --- [           main] c.n.d.s.t.d.RedirectingEurekaHttpClient  : Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://localhost:8761/eureka/}
 
 com.sun.jersey.api.client.ClientHandlerException: java.net.ConnectException: Connection refused (Connection refused)
 	at com.sun.jersey.client.apache4.ApacheHttpClient4Handler.handle(ApacheHttpClient4Handler.java:187) ~[jersey-apache-client4-1.19.1.jar:1.19.1]
@@ -133,11 +133,11 @@ com.sun.jersey.api.client.ClientHandlerException: java.net.ConnectException: Con
 	at com.netflix.discovery.DiscoveryClient.<init>(DiscoveryClient.java:269) [eureka-client-1.9.8.jar:1.9.8]
 	at org.springframework.cloud.netflix.eureka.CloudEurekaClient.<init>(CloudEurekaClient.java:63) [spring-cloud-netflix-eureka-client-2.1.0.RELEASE.jar:2.1.0.RELEASE]
 	at org.springframework.cloud.netflix.eureka.EurekaClientAutoConfiguration$RefreshableEurekaClientConfiguration.eurekaClient(EurekaClientAutoConfiguration.java:302) [spring-cloud-netflix-eureka-client-2.1.0.RELEASE.jar:2.1.0.RELEASE]
-	at org.springframework.cloud.netflix.eureka.EurekaClientAutoConfiguration$RefreshableEurekaClientConfiguration$$EnhancerBySpringCGLIB$$1343e8c2.CGLIB$eurekaClient$2(<generated>) [spring-cloud-netflix-eureka-client-2.1.0.RELEASE.jar:2.1.0.RELEASE]
-	at org.springframework.cloud.netflix.eureka.EurekaClientAutoConfiguration$RefreshableEurekaClientConfiguration$$EnhancerBySpringCGLIB$$1343e8c2$$FastClassBySpringCGLIB$$524e35c5.invoke(<generated>) [spring-cloud-netflix-eureka-client-2.1.0.RELEASE.jar:2.1.0.RELEASE]
+	at org.springframework.cloud.netflix.eureka.EurekaClientAutoConfiguration$RefreshableEurekaClientConfiguration$$EnhancerBySpringCGLIB$$ab2465ac.CGLIB$eurekaClient$0(<generated>) [spring-cloud-netflix-eureka-client-2.1.0.RELEASE.jar:2.1.0.RELEASE]
+	at org.springframework.cloud.netflix.eureka.EurekaClientAutoConfiguration$RefreshableEurekaClientConfiguration$$EnhancerBySpringCGLIB$$ab2465ac$$FastClassBySpringCGLIB$$7f5a7e06.invoke(<generated>) [spring-cloud-netflix-eureka-client-2.1.0.RELEASE.jar:2.1.0.RELEASE]
 	at org.springframework.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:244) [spring-core-5.1.4.RELEASE.jar:5.1.4.RELEASE]
 	at org.springframework.context.annotation.ConfigurationClassEnhancer$BeanMethodInterceptor.intercept(ConfigurationClassEnhancer.java:363) [spring-context-5.1.4.RELEASE.jar:5.1.4.RELEASE]
-	at org.springframework.cloud.netflix.eureka.EurekaClientAutoConfiguration$RefreshableEurekaClientConfiguration$$EnhancerBySpringCGLIB$$1343e8c2.eurekaClient(<generated>) [spring-cloud-netflix-eureka-client-2.1.0.RELEASE.jar:2.1.0.RELEASE]
+	at org.springframework.cloud.netflix.eureka.EurekaClientAutoConfiguration$RefreshableEurekaClientConfiguration$$EnhancerBySpringCGLIB$$ab2465ac.eurekaClient(<generated>) [spring-cloud-netflix-eureka-client-2.1.0.RELEASE.jar:2.1.0.RELEASE]
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_144]
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_144]
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_144]
@@ -165,7 +165,7 @@ com.sun.jersey.api.client.ClientHandlerException: java.net.ConnectException: Con
 	at org.springframework.cloud.context.scope.GenericScope$LockedScopedProxyFactoryBean.invoke(GenericScope.java:494) ~[spring-cloud-context-2.1.0.RELEASE.jar:2.1.0.RELEASE]
 	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.1.4.RELEASE.jar:5.1.4.RELEASE]
 	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:688) ~[spring-aop-5.1.4.RELEASE.jar:5.1.4.RELEASE]
-	at org.springframework.cloud.netflix.eureka.serviceregistry.EurekaRegistration$$EnhancerBySpringCGLIB$$df312a89.getEurekaClient(<generated>) ~[spring-cloud-netflix-eureka-client-2.1.0.RELEASE.jar:2.1.0.RELEASE]
+	at org.springframework.cloud.netflix.eureka.serviceregistry.EurekaRegistration$$EnhancerBySpringCGLIB$$eec2a8bf.getEurekaClient(<generated>) ~[spring-cloud-netflix-eureka-client-2.1.0.RELEASE.jar:2.1.0.RELEASE]
 	at org.springframework.cloud.netflix.eureka.serviceregistry.EurekaServiceRegistry.maybeInitializeClient(EurekaServiceRegistry.java:57) ~[spring-cloud-netflix-eureka-client-2.1.0.RELEASE.jar:2.1.0.RELEASE]
 	at org.springframework.cloud.netflix.eureka.serviceregistry.EurekaServiceRegistry.register(EurekaServiceRegistry.java:39) ~[spring-cloud-netflix-eureka-client-2.1.0.RELEASE.jar:2.1.0.RELEASE]
 	at org.springframework.cloud.netflix.eureka.serviceregistry.EurekaAutoServiceRegistration.start(EurekaAutoServiceRegistration.java:82) ~[spring-cloud-netflix-eureka-client-2.1.0.RELEASE.jar:2.1.0.RELEASE]
@@ -238,8 +238,8 @@ Caused by: java.net.ConnectException: Connection refused (Connection refused)
 	at com.sun.jersey.client.apache4.ApacheHttpClient4Handler.handle(ApacheHttpClient4Handler.java:173) ~[jersey-apache-client4-1.19.1.jar:1.19.1]
 	... 113 common frames omitted
 
-2019-02-14 12:34:31.370  WARN 50147 --- [           main] c.n.d.s.t.d.RetryableEurekaHttpClient    : Request execution failed with message: java.net.ConnectException: Connection refused (Connection refused)
-2019-02-14 12:34:31.377 ERROR 50147 --- [           main] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_CARD-SERVICE/192.168.43.177:card-service:0 - was unable to refresh its cache! status = Cannot execute request on any known server
+2019-02-16 17:59:34.807  WARN 84204 --- [           main] c.n.d.s.t.d.RetryableEurekaHttpClient    : Request execution failed with message: java.net.ConnectException: Connection refused (Connection refused)
+2019-02-16 17:59:34.810 ERROR 84204 --- [           main] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_CARD-SERVICE/192.168.43.177:card-service:0 - was unable to refresh its cache! status = Cannot execute request on any known server
 
 com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
 	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:112) ~[eureka-client-1.9.8.jar:1.9.8]
@@ -253,11 +253,11 @@ com.netflix.discovery.shared.transport.TransportException: Cannot execute reques
 	at com.netflix.discovery.DiscoveryClient.<init>(DiscoveryClient.java:269) [eureka-client-1.9.8.jar:1.9.8]
 	at org.springframework.cloud.netflix.eureka.CloudEurekaClient.<init>(CloudEurekaClient.java:63) [spring-cloud-netflix-eureka-client-2.1.0.RELEASE.jar:2.1.0.RELEASE]
 	at org.springframework.cloud.netflix.eureka.EurekaClientAutoConfiguration$RefreshableEurekaClientConfiguration.eurekaClient(EurekaClientAutoConfiguration.java:302) [spring-cloud-netflix-eureka-client-2.1.0.RELEASE.jar:2.1.0.RELEASE]
-	at org.springframework.cloud.netflix.eureka.EurekaClientAutoConfiguration$RefreshableEurekaClientConfiguration$$EnhancerBySpringCGLIB$$1343e8c2.CGLIB$eurekaClient$2(<generated>) [spring-cloud-netflix-eureka-client-2.1.0.RELEASE.jar:2.1.0.RELEASE]
-	at org.springframework.cloud.netflix.eureka.EurekaClientAutoConfiguration$RefreshableEurekaClientConfiguration$$EnhancerBySpringCGLIB$$1343e8c2$$FastClassBySpringCGLIB$$524e35c5.invoke(<generated>) [spring-cloud-netflix-eureka-client-2.1.0.RELEASE.jar:2.1.0.RELEASE]
+	at org.springframework.cloud.netflix.eureka.EurekaClientAutoConfiguration$RefreshableEurekaClientConfiguration$$EnhancerBySpringCGLIB$$ab2465ac.CGLIB$eurekaClient$0(<generated>) [spring-cloud-netflix-eureka-client-2.1.0.RELEASE.jar:2.1.0.RELEASE]
+	at org.springframework.cloud.netflix.eureka.EurekaClientAutoConfiguration$RefreshableEurekaClientConfiguration$$EnhancerBySpringCGLIB$$ab2465ac$$FastClassBySpringCGLIB$$7f5a7e06.invoke(<generated>) [spring-cloud-netflix-eureka-client-2.1.0.RELEASE.jar:2.1.0.RELEASE]
 	at org.springframework.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:244) [spring-core-5.1.4.RELEASE.jar:5.1.4.RELEASE]
 	at org.springframework.context.annotation.ConfigurationClassEnhancer$BeanMethodInterceptor.intercept(ConfigurationClassEnhancer.java:363) [spring-context-5.1.4.RELEASE.jar:5.1.4.RELEASE]
-	at org.springframework.cloud.netflix.eureka.EurekaClientAutoConfiguration$RefreshableEurekaClientConfiguration$$EnhancerBySpringCGLIB$$1343e8c2.eurekaClient(<generated>) [spring-cloud-netflix-eureka-client-2.1.0.RELEASE.jar:2.1.0.RELEASE]
+	at org.springframework.cloud.netflix.eureka.EurekaClientAutoConfiguration$RefreshableEurekaClientConfiguration$$EnhancerBySpringCGLIB$$ab2465ac.eurekaClient(<generated>) [spring-cloud-netflix-eureka-client-2.1.0.RELEASE.jar:2.1.0.RELEASE]
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_144]
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_144]
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_144]
@@ -285,7 +285,7 @@ com.netflix.discovery.shared.transport.TransportException: Cannot execute reques
 	at org.springframework.cloud.context.scope.GenericScope$LockedScopedProxyFactoryBean.invoke(GenericScope.java:494) ~[spring-cloud-context-2.1.0.RELEASE.jar:2.1.0.RELEASE]
 	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.1.4.RELEASE.jar:5.1.4.RELEASE]
 	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:688) ~[spring-aop-5.1.4.RELEASE.jar:5.1.4.RELEASE]
-	at org.springframework.cloud.netflix.eureka.serviceregistry.EurekaRegistration$$EnhancerBySpringCGLIB$$df312a89.getEurekaClient(<generated>) ~[spring-cloud-netflix-eureka-client-2.1.0.RELEASE.jar:2.1.0.RELEASE]
+	at org.springframework.cloud.netflix.eureka.serviceregistry.EurekaRegistration$$EnhancerBySpringCGLIB$$eec2a8bf.getEurekaClient(<generated>) ~[spring-cloud-netflix-eureka-client-2.1.0.RELEASE.jar:2.1.0.RELEASE]
 	at org.springframework.cloud.netflix.eureka.serviceregistry.EurekaServiceRegistry.maybeInitializeClient(EurekaServiceRegistry.java:57) ~[spring-cloud-netflix-eureka-client-2.1.0.RELEASE.jar:2.1.0.RELEASE]
 	at org.springframework.cloud.netflix.eureka.serviceregistry.EurekaServiceRegistry.register(EurekaServiceRegistry.java:39) ~[spring-cloud-netflix-eureka-client-2.1.0.RELEASE.jar:2.1.0.RELEASE]
 	at org.springframework.cloud.netflix.eureka.serviceregistry.EurekaAutoServiceRegistration.start(EurekaAutoServiceRegistration.java:82) ~[spring-cloud-netflix-eureka-client-2.1.0.RELEASE.jar:2.1.0.RELEASE]
@@ -340,14 +340,14 @@ com.netflix.discovery.shared.transport.TransportException: Cannot execute reques
 	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:126) ~[surefire-booter-2.22.1.jar:2.22.1]
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:418) ~[surefire-booter-2.22.1.jar:2.22.1]
 
-2019-02-14 12:34:31.378  WARN 50147 --- [           main] com.netflix.discovery.DiscoveryClient    : Using default backup registry implementation which does not do anything.
-2019-02-14 12:34:31.381  INFO 50147 --- [           main] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
-2019-02-14 12:34:31.389  INFO 50147 --- [           main] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
-2019-02-14 12:34:31.396  INFO 50147 --- [           main] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1550144071394 with initial instances count: 0
-2019-02-14 12:34:31.405  INFO 50147 --- [           main] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application CARD-SERVICE with eureka with status UP
-2019-02-14 12:34:31.407  INFO 50147 --- [           main] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1550144071407, current=UP, previous=STARTING]
-2019-02-14 12:34:31.412  INFO 50147 --- [nfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_CARD-SERVICE/192.168.43.177:card-service:0: registering service...
-2019-02-14 12:34:31.428 ERROR 50147 --- [nfoReplicator-0] c.n.d.s.t.d.RedirectingEurekaHttpClient  : Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://localhost:8761/eureka/}
+2019-02-16 17:59:34.812  WARN 84204 --- [           main] com.netflix.discovery.DiscoveryClient    : Using default backup registry implementation which does not do anything.
+2019-02-16 17:59:34.817  INFO 84204 --- [           main] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2019-02-16 17:59:34.822  INFO 84204 --- [           main] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2019-02-16 17:59:34.830  INFO 84204 --- [           main] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1550336374829 with initial instances count: 0
+2019-02-16 17:59:34.841  INFO 84204 --- [           main] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application CARD-SERVICE with eureka with status UP
+2019-02-16 17:59:34.843  INFO 84204 --- [           main] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1550336374843, current=UP, previous=STARTING]
+2019-02-16 17:59:34.847  INFO 84204 --- [nfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_CARD-SERVICE/192.168.43.177:card-service:0: registering service...
+2019-02-16 17:59:34.869 ERROR 84204 --- [nfoReplicator-0] c.n.d.s.t.d.RedirectingEurekaHttpClient  : Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://localhost:8761/eureka/}
 
 com.sun.jersey.api.client.ClientHandlerException: java.net.ConnectException: Connection refused (Connection refused)
 	at com.sun.jersey.client.apache4.ApacheHttpClient4Handler.handle(ApacheHttpClient4Handler.java:187) ~[jersey-apache-client4-1.19.1.jar:1.19.1]
@@ -400,8 +400,8 @@ Caused by: java.net.ConnectException: Connection refused (Connection refused)
 	at com.sun.jersey.client.apache4.ApacheHttpClient4Handler.handle(ApacheHttpClient4Handler.java:173) ~[jersey-apache-client4-1.19.1.jar:1.19.1]
 	... 30 common frames omitted
 
-2019-02-14 12:34:31.429  WARN 50147 --- [nfoReplicator-0] c.n.d.s.t.d.RetryableEurekaHttpClient    : Request execution failed with message: java.net.ConnectException: Connection refused (Connection refused)
-2019-02-14 12:34:31.430  WARN 50147 --- [nfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_CARD-SERVICE/192.168.43.177:card-service:0 - registration failed Cannot execute request on any known server
+2019-02-16 17:59:34.869  WARN 84204 --- [nfoReplicator-0] c.n.d.s.t.d.RetryableEurekaHttpClient    : Request execution failed with message: java.net.ConnectException: Connection refused (Connection refused)
+2019-02-16 17:59:34.870  WARN 84204 --- [nfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_CARD-SERVICE/192.168.43.177:card-service:0 - registration failed Cannot execute request on any known server
 
 com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
 	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:112) ~[eureka-client-1.9.8.jar:1.9.8]
@@ -420,7 +420,7 @@ com.netflix.discovery.shared.transport.TransportException: Cannot execute reques
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_144]
 	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_144]
 
-2019-02-14 12:34:31.430  WARN 50147 --- [nfoReplicator-0] c.n.discovery.InstanceInfoReplicator     : There was a problem with the instance info replicator
+2019-02-16 17:59:34.870  WARN 84204 --- [nfoReplicator-0] c.n.discovery.InstanceInfoReplicator     : There was a problem with the instance info replicator
 
 com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
 	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:112) ~[eureka-client-1.9.8.jar:1.9.8]
@@ -439,369 +439,370 @@ com.netflix.discovery.shared.transport.TransportException: Cannot execute reques
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_144]
 	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_144]
 
-2019-02-14 12:34:31.432  INFO 50147 --- [           main] c.broome.micro.bank.CardStepDefinitions  : Started CardStepDefinitions in 10.379 seconds (JVM running for 11.648)
+2019-02-16 17:59:34.897  INFO 84204 --- [           main] c.broome.micro.bank.CardStepDefinitions  : Started CardStepDefinitions in 10.521 seconds (JVM running for 11.976)
 Feature: Card functionalities
 
   Scenario: List cards       # src/test/resources/features/card.feature:3
-2019-02-14 12:34:31.477  INFO 50147 --- [           main] c.broome.micro.bank.BaseIntegrationTest  : PORT: 0
-2019-02-14 12:34:31.493  INFO 50147 --- [           main] c.b.micro.bank.services.CardService      : CLEANING IN SERVICE
-2019-02-14 12:34:31.540  INFO 50147 --- [           main] o.h.h.i.QueryTranslatorFactoryInitiator  : HHH000397: Using ASTQueryTranslatorFactory
+2019-02-16 17:59:34.957  INFO 84204 --- [           main] c.broome.micro.bank.BaseIntegrationTest  : PORT: 0
+2019-02-16 17:59:34.973  INFO 84204 --- [           main] c.b.micro.bank.services.CardService      : CLEANING IN SERVICE
+2019-02-16 17:59:35.021  INFO 84204 --- [           main] o.h.h.i.QueryTranslatorFactoryInitiator  : HHH000397: Using ASTQueryTranslatorFactory
 Hibernate: select card0_.card_number as card_num1_0_, card0_.account_number as account_2_0_, card0_.blocked as blocked3_0_, card0_.pin_code as pin_code4_0_, card0_.user_id as user_id5_0_ from card card0_
-2019-02-14 12:34:31.727  INFO 50147 --- [           main] c.b.micro.bank.helper.RestCommunication  : NEWPORT: 50304
-2019-02-14 12:34:32.019  INFO 50147 --- [o-auto-1-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2019-02-14 12:34:32.019  INFO 50147 --- [o-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2019-02-14 12:34:32.050  INFO 50147 --- [o-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 31 ms
-2019-02-14 12:34:32.129  INFO 50147 --- [o-auto-1-exec-1] c.b.m.bank.controller.CardController     : POST: Creating a new card
+2019-02-16 17:59:35.229  INFO 84204 --- [           main] c.b.m.bank.helper.CardIntegrationTest    : NEWPORT: 52758
+2019-02-16 17:59:35.507  INFO 84204 --- [o-auto-1-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-02-16 17:59:35.508  INFO 84204 --- [o-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2019-02-16 17:59:35.541  INFO 84204 --- [o-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 32 ms
+2019-02-16 17:59:35.626  INFO 84204 --- [o-auto-1-exec-1] c.b.m.bank.controller.CardController     : POST: Creating a new card
+2019-02-16 17:59:35.626  INFO 84204 --- [o-auto-1-exec-1] c.b.m.bank.controller.CardController     : header in cardcontroller: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsInVzZXJJZCI6IjEiLCJleHAiOjE1NTExMTcyNDV9.rpnO6mjtxmoOFDzC_yE-D8sgQJZz8BaKEvVSrNwiz3St_Q05Y05z-Ixf0TdtI4Avm9t04oqbWkQxb5r4x19VbQ
+2019-02-16 17:59:35.627  INFO 84204 --- [o-auto-1-exec-1] c.b.m.bank.controller.CardController     : stripped header: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsInVzZXJJZCI6IjEiLCJleHAiOjE1NTExMTcyNDV9.rpnO6mjtxmoOFDzC_yE-D8sgQJZz8BaKEvVSrNwiz3St_Q05Y05z-Ixf0TdtI4Avm9t04oqbWkQxb5r4x19VbQ
 Hibernate: call next value for seq
 Hibernate: call next value for seq
 Hibernate: insert into card (account_number, blocked, pin_code, user_id, card_number) values (?, ?, ?, ?, ?)
     Given user 1 have a card # CardStepDefinitions.haveACard(String)
     When user 1 list cards   # CardStepDefinitions.listCards(String)
-2019-02-14 12:34:32.218  INFO 50147 --- [           main] c.b.micro.bank.helper.RestCommunication  : NEWPORT: 50304
-2019-02-14 12:34:32.230  INFO 50147 --- [o-auto-1-exec-2] c.b.m.bank.controller.CardController     : GETTING ALL CARDS
+2019-02-16 17:59:36.123  INFO 84204 --- [           main] c.b.m.bank.helper.CardIntegrationTest    : NEWPORT: 52758
+2019-02-16 17:59:36.135  INFO 84204 --- [o-auto-1-exec-2] c.b.m.bank.controller.CardController     : GETTING ALL CARDS
+2019-02-16 17:59:36.135  INFO 84204 --- [o-auto-1-exec-2] c.b.m.bank.controller.CardController     : header in cardcontroller: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsInVzZXJJZCI6IjEiLCJleHAiOjE1NTExMTcyNDV9.rpnO6mjtxmoOFDzC_yE-D8sgQJZz8BaKEvVSrNwiz3St_Q05Y05z-Ixf0TdtI4Avm9t04oqbWkQxb5r4x19VbQ
+2019-02-16 17:59:36.135  INFO 84204 --- [o-auto-1-exec-2] c.b.m.bank.controller.CardController     : stripped header: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsInVzZXJJZCI6IjEiLCJleHAiOjE1NTExMTcyNDV9.rpnO6mjtxmoOFDzC_yE-D8sgQJZz8BaKEvVSrNwiz3St_Q05Y05z-Ixf0TdtI4Avm9t04oqbWkQxb5r4x19VbQ
 Hibernate: select card0_.card_number as card_num1_0_, card0_.account_number as account_2_0_, card0_.blocked as blocked3_0_, card0_.pin_code as pin_code4_0_, card0_.user_id as user_id5_0_ from card card0_ where card0_.user_id=?
-2019-02-14 12:34:32.262  INFO 50147 --- [o-auto-1-exec-2] c.b.micro.bank.services.CardService      : CARDNUMBER: 123456 PIN: 1234
-2019-02-14 12:34:32.270  INFO 50147 --- [           main] c.b.micro.bank.helper.RestCommunication  : got cards:[pinCode;1234
-accountNumber;37730001
-userId:1
-blocked:false
-cardNumber123456]
+2019-02-16 17:59:36.177  INFO 84204 --- [o-auto-1-exec-2] c.b.micro.bank.services.CardService      : CARDNUMBER: 123456 PIN: 1234
+2019-02-16 17:59:36.183  INFO 84204 --- [           main] c.b.m.bank.helper.CardIntegrationTest    : got cards:1
+2019-02-16 17:59:36.184  INFO 84204 --- [           main] c.broome.micro.bank.CardStepDefinitions  : CARDS IS NOT NULL
     Then user 1 have 1 card  # CardStepDefinitions.userHaveCards(String,int)
-2019-02-14 12:34:32.341  INFO 50147 --- [           main] .b.t.c.SpringBootTestContextBootstrapper : Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.broome.micro.bank.CardStepDefinitions], using SpringBootContextLoader
-2019-02-14 12:34:32.345  INFO 50147 --- [           main] o.s.t.c.support.AbstractContextLoader    : Could not detect default resource locations for test class [com.broome.micro.bank.CardStepDefinitions]: no resource found for suffixes {-context.xml, Context.groovy}.
-2019-02-14 12:34:32.348  INFO 50147 --- [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.broome.micro.bank.CardStepDefinitions]: CardStepDefinitions does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-2019-02-14 12:34:32.353  INFO 50147 --- [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.broome.micro.bank.CardServiceApplication for test class com.broome.micro.bank.CardStepDefinitions
-2019-02-14 12:34:32.356  INFO 50147 --- [           main] .b.t.c.SpringBootTestContextBootstrapper : Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
-2019-02-14 12:34:32.358  INFO 50147 --- [           main] .b.t.c.SpringBootTestContextBootstrapper : Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@2de82bf8, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@7804a783, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@54ec8ab3, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@71b32407, org.springframework.test.context.support.DirtiesContextTestExecutionListener@1d686622, org.springframework.test.context.transaction.TransactionalTestExecutionListener@400df2b3, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@70044113, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@18ffc008, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@4678ec43, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@694f0655, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@3b11deb6, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@5d08a65c]
+2019-02-16 17:59:36.248  INFO 84204 --- [           main] .b.t.c.SpringBootTestContextBootstrapper : Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.broome.micro.bank.CardStepDefinitions], using SpringBootContextLoader
+2019-02-16 17:59:36.253  INFO 84204 --- [           main] o.s.t.c.support.AbstractContextLoader    : Could not detect default resource locations for test class [com.broome.micro.bank.CardStepDefinitions]: no resource found for suffixes {-context.xml, Context.groovy}.
+2019-02-16 17:59:36.255  INFO 84204 --- [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.broome.micro.bank.CardStepDefinitions]: CardStepDefinitions does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2019-02-16 17:59:36.262  INFO 84204 --- [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.broome.micro.bank.CardServiceApplication for test class com.broome.micro.bank.CardStepDefinitions
+2019-02-16 17:59:36.263  INFO 84204 --- [           main] .b.t.c.SpringBootTestContextBootstrapper : Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+2019-02-16 17:59:36.264  INFO 84204 --- [           main] .b.t.c.SpringBootTestContextBootstrapper : Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@1dbf727a, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@6ffa8126, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@23ee70a7, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@47f416d0, org.springframework.test.context.support.DirtiesContextTestExecutionListener@21be80f6, org.springframework.test.context.transaction.TransactionalTestExecutionListener@1af6d656, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@4acdf6e7, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@2de82bf8, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@7804a783, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@54ec8ab3, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@71b32407, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@1d686622]
 
   Scenario: Adding a card with correct info     # src/test/resources/features/card.feature:8
-2019-02-14 12:34:32.361  INFO 50147 --- [           main] c.broome.micro.bank.BaseIntegrationTest  : PORT: 0
-2019-02-14 12:34:32.375  INFO 50147 --- [           main] c.b.micro.bank.services.CardService      : CLEANING IN SERVICE
+2019-02-16 17:59:36.265  INFO 84204 --- [           main] c.broome.micro.bank.BaseIntegrationTest  : PORT: 0
+2019-02-16 17:59:36.273  INFO 84204 --- [           main] c.b.micro.bank.services.CardService      : CLEANING IN SERVICE
 Hibernate: select card0_.card_number as card_num1_0_, card0_.account_number as account_2_0_, card0_.blocked as blocked3_0_, card0_.pin_code as pin_code4_0_, card0_.user_id as user_id5_0_ from card card0_
 Hibernate: delete from card where card_number=?
-2019-02-14 12:34:32.392  INFO 50147 --- [           main] c.b.micro.bank.helper.RestCommunication  : NEWPORT: 50304
-2019-02-14 12:34:32.412  INFO 50147 --- [o-auto-1-exec-3] c.b.m.bank.controller.CardController     : POST: Creating a new card
+2019-02-16 17:59:36.291  INFO 84204 --- [           main] c.b.m.bank.helper.CardIntegrationTest    : NEWPORT: 52758
+2019-02-16 17:59:36.306  INFO 84204 --- [o-auto-1-exec-3] c.b.m.bank.controller.CardController     : POST: Creating a new card
+2019-02-16 17:59:36.306  INFO 84204 --- [o-auto-1-exec-3] c.b.m.bank.controller.CardController     : header in cardcontroller: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsInVzZXJJZCI6IjEiLCJleHAiOjE1NTExMTcyNDV9.rpnO6mjtxmoOFDzC_yE-D8sgQJZz8BaKEvVSrNwiz3St_Q05Y05z-Ixf0TdtI4Avm9t04oqbWkQxb5r4x19VbQ
+2019-02-16 17:59:36.306  INFO 84204 --- [o-auto-1-exec-3] c.b.m.bank.controller.CardController     : stripped header: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsInVzZXJJZCI6IjEiLCJleHAiOjE1NTExMTcyNDV9.rpnO6mjtxmoOFDzC_yE-D8sgQJZz8BaKEvVSrNwiz3St_Q05Y05z-Ixf0TdtI4Avm9t04oqbWkQxb5r4x19VbQ
 Hibernate: insert into card (account_number, blocked, pin_code, user_id, card_number) values (?, ?, ?, ?, ?)
     When the user 1 adds a card with ok account # CardStepDefinitions.userAddsACard(String)
-2019-02-14 12:34:32.422  INFO 50147 --- [           main] c.b.micro.bank.helper.RestCommunication  : NEWPORT: 50304
-2019-02-14 12:34:32.426  INFO 50147 --- [o-auto-1-exec-4] c.b.m.bank.controller.CardController     : GETTING ALL CARDS
+2019-02-16 17:59:36.317  INFO 84204 --- [           main] c.b.m.bank.helper.CardIntegrationTest    : NEWPORT: 52758
+2019-02-16 17:59:36.322  INFO 84204 --- [o-auto-1-exec-4] c.b.m.bank.controller.CardController     : GETTING ALL CARDS
+2019-02-16 17:59:36.322  INFO 84204 --- [o-auto-1-exec-4] c.b.m.bank.controller.CardController     : header in cardcontroller: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsInVzZXJJZCI6IjEiLCJleHAiOjE1NTExMTcyNDV9.rpnO6mjtxmoOFDzC_yE-D8sgQJZz8BaKEvVSrNwiz3St_Q05Y05z-Ixf0TdtI4Avm9t04oqbWkQxb5r4x19VbQ
+2019-02-16 17:59:36.322  INFO 84204 --- [o-auto-1-exec-4] c.b.m.bank.controller.CardController     : stripped header: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsInVzZXJJZCI6IjEiLCJleHAiOjE1NTExMTcyNDV9.rpnO6mjtxmoOFDzC_yE-D8sgQJZz8BaKEvVSrNwiz3St_Q05Y05z-Ixf0TdtI4Avm9t04oqbWkQxb5r4x19VbQ
 Hibernate: select card0_.card_number as card_num1_0_, card0_.account_number as account_2_0_, card0_.blocked as blocked3_0_, card0_.pin_code as pin_code4_0_, card0_.user_id as user_id5_0_ from card card0_ where card0_.user_id=?
-2019-02-14 12:34:32.428  INFO 50147 --- [o-auto-1-exec-4] c.b.micro.bank.services.CardService      : CARDNUMBER: 123457 PIN: 1234
-2019-02-14 12:34:32.430  INFO 50147 --- [           main] c.b.micro.bank.helper.RestCommunication  : got cards:[pinCode;1234
-accountNumber;37730001
-userId:1
-blocked:false
-cardNumber123457]
+2019-02-16 17:59:36.326  INFO 84204 --- [o-auto-1-exec-4] c.b.micro.bank.services.CardService      : CARDNUMBER: 123457 PIN: 1234
+2019-02-16 17:59:36.328  INFO 84204 --- [           main] c.b.m.bank.helper.CardIntegrationTest    : got cards:1
+2019-02-16 17:59:36.328  INFO 84204 --- [           main] c.broome.micro.bank.CardStepDefinitions  : CARDS IS NOT NULL
     Then user 1 have 1 card                     # CardStepDefinitions.userHaveCards(String,int)
-2019-02-14 12:34:32.435  INFO 50147 --- [           main] .b.t.c.SpringBootTestContextBootstrapper : Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.broome.micro.bank.CardStepDefinitions], using SpringBootContextLoader
-2019-02-14 12:34:32.436  INFO 50147 --- [           main] o.s.t.c.support.AbstractContextLoader    : Could not detect default resource locations for test class [com.broome.micro.bank.CardStepDefinitions]: no resource found for suffixes {-context.xml, Context.groovy}.
-2019-02-14 12:34:32.436  INFO 50147 --- [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.broome.micro.bank.CardStepDefinitions]: CardStepDefinitions does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-2019-02-14 12:34:32.439  INFO 50147 --- [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.broome.micro.bank.CardServiceApplication for test class com.broome.micro.bank.CardStepDefinitions
-2019-02-14 12:34:32.442  INFO 50147 --- [           main] .b.t.c.SpringBootTestContextBootstrapper : Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
-2019-02-14 12:34:32.442  INFO 50147 --- [           main] .b.t.c.SpringBootTestContextBootstrapper : Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@36f80ceb, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@31ab75a5, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@17541204, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@2dec57c5, org.springframework.test.context.support.DirtiesContextTestExecutionListener@5b8599c7, org.springframework.test.context.transaction.TransactionalTestExecutionListener@31e9d94f, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@69a3944, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@4987142d, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@3e3bf77b, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@41e76252, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@16602333, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@67376bae]
+2019-02-16 17:59:36.330  INFO 84204 --- [           main] .b.t.c.SpringBootTestContextBootstrapper : Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.broome.micro.bank.CardStepDefinitions], using SpringBootContextLoader
+2019-02-16 17:59:36.333  INFO 84204 --- [           main] o.s.t.c.support.AbstractContextLoader    : Could not detect default resource locations for test class [com.broome.micro.bank.CardStepDefinitions]: no resource found for suffixes {-context.xml, Context.groovy}.
+2019-02-16 17:59:36.333  INFO 84204 --- [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.broome.micro.bank.CardStepDefinitions]: CardStepDefinitions does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2019-02-16 17:59:36.337  INFO 84204 --- [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.broome.micro.bank.CardServiceApplication for test class com.broome.micro.bank.CardStepDefinitions
+2019-02-16 17:59:36.340  INFO 84204 --- [           main] .b.t.c.SpringBootTestContextBootstrapper : Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+2019-02-16 17:59:36.342  INFO 84204 --- [           main] .b.t.c.SpringBootTestContextBootstrapper : Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@2a7b5925, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@5a5b394, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@6c9b6332, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@384b3fe7, org.springframework.test.context.support.DirtiesContextTestExecutionListener@4889fbba, org.springframework.test.context.transaction.TransactionalTestExecutionListener@6018d82c, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@572db5ee, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@36f80ceb, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@31ab75a5, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@17541204, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@2dec57c5, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@5b8599c7]
 
   Scenario: Adding a card with wrong info        # src/test/resources/features/card.feature:12
-2019-02-14 12:34:32.444  INFO 50147 --- [           main] c.broome.micro.bank.BaseIntegrationTest  : PORT: 0
-2019-02-14 12:34:32.452  INFO 50147 --- [           main] c.b.micro.bank.services.CardService      : CLEANING IN SERVICE
+2019-02-16 17:59:36.344  INFO 84204 --- [           main] c.broome.micro.bank.BaseIntegrationTest  : PORT: 0
+2019-02-16 17:59:36.353  INFO 84204 --- [           main] c.b.micro.bank.services.CardService      : CLEANING IN SERVICE
 Hibernate: select card0_.card_number as card_num1_0_, card0_.account_number as account_2_0_, card0_.blocked as blocked3_0_, card0_.pin_code as pin_code4_0_, card0_.user_id as user_id5_0_ from card card0_
 Hibernate: delete from card where card_number=?
-2019-02-14 12:34:32.457  INFO 50147 --- [           main] c.b.micro.bank.helper.RestCommunication  : NEWPORT: 50304
-2019-02-14 12:34:32.466  INFO 50147 --- [o-auto-1-exec-5] c.b.m.bank.controller.CardController     : POST: Creating a new card
+2019-02-16 17:59:36.357  INFO 84204 --- [           main] c.b.m.bank.helper.CardIntegrationTest    : NEWPORT: 52758
+2019-02-16 17:59:36.365  INFO 84204 --- [o-auto-1-exec-5] c.b.m.bank.controller.CardController     : POST: Creating a new card
+2019-02-16 17:59:36.365  INFO 84204 --- [o-auto-1-exec-5] c.b.m.bank.controller.CardController     : header in cardcontroller: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsInVzZXJJZCI6IjEiLCJleHAiOjE1NTExMTcyNDV9.rpnO6mjtxmoOFDzC_yE-D8sgQJZz8BaKEvVSrNwiz3St_Q05Y05z-Ixf0TdtI4Avm9t04oqbWkQxb5r4x19VbQ
+2019-02-16 17:59:36.365  INFO 84204 --- [o-auto-1-exec-5] c.b.m.bank.controller.CardController     : stripped header: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsInVzZXJJZCI6IjEiLCJleHAiOjE1NTExMTcyNDV9.rpnO6mjtxmoOFDzC_yE-D8sgQJZz8BaKEvVSrNwiz3St_Q05Y05z-Ixf0TdtI4Avm9t04oqbWkQxb5r4x19VbQ
     When the user 1 adds a card with bad account # CardStepDefinitions.userAddsACardWithBadAccount(String)
-2019-02-14 12:34:32.469  INFO 50147 --- [           main] c.b.micro.bank.helper.RestCommunication  : NEWPORT: 50304
-2019-02-14 12:34:32.472  INFO 50147 --- [o-auto-1-exec-6] c.b.m.bank.controller.CardController     : GETTING ALL CARDS
+2019-02-16 17:59:36.371  INFO 84204 --- [           main] c.b.m.bank.helper.CardIntegrationTest    : NEWPORT: 52758
+2019-02-16 17:59:36.375  INFO 84204 --- [o-auto-1-exec-6] c.b.m.bank.controller.CardController     : GETTING ALL CARDS
+2019-02-16 17:59:36.375  INFO 84204 --- [o-auto-1-exec-6] c.b.m.bank.controller.CardController     : header in cardcontroller: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsInVzZXJJZCI6IjEiLCJleHAiOjE1NTExMTcyNDV9.rpnO6mjtxmoOFDzC_yE-D8sgQJZz8BaKEvVSrNwiz3St_Q05Y05z-Ixf0TdtI4Avm9t04oqbWkQxb5r4x19VbQ
+2019-02-16 17:59:36.375  INFO 84204 --- [o-auto-1-exec-6] c.b.m.bank.controller.CardController     : stripped header: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsInVzZXJJZCI6IjEiLCJleHAiOjE1NTExMTcyNDV9.rpnO6mjtxmoOFDzC_yE-D8sgQJZz8BaKEvVSrNwiz3St_Q05Y05z-Ixf0TdtI4Avm9t04oqbWkQxb5r4x19VbQ
 Hibernate: select card0_.card_number as card_num1_0_, card0_.account_number as account_2_0_, card0_.blocked as blocked3_0_, card0_.pin_code as pin_code4_0_, card0_.user_id as user_id5_0_ from card card0_ where card0_.user_id=?
-2019-02-14 12:34:32.476  INFO 50147 --- [           main] c.b.micro.bank.helper.RestCommunication  : got cards:[]
+2019-02-16 17:59:36.380  INFO 84204 --- [           main] c.b.m.bank.helper.CardIntegrationTest    : got cards:0
+2019-02-16 17:59:36.381  INFO 84204 --- [           main] c.broome.micro.bank.CardStepDefinitions  : CARDS IS NOT NULL
     Then user 1 have 0 card                      # CardStepDefinitions.userHaveCards(String,int)
-2019-02-14 12:34:32.478  INFO 50147 --- [           main] .b.t.c.SpringBootTestContextBootstrapper : Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.broome.micro.bank.CardStepDefinitions], using SpringBootContextLoader
-2019-02-14 12:34:32.479  INFO 50147 --- [           main] o.s.t.c.support.AbstractContextLoader    : Could not detect default resource locations for test class [com.broome.micro.bank.CardStepDefinitions]: no resource found for suffixes {-context.xml, Context.groovy}.
-2019-02-14 12:34:32.479  INFO 50147 --- [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.broome.micro.bank.CardStepDefinitions]: CardStepDefinitions does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-2019-02-14 12:34:32.482  INFO 50147 --- [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.broome.micro.bank.CardServiceApplication for test class com.broome.micro.bank.CardStepDefinitions
-2019-02-14 12:34:32.484  INFO 50147 --- [           main] .b.t.c.SpringBootTestContextBootstrapper : Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
-2019-02-14 12:34:32.486  INFO 50147 --- [           main] .b.t.c.SpringBootTestContextBootstrapper : Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@7b6b99c5, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@2e1c8027, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@72d7afff, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@5c41f6a0, org.springframework.test.context.support.DirtiesContextTestExecutionListener@7b43f95c, org.springframework.test.context.transaction.TransactionalTestExecutionListener@311453ab, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@7ef3aa21, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@2dd4a7a9, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@49392256, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@5a23b9d1, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@3962b216, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@3183a37c]
+2019-02-16 17:59:36.383  INFO 84204 --- [           main] .b.t.c.SpringBootTestContextBootstrapper : Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.broome.micro.bank.CardStepDefinitions], using SpringBootContextLoader
+2019-02-16 17:59:36.384  INFO 84204 --- [           main] o.s.t.c.support.AbstractContextLoader    : Could not detect default resource locations for test class [com.broome.micro.bank.CardStepDefinitions]: no resource found for suffixes {-context.xml, Context.groovy}.
+2019-02-16 17:59:36.384  INFO 84204 --- [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.broome.micro.bank.CardStepDefinitions]: CardStepDefinitions does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2019-02-16 17:59:36.388  INFO 84204 --- [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.broome.micro.bank.CardServiceApplication for test class com.broome.micro.bank.CardStepDefinitions
+2019-02-16 17:59:36.390  INFO 84204 --- [           main] .b.t.c.SpringBootTestContextBootstrapper : Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+2019-02-16 17:59:36.390  INFO 84204 --- [           main] .b.t.c.SpringBootTestContextBootstrapper : Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@35b79b1f, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@664083f6, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@5a8835c6, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@67216c33, org.springframework.test.context.support.DirtiesContextTestExecutionListener@6ec77cab, org.springframework.test.context.transaction.TransactionalTestExecutionListener@c7a1db6, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@17c72ffa, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@7b6b99c5, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@2e1c8027, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@72d7afff, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@5c41f6a0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@7b43f95c]
 
   Scenario: Changing pin               # src/test/resources/features/card.feature:16
-2019-02-14 12:34:32.487  INFO 50147 --- [           main] c.broome.micro.bank.BaseIntegrationTest  : PORT: 0
-2019-02-14 12:34:32.494  INFO 50147 --- [           main] c.b.micro.bank.services.CardService      : CLEANING IN SERVICE
+2019-02-16 17:59:36.399  INFO 84204 --- [           main] c.broome.micro.bank.BaseIntegrationTest  : PORT: 0
+2019-02-16 17:59:36.408  INFO 84204 --- [           main] c.b.micro.bank.services.CardService      : CLEANING IN SERVICE
 Hibernate: select card0_.card_number as card_num1_0_, card0_.account_number as account_2_0_, card0_.blocked as blocked3_0_, card0_.pin_code as pin_code4_0_, card0_.user_id as user_id5_0_ from card card0_
-2019-02-14 12:34:32.498  INFO 50147 --- [           main] c.b.micro.bank.helper.RestCommunication  : NEWPORT: 50304
-2019-02-14 12:34:32.509  INFO 50147 --- [o-auto-1-exec-7] c.b.m.bank.controller.CardController     : POST: Creating a new card
+2019-02-16 17:59:36.411  INFO 84204 --- [           main] c.b.m.bank.helper.CardIntegrationTest    : NEWPORT: 52758
+2019-02-16 17:59:36.419  INFO 84204 --- [o-auto-1-exec-7] c.b.m.bank.controller.CardController     : POST: Creating a new card
+2019-02-16 17:59:36.419  INFO 84204 --- [o-auto-1-exec-7] c.b.m.bank.controller.CardController     : header in cardcontroller: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsInVzZXJJZCI6IjEiLCJleHAiOjE1NTExMTcyNDV9.rpnO6mjtxmoOFDzC_yE-D8sgQJZz8BaKEvVSrNwiz3St_Q05Y05z-Ixf0TdtI4Avm9t04oqbWkQxb5r4x19VbQ
+2019-02-16 17:59:36.420  INFO 84204 --- [o-auto-1-exec-7] c.b.m.bank.controller.CardController     : stripped header: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsInVzZXJJZCI6IjEiLCJleHAiOjE1NTExMTcyNDV9.rpnO6mjtxmoOFDzC_yE-D8sgQJZz8BaKEvVSrNwiz3St_Q05Y05z-Ixf0TdtI4Avm9t04oqbWkQxb5r4x19VbQ
 Hibernate: insert into card (account_number, blocked, pin_code, user_id, card_number) values (?, ?, ?, ?, ?)
     Given user 1 have a card           # CardStepDefinitions.haveACard(String)
     When user 1 changes pin to 4321    # CardStepDefinitions.changePin(String,String)
-2019-02-14 12:34:32.516  INFO 50147 --- [           main] c.b.micro.bank.helper.RestCommunication  : NEWPORT: 50304
-2019-02-14 12:34:32.520  INFO 50147 --- [o-auto-1-exec-8] c.b.m.bank.controller.CardController     : GETTING ALL CARDS
+2019-02-16 17:59:36.427  INFO 84204 --- [           main] c.b.m.bank.helper.CardIntegrationTest    : NEWPORT: 52758
+2019-02-16 17:59:36.430  INFO 84204 --- [o-auto-1-exec-8] c.b.m.bank.controller.CardController     : GETTING ALL CARDS
+2019-02-16 17:59:36.431  INFO 84204 --- [o-auto-1-exec-8] c.b.m.bank.controller.CardController     : header in cardcontroller: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsInVzZXJJZCI6IjEiLCJleHAiOjE1NTExMTcyNDV9.rpnO6mjtxmoOFDzC_yE-D8sgQJZz8BaKEvVSrNwiz3St_Q05Y05z-Ixf0TdtI4Avm9t04oqbWkQxb5r4x19VbQ
+2019-02-16 17:59:36.431  INFO 84204 --- [o-auto-1-exec-8] c.b.m.bank.controller.CardController     : stripped header: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsInVzZXJJZCI6IjEiLCJleHAiOjE1NTExMTcyNDV9.rpnO6mjtxmoOFDzC_yE-D8sgQJZz8BaKEvVSrNwiz3St_Q05Y05z-Ixf0TdtI4Avm9t04oqbWkQxb5r4x19VbQ
 Hibernate: select card0_.card_number as card_num1_0_, card0_.account_number as account_2_0_, card0_.blocked as blocked3_0_, card0_.pin_code as pin_code4_0_, card0_.user_id as user_id5_0_ from card card0_ where card0_.user_id=?
-2019-02-14 12:34:32.522  INFO 50147 --- [o-auto-1-exec-8] c.b.micro.bank.services.CardService      : CARDNUMBER: 123458 PIN: 1234
-2019-02-14 12:34:32.525  INFO 50147 --- [           main] c.b.micro.bank.helper.RestCommunication  : got cards:[pinCode;1234
-accountNumber;37730001
-userId:1
-blocked:false
-cardNumber123458]
+2019-02-16 17:59:36.434  INFO 84204 --- [o-auto-1-exec-8] c.b.micro.bank.services.CardService      : CARDNUMBER: 123458 PIN: 1234
+2019-02-16 17:59:36.437  INFO 84204 --- [           main] c.b.m.bank.helper.CardIntegrationTest    : got cards:1
     Then user 1 pin is changed to 4321 # CardStepDefinitions.userPinIs(String,String)
-2019-02-14 12:34:32.527  INFO 50147 --- [           main] .b.t.c.SpringBootTestContextBootstrapper : Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.broome.micro.bank.CardStepDefinitions], using SpringBootContextLoader
-2019-02-14 12:34:32.528  INFO 50147 --- [           main] o.s.t.c.support.AbstractContextLoader    : Could not detect default resource locations for test class [com.broome.micro.bank.CardStepDefinitions]: no resource found for suffixes {-context.xml, Context.groovy}.
-2019-02-14 12:34:32.528  INFO 50147 --- [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.broome.micro.bank.CardStepDefinitions]: CardStepDefinitions does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-2019-02-14 12:34:32.530  INFO 50147 --- [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.broome.micro.bank.CardServiceApplication for test class com.broome.micro.bank.CardStepDefinitions
-2019-02-14 12:34:32.532  INFO 50147 --- [           main] .b.t.c.SpringBootTestContextBootstrapper : Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
-2019-02-14 12:34:32.532  INFO 50147 --- [           main] .b.t.c.SpringBootTestContextBootstrapper : Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@d7c4fcb, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@61d527ac, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@498503cb, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@380e3122, org.springframework.test.context.support.DirtiesContextTestExecutionListener@576323ff, org.springframework.test.context.transaction.TransactionalTestExecutionListener@1fc386f8, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@7eb94590, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@3777fc44, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@79454d8e, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@7ab2e018, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@4e13af1b, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@468eff41]
+2019-02-16 17:59:36.439  INFO 84204 --- [           main] .b.t.c.SpringBootTestContextBootstrapper : Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.broome.micro.bank.CardStepDefinitions], using SpringBootContextLoader
+2019-02-16 17:59:36.440  INFO 84204 --- [           main] o.s.t.c.support.AbstractContextLoader    : Could not detect default resource locations for test class [com.broome.micro.bank.CardStepDefinitions]: no resource found for suffixes {-context.xml, Context.groovy}.
+2019-02-16 17:59:36.440  INFO 84204 --- [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.broome.micro.bank.CardStepDefinitions]: CardStepDefinitions does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2019-02-16 17:59:36.443  INFO 84204 --- [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.broome.micro.bank.CardServiceApplication for test class com.broome.micro.bank.CardStepDefinitions
+2019-02-16 17:59:36.445  INFO 84204 --- [           main] .b.t.c.SpringBootTestContextBootstrapper : Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+2019-02-16 17:59:36.446  INFO 84204 --- [           main] .b.t.c.SpringBootTestContextBootstrapper : Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@5a5c2889, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@7668f8fd, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@75566f4, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@6785786d, org.springframework.test.context.support.DirtiesContextTestExecutionListener@5c261c74, org.springframework.test.context.transaction.TransactionalTestExecutionListener@6d38a81d, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@41f61188, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@d7c4fcb, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@61d527ac, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@498503cb, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@380e3122, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@576323ff]
 
   Scenario: Blocking the card   # src/test/resources/features/card.feature:21
-2019-02-14 12:34:32.534  INFO 50147 --- [           main] c.broome.micro.bank.BaseIntegrationTest  : PORT: 0
-2019-02-14 12:34:32.541  INFO 50147 --- [           main] c.b.micro.bank.services.CardService      : CLEANING IN SERVICE
+2019-02-16 17:59:36.448  INFO 84204 --- [           main] c.broome.micro.bank.BaseIntegrationTest  : PORT: 0
+2019-02-16 17:59:36.456  INFO 84204 --- [           main] c.b.micro.bank.services.CardService      : CLEANING IN SERVICE
 Hibernate: select card0_.card_number as card_num1_0_, card0_.account_number as account_2_0_, card0_.blocked as blocked3_0_, card0_.pin_code as pin_code4_0_, card0_.user_id as user_id5_0_ from card card0_
 Hibernate: delete from card where card_number=?
-2019-02-14 12:34:32.546  INFO 50147 --- [           main] c.b.micro.bank.helper.RestCommunication  : NEWPORT: 50304
-2019-02-14 12:34:32.554  INFO 50147 --- [o-auto-1-exec-9] c.b.m.bank.controller.CardController     : POST: Creating a new card
+2019-02-16 17:59:36.460  INFO 84204 --- [           main] c.b.m.bank.helper.CardIntegrationTest    : NEWPORT: 52758
+2019-02-16 17:59:36.467  INFO 84204 --- [o-auto-1-exec-9] c.b.m.bank.controller.CardController     : POST: Creating a new card
+2019-02-16 17:59:36.467  INFO 84204 --- [o-auto-1-exec-9] c.b.m.bank.controller.CardController     : header in cardcontroller: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsInVzZXJJZCI6IjEiLCJleHAiOjE1NTExMTcyNDV9.rpnO6mjtxmoOFDzC_yE-D8sgQJZz8BaKEvVSrNwiz3St_Q05Y05z-Ixf0TdtI4Avm9t04oqbWkQxb5r4x19VbQ
+2019-02-16 17:59:36.467  INFO 84204 --- [o-auto-1-exec-9] c.b.m.bank.controller.CardController     : stripped header: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsInVzZXJJZCI6IjEiLCJleHAiOjE1NTExMTcyNDV9.rpnO6mjtxmoOFDzC_yE-D8sgQJZz8BaKEvVSrNwiz3St_Q05Y05z-Ixf0TdtI4Avm9t04oqbWkQxb5r4x19VbQ
 Hibernate: insert into card (account_number, blocked, pin_code, user_id, card_number) values (?, ?, ?, ?, ?)
     Given user 1 have a card    # CardStepDefinitions.haveACard(String)
-2019-02-14 12:34:32.559  INFO 50147 --- [           main] c.b.micro.bank.helper.RestCommunication  : NEWPORT: 50304
-2019-02-14 12:34:32.562  INFO 50147 --- [-auto-1-exec-10] c.b.m.bank.controller.CardController     : GETTING ALL CARDS
+2019-02-16 17:59:36.474  INFO 84204 --- [           main] c.b.m.bank.helper.CardIntegrationTest    : NEWPORT: 52758
+2019-02-16 17:59:36.477  INFO 84204 --- [-auto-1-exec-10] c.b.m.bank.controller.CardController     : GETTING ALL CARDS
+2019-02-16 17:59:36.477  INFO 84204 --- [-auto-1-exec-10] c.b.m.bank.controller.CardController     : header in cardcontroller: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsInVzZXJJZCI6IjEiLCJleHAiOjE1NTExMTcyNDV9.rpnO6mjtxmoOFDzC_yE-D8sgQJZz8BaKEvVSrNwiz3St_Q05Y05z-Ixf0TdtI4Avm9t04oqbWkQxb5r4x19VbQ
+2019-02-16 17:59:36.478  INFO 84204 --- [-auto-1-exec-10] c.b.m.bank.controller.CardController     : stripped header: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsInVzZXJJZCI6IjEiLCJleHAiOjE1NTExMTcyNDV9.rpnO6mjtxmoOFDzC_yE-D8sgQJZz8BaKEvVSrNwiz3St_Q05Y05z-Ixf0TdtI4Avm9t04oqbWkQxb5r4x19VbQ
 Hibernate: select card0_.card_number as card_num1_0_, card0_.account_number as account_2_0_, card0_.blocked as blocked3_0_, card0_.pin_code as pin_code4_0_, card0_.user_id as user_id5_0_ from card card0_ where card0_.user_id=?
-2019-02-14 12:34:32.564  INFO 50147 --- [-auto-1-exec-10] c.b.micro.bank.services.CardService      : CARDNUMBER: 123459 PIN: 1234
-2019-02-14 12:34:32.567  INFO 50147 --- [           main] c.b.micro.bank.helper.RestCommunication  : got cards:[pinCode;1234
-accountNumber;37730001
-userId:1
-blocked:false
-cardNumber123459]
-2019-02-14 12:34:32.568  INFO 50147 --- [           main] c.b.micro.bank.helper.RestCommunication  : NEWPORT: 50304
-2019-02-14 12:34:32.575  INFO 50147 --- [o-auto-1-exec-1] c.b.m.bank.controller.CardController     : BLOCKING CARD id1,cardNumber123459,accnumber37730001
+2019-02-16 17:59:36.481  INFO 84204 --- [-auto-1-exec-10] c.b.micro.bank.services.CardService      : CARDNUMBER: 123459 PIN: 1234
+2019-02-16 17:59:36.485  INFO 84204 --- [           main] c.b.m.bank.helper.CardIntegrationTest    : got cards:1
+2019-02-16 17:59:36.486  INFO 84204 --- [           main] c.b.m.bank.helper.CardIntegrationTest    : NEWPORT: 52758
+2019-02-16 17:59:36.493  INFO 84204 --- [o-auto-1-exec-1] c.b.m.bank.controller.CardController     : header in cardcontroller: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsInVzZXJJZCI6IjEiLCJleHAiOjE1NTExMTcyNDV9.rpnO6mjtxmoOFDzC_yE-D8sgQJZz8BaKEvVSrNwiz3St_Q05Y05z-Ixf0TdtI4Avm9t04oqbWkQxb5r4x19VbQ
+2019-02-16 17:59:36.494  INFO 84204 --- [o-auto-1-exec-1] c.b.m.bank.controller.CardController     : stripped header: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsInVzZXJJZCI6IjEiLCJleHAiOjE1NTExMTcyNDV9.rpnO6mjtxmoOFDzC_yE-D8sgQJZz8BaKEvVSrNwiz3St_Q05Y05z-Ixf0TdtI4Avm9t04oqbWkQxb5r4x19VbQ
+2019-02-16 17:59:36.495  INFO 84204 --- [o-auto-1-exec-1] c.b.m.bank.controller.CardController     : BLOCKING CARD id1,cardNumber123459,accnumber37730001
 Hibernate: select card0_.card_number as card_num1_0_, card0_.account_number as account_2_0_, card0_.blocked as blocked3_0_, card0_.pin_code as pin_code4_0_, card0_.user_id as user_id5_0_ from card card0_ where card0_.user_id=? and card0_.card_number=? and card0_.account_number=?
 Hibernate: update card set account_number=?, blocked=?, pin_code=?, user_id=? where card_number=?
-2019-02-14 12:34:32.594  INFO 50147 --- [           main] c.b.micro.bank.helper.RestCommunication  : NEWPORT: 50304
-2019-02-14 12:34:32.596  INFO 50147 --- [o-auto-1-exec-2] c.b.m.bank.controller.CardController     : GETTING ALL CARDS
+2019-02-16 17:59:36.516  INFO 84204 --- [           main] c.b.m.bank.helper.CardIntegrationTest    : NEWPORT: 52758
+2019-02-16 17:59:36.519  INFO 84204 --- [o-auto-1-exec-2] c.b.m.bank.controller.CardController     : GETTING ALL CARDS
+2019-02-16 17:59:36.519  INFO 84204 --- [o-auto-1-exec-2] c.b.m.bank.controller.CardController     : header in cardcontroller: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsInVzZXJJZCI6IjEiLCJleHAiOjE1NTExMTcyNDV9.rpnO6mjtxmoOFDzC_yE-D8sgQJZz8BaKEvVSrNwiz3St_Q05Y05z-Ixf0TdtI4Avm9t04oqbWkQxb5r4x19VbQ
+2019-02-16 17:59:36.519  INFO 84204 --- [o-auto-1-exec-2] c.b.m.bank.controller.CardController     : stripped header: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsInVzZXJJZCI6IjEiLCJleHAiOjE1NTExMTcyNDV9.rpnO6mjtxmoOFDzC_yE-D8sgQJZz8BaKEvVSrNwiz3St_Q05Y05z-Ixf0TdtI4Avm9t04oqbWkQxb5r4x19VbQ
 Hibernate: select card0_.card_number as card_num1_0_, card0_.account_number as account_2_0_, card0_.blocked as blocked3_0_, card0_.pin_code as pin_code4_0_, card0_.user_id as user_id5_0_ from card card0_ where card0_.user_id=?
-2019-02-14 12:34:32.598  INFO 50147 --- [o-auto-1-exec-2] c.b.micro.bank.services.CardService      : CARDNUMBER: 123459 PIN: 1234
-2019-02-14 12:34:32.600  INFO 50147 --- [           main] c.b.micro.bank.helper.RestCommunication  : got cards:[pinCode;1234
-accountNumber;37730001
-userId:1
-blocked:true
-cardNumber123459]
+2019-02-16 17:59:36.523  INFO 84204 --- [o-auto-1-exec-2] c.b.micro.bank.services.CardService      : CARDNUMBER: 123459 PIN: 1234
+2019-02-16 17:59:36.525  INFO 84204 --- [           main] c.b.m.bank.helper.CardIntegrationTest    : got cards:1
     When user 1 blocks the card # CardStepDefinitions.blockCard(String)
-2019-02-14 12:34:32.602  INFO 50147 --- [           main] c.b.micro.bank.helper.RestCommunication  : NEWPORT: 50304
-2019-02-14 12:34:32.604  INFO 50147 --- [o-auto-1-exec-3] c.b.m.bank.controller.CardController     : GETTING ALL CARDS
+2019-02-16 17:59:36.527  INFO 84204 --- [           main] c.b.m.bank.helper.CardIntegrationTest    : NEWPORT: 52758
+2019-02-16 17:59:36.531  INFO 84204 --- [o-auto-1-exec-3] c.b.m.bank.controller.CardController     : GETTING ALL CARDS
+2019-02-16 17:59:36.531  INFO 84204 --- [o-auto-1-exec-3] c.b.m.bank.controller.CardController     : header in cardcontroller: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsInVzZXJJZCI6IjEiLCJleHAiOjE1NTExMTcyNDV9.rpnO6mjtxmoOFDzC_yE-D8sgQJZz8BaKEvVSrNwiz3St_Q05Y05z-Ixf0TdtI4Avm9t04oqbWkQxb5r4x19VbQ
+2019-02-16 17:59:36.531  INFO 84204 --- [o-auto-1-exec-3] c.b.m.bank.controller.CardController     : stripped header: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsInVzZXJJZCI6IjEiLCJleHAiOjE1NTExMTcyNDV9.rpnO6mjtxmoOFDzC_yE-D8sgQJZz8BaKEvVSrNwiz3St_Q05Y05z-Ixf0TdtI4Avm9t04oqbWkQxb5r4x19VbQ
 Hibernate: select card0_.card_number as card_num1_0_, card0_.account_number as account_2_0_, card0_.blocked as blocked3_0_, card0_.pin_code as pin_code4_0_, card0_.user_id as user_id5_0_ from card card0_ where card0_.user_id=?
-2019-02-14 12:34:32.606  INFO 50147 --- [o-auto-1-exec-3] c.b.micro.bank.services.CardService      : CARDNUMBER: 123459 PIN: 1234
-2019-02-14 12:34:32.607  INFO 50147 --- [           main] c.b.micro.bank.helper.RestCommunication  : got cards:[pinCode;1234
-accountNumber;37730001
-userId:1
-blocked:true
-cardNumber123459]
-2019-02-14 12:34:32.608  INFO 50147 --- [           main] c.broome.micro.bank.CardStepDefinitions  : CARD 37730001 is blocked: true
+2019-02-16 17:59:36.535  INFO 84204 --- [o-auto-1-exec-3] c.b.micro.bank.services.CardService      : CARDNUMBER: 123459 PIN: 1234
+2019-02-16 17:59:36.540  INFO 84204 --- [           main] c.b.m.bank.helper.CardIntegrationTest    : got cards:1
+2019-02-16 17:59:36.540  INFO 84204 --- [           main] c.broome.micro.bank.CardStepDefinitions  : CARD 37730001 is blocked: true
     Then user 1 card is blocked # CardStepDefinitions.theCardIsBlocked(String)
-2019-02-14 12:34:32.610  INFO 50147 --- [           main] .b.t.c.SpringBootTestContextBootstrapper : Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.broome.micro.bank.CardStepDefinitions], using SpringBootContextLoader
-2019-02-14 12:34:32.611  INFO 50147 --- [           main] o.s.t.c.support.AbstractContextLoader    : Could not detect default resource locations for test class [com.broome.micro.bank.CardStepDefinitions]: no resource found for suffixes {-context.xml, Context.groovy}.
-2019-02-14 12:34:32.611  INFO 50147 --- [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.broome.micro.bank.CardStepDefinitions]: CardStepDefinitions does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-2019-02-14 12:34:32.614  INFO 50147 --- [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.broome.micro.bank.CardServiceApplication for test class com.broome.micro.bank.CardStepDefinitions
-2019-02-14 12:34:32.615  INFO 50147 --- [           main] .b.t.c.SpringBootTestContextBootstrapper : Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
-2019-02-14 12:34:32.616  INFO 50147 --- [           main] .b.t.c.SpringBootTestContextBootstrapper : Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@2cd31214, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@594f508f, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@6b6939e1, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@5d32f5db, org.springframework.test.context.support.DirtiesContextTestExecutionListener@69c51fdb, org.springframework.test.context.transaction.TransactionalTestExecutionListener@4aadf144, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@68a97fc1, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@227fc322, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@63053b71, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@4687c184, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@65f3f9e2, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@394950ad]
+2019-02-16 17:59:36.543  INFO 84204 --- [           main] .b.t.c.SpringBootTestContextBootstrapper : Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.broome.micro.bank.CardStepDefinitions], using SpringBootContextLoader
+2019-02-16 17:59:36.545  INFO 84204 --- [           main] o.s.t.c.support.AbstractContextLoader    : Could not detect default resource locations for test class [com.broome.micro.bank.CardStepDefinitions]: no resource found for suffixes {-context.xml, Context.groovy}.
+2019-02-16 17:59:36.545  INFO 84204 --- [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.broome.micro.bank.CardStepDefinitions]: CardStepDefinitions does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2019-02-16 17:59:36.549  INFO 84204 --- [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.broome.micro.bank.CardServiceApplication for test class com.broome.micro.bank.CardStepDefinitions
+2019-02-16 17:59:36.550  INFO 84204 --- [           main] .b.t.c.SpringBootTestContextBootstrapper : Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+2019-02-16 17:59:36.551  INFO 84204 --- [           main] .b.t.c.SpringBootTestContextBootstrapper : Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@1bbfd42f, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@65f96d58, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@48a61e38, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@52a3eef8, org.springframework.test.context.support.DirtiesContextTestExecutionListener@37d8562f, org.springframework.test.context.transaction.TransactionalTestExecutionListener@19656e21, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@614ae4eb, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@2cd31214, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@594f508f, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@6b6939e1, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@5d32f5db, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@69c51fdb]
 
   Scenario: Paying with the card              # src/test/resources/features/card.feature:26
-2019-02-14 12:34:32.620  INFO 50147 --- [           main] c.broome.micro.bank.BaseIntegrationTest  : PORT: 0
-2019-02-14 12:34:32.627  INFO 50147 --- [           main] c.b.micro.bank.services.CardService      : CLEANING IN SERVICE
+2019-02-16 17:59:36.553  INFO 84204 --- [           main] c.broome.micro.bank.BaseIntegrationTest  : PORT: 0
+2019-02-16 17:59:36.562  INFO 84204 --- [           main] c.b.micro.bank.services.CardService      : CLEANING IN SERVICE
 Hibernate: select card0_.card_number as card_num1_0_, card0_.account_number as account_2_0_, card0_.blocked as blocked3_0_, card0_.pin_code as pin_code4_0_, card0_.user_id as user_id5_0_ from card card0_
 Hibernate: delete from card where card_number=?
-2019-02-14 12:34:32.632  INFO 50147 --- [           main] c.b.micro.bank.helper.RestCommunication  : NEWPORT: 50304
-2019-02-14 12:34:32.642  INFO 50147 --- [o-auto-1-exec-4] c.b.m.bank.controller.CardController     : POST: Creating a new card
+2019-02-16 17:59:36.566  INFO 84204 --- [           main] c.b.m.bank.helper.CardIntegrationTest    : NEWPORT: 52758
+2019-02-16 17:59:36.578  INFO 84204 --- [o-auto-1-exec-4] c.b.m.bank.controller.CardController     : POST: Creating a new card
+2019-02-16 17:59:36.579  INFO 84204 --- [o-auto-1-exec-4] c.b.m.bank.controller.CardController     : header in cardcontroller: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsInVzZXJJZCI6IjEiLCJleHAiOjE1NTExMTcyNDV9.rpnO6mjtxmoOFDzC_yE-D8sgQJZz8BaKEvVSrNwiz3St_Q05Y05z-Ixf0TdtI4Avm9t04oqbWkQxb5r4x19VbQ
+2019-02-16 17:59:36.579  INFO 84204 --- [o-auto-1-exec-4] c.b.m.bank.controller.CardController     : stripped header: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsInVzZXJJZCI6IjEiLCJleHAiOjE1NTExMTcyNDV9.rpnO6mjtxmoOFDzC_yE-D8sgQJZz8BaKEvVSrNwiz3St_Q05Y05z-Ixf0TdtI4Avm9t04oqbWkQxb5r4x19VbQ
 Hibernate: insert into card (account_number, blocked, pin_code, user_id, card_number) values (?, ?, ?, ?, ?)
     Given user 1 have a card                  # CardStepDefinitions.haveACard(String)
-2019-02-14 12:34:32.649  INFO 50147 --- [           main] c.b.micro.bank.helper.RestCommunication  : NEWPORT: 50304
-2019-02-14 12:34:32.652  INFO 50147 --- [o-auto-1-exec-5] c.b.m.bank.controller.CardController     : GETTING ALL CARDS
+2019-02-16 17:59:36.586  INFO 84204 --- [           main] c.b.m.bank.helper.CardIntegrationTest    : NEWPORT: 52758
+2019-02-16 17:59:36.589  INFO 84204 --- [o-auto-1-exec-5] c.b.m.bank.controller.CardController     : GETTING ALL CARDS
+2019-02-16 17:59:36.589  INFO 84204 --- [o-auto-1-exec-5] c.b.m.bank.controller.CardController     : header in cardcontroller: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsInVzZXJJZCI6IjEiLCJleHAiOjE1NTExMTcyNDV9.rpnO6mjtxmoOFDzC_yE-D8sgQJZz8BaKEvVSrNwiz3St_Q05Y05z-Ixf0TdtI4Avm9t04oqbWkQxb5r4x19VbQ
+2019-02-16 17:59:36.590  INFO 84204 --- [o-auto-1-exec-5] c.b.m.bank.controller.CardController     : stripped header: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsInVzZXJJZCI6IjEiLCJleHAiOjE1NTExMTcyNDV9.rpnO6mjtxmoOFDzC_yE-D8sgQJZz8BaKEvVSrNwiz3St_Q05Y05z-Ixf0TdtI4Avm9t04oqbWkQxb5r4x19VbQ
 Hibernate: select card0_.card_number as card_num1_0_, card0_.account_number as account_2_0_, card0_.blocked as blocked3_0_, card0_.pin_code as pin_code4_0_, card0_.user_id as user_id5_0_ from card card0_ where card0_.user_id=?
-2019-02-14 12:34:32.654  INFO 50147 --- [o-auto-1-exec-5] c.b.micro.bank.services.CardService      : CARDNUMBER: 123460 PIN: 1234
-2019-02-14 12:34:32.657  INFO 50147 --- [           main] c.b.micro.bank.helper.RestCommunication  : got cards:[pinCode;1234
-accountNumber;37730001
-userId:1
-blocked:false
-cardNumber123460]
+2019-02-16 17:59:36.593  INFO 84204 --- [o-auto-1-exec-5] c.b.micro.bank.services.CardService      : CARDNUMBER: 123460 PIN: 1234
+2019-02-16 17:59:36.595  INFO 84204 --- [           main] c.b.m.bank.helper.CardIntegrationTest    : got cards:1
+2019-02-16 17:59:36.595  INFO 84204 --- [           main] c.broome.micro.bank.CardStepDefinitions  : CARDS IS NOT NULL
     And user 1 have 1 card                    # CardStepDefinitions.userHaveCards(String,int)
-2019-02-14 12:34:32.658  INFO 50147 --- [           main] c.broome.micro.bank.CardStepDefinitions  : SHOULD RETURN GOOD TRANSACTION balance 200
+2019-02-16 17:59:36.596  INFO 84204 --- [           main] c.broome.micro.bank.CardStepDefinitions  : SHOULD RETURN GOOD TRANSACTION balance 200
     And the card have balance 200             # CardStepDefinitions.theCardHaveBalance(int)
-2019-02-14 12:34:32.683  INFO 50147 --- [           main] c.b.micro.bank.helper.RestCommunication  : NEWPORT: 50304
-2019-02-14 12:34:32.686  INFO 50147 --- [o-auto-1-exec-6] c.b.m.bank.controller.CardController     : GETTING ALL CARDS
+2019-02-16 17:59:36.627  INFO 84204 --- [           main] c.b.m.bank.helper.CardIntegrationTest    : NEWPORT: 52758
+2019-02-16 17:59:36.629  INFO 84204 --- [o-auto-1-exec-6] c.b.m.bank.controller.CardController     : GETTING ALL CARDS
+2019-02-16 17:59:36.630  INFO 84204 --- [o-auto-1-exec-6] c.b.m.bank.controller.CardController     : header in cardcontroller: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsInVzZXJJZCI6IjEiLCJleHAiOjE1NTExMTcyNDV9.rpnO6mjtxmoOFDzC_yE-D8sgQJZz8BaKEvVSrNwiz3St_Q05Y05z-Ixf0TdtI4Avm9t04oqbWkQxb5r4x19VbQ
+2019-02-16 17:59:36.630  INFO 84204 --- [o-auto-1-exec-6] c.b.m.bank.controller.CardController     : stripped header: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsInVzZXJJZCI6IjEiLCJleHAiOjE1NTExMTcyNDV9.rpnO6mjtxmoOFDzC_yE-D8sgQJZz8BaKEvVSrNwiz3St_Q05Y05z-Ixf0TdtI4Avm9t04oqbWkQxb5r4x19VbQ
 Hibernate: select card0_.card_number as card_num1_0_, card0_.account_number as account_2_0_, card0_.blocked as blocked3_0_, card0_.pin_code as pin_code4_0_, card0_.user_id as user_id5_0_ from card card0_ where card0_.user_id=?
-2019-02-14 12:34:32.687  INFO 50147 --- [o-auto-1-exec-6] c.b.micro.bank.services.CardService      : CARDNUMBER: 123460 PIN: 1234
-2019-02-14 12:34:32.690  INFO 50147 --- [           main] c.b.micro.bank.helper.RestCommunication  : got cards:[pinCode;1234
-accountNumber;37730001
-userId:1
-blocked:false
-cardNumber123460]
-2019-02-14 12:34:32.691  INFO 50147 --- [           main] c.b.micro.bank.helper.RestCommunication  : NEWPORT: 50304
-2019-02-14 12:34:32.708  INFO 50147 --- [o-auto-1-exec-7] c.b.micro.bank.services.CardService      : Starting to process transaction
+2019-02-16 17:59:36.634  INFO 84204 --- [o-auto-1-exec-6] c.b.micro.bank.services.CardService      : CARDNUMBER: 123460 PIN: 1234
+2019-02-16 17:59:36.636  INFO 84204 --- [           main] c.b.m.bank.helper.CardIntegrationTest    : got cards:1
+2019-02-16 17:59:36.636  INFO 84204 --- [           main] c.b.m.bank.helper.CardIntegrationTest    : NEWPORT: 52758
+2019-02-16 17:59:36.655  INFO 84204 --- [o-auto-1-exec-7] c.b.micro.bank.services.CardService      : Starting to process transaction
 Hibernate: select card0_.card_number as card_num1_0_, card0_.account_number as account_2_0_, card0_.blocked as blocked3_0_, card0_.pin_code as pin_code4_0_, card0_.user_id as user_id5_0_ from card card0_ where card0_.card_number=? and card0_.pin_code=?
-2019-02-14 12:34:32.713  INFO 50147 --- [o-auto-1-exec-7] c.b.micro.bank.services.CardService      : Found card with pincode 1234 and cardNr 123460 
-2019-02-14 12:34:32.713  INFO 50147 --- [o-auto-1-exec-7] c.b.micro.bank.services.CardService      : pin is oK
-2019-02-14 12:34:32.713  INFO 50147 --- [o-auto-1-exec-7] c.b.micro.bank.services.CardService      : RETURNING TRANSACTION
-2019-02-14 12:34:32.713  INFO 50147 --- [o-auto-1-exec-7] c.b.micro.bank.services.CardService      : card 123460 is not blocked
+2019-02-16 17:59:36.660  INFO 84204 --- [o-auto-1-exec-7] c.b.micro.bank.services.CardService      : Found card with pincode 1234 and cardNr 123460 
+2019-02-16 17:59:36.660  INFO 84204 --- [o-auto-1-exec-7] c.b.micro.bank.services.CardService      : pin is oK
+2019-02-16 17:59:36.661  INFO 84204 --- [o-auto-1-exec-7] c.b.micro.bank.services.CardService      : RETURNING TRANSACTION
+2019-02-16 17:59:36.661  INFO 84204 --- [o-auto-1-exec-7] c.b.micro.bank.services.CardService      : card 123460 is not blocked
     When user 1 pays 50 with correct pin 1234 # CardStepDefinitions.pay(String,int,String)
     Then the payment is approved              # CardStepDefinitions.approvedPayment()
-2019-02-14 12:34:32.746  INFO 50147 --- [           main] .b.t.c.SpringBootTestContextBootstrapper : Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.broome.micro.bank.CardStepDefinitions], using SpringBootContextLoader
-2019-02-14 12:34:32.747  INFO 50147 --- [           main] o.s.t.c.support.AbstractContextLoader    : Could not detect default resource locations for test class [com.broome.micro.bank.CardStepDefinitions]: no resource found for suffixes {-context.xml, Context.groovy}.
-2019-02-14 12:34:32.747  INFO 50147 --- [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.broome.micro.bank.CardStepDefinitions]: CardStepDefinitions does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-2019-02-14 12:34:32.749  INFO 50147 --- [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.broome.micro.bank.CardServiceApplication for test class com.broome.micro.bank.CardStepDefinitions
-2019-02-14 12:34:32.751  INFO 50147 --- [           main] .b.t.c.SpringBootTestContextBootstrapper : Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
-2019-02-14 12:34:32.751  INFO 50147 --- [           main] .b.t.c.SpringBootTestContextBootstrapper : Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@2b9bbaa8, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@11771fd6, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@1c512bb, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@4d142b53, org.springframework.test.context.support.DirtiesContextTestExecutionListener@3bac86a3, org.springframework.test.context.transaction.TransactionalTestExecutionListener@128ca7af, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@3bf52f8f, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@57d7c511, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@811d8d6, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@7f57a7a4, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@6dcc7696, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@45ac973]
+2019-02-16 17:59:36.685  INFO 84204 --- [           main] .b.t.c.SpringBootTestContextBootstrapper : Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.broome.micro.bank.CardStepDefinitions], using SpringBootContextLoader
+2019-02-16 17:59:36.686  INFO 84204 --- [           main] o.s.t.c.support.AbstractContextLoader    : Could not detect default resource locations for test class [com.broome.micro.bank.CardStepDefinitions]: no resource found for suffixes {-context.xml, Context.groovy}.
+2019-02-16 17:59:36.686  INFO 84204 --- [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.broome.micro.bank.CardStepDefinitions]: CardStepDefinitions does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2019-02-16 17:59:36.689  INFO 84204 --- [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.broome.micro.bank.CardServiceApplication for test class com.broome.micro.bank.CardStepDefinitions
+2019-02-16 17:59:36.691  INFO 84204 --- [           main] .b.t.c.SpringBootTestContextBootstrapper : Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+2019-02-16 17:59:36.691  INFO 84204 --- [           main] .b.t.c.SpringBootTestContextBootstrapper : Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@7e764e5c, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@42457891, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@92de794, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@5bed0ff4, org.springframework.test.context.support.DirtiesContextTestExecutionListener@17a5ae7b, org.springframework.test.context.transaction.TransactionalTestExecutionListener@7e4dddee, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@183a84f4, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@2b9bbaa8, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@11771fd6, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@1c512bb, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@4d142b53, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@3bac86a3]
 
   Scenario: Paying with a blocked card                     # src/test/resources/features/card.feature:33
-2019-02-14 12:34:32.753  INFO 50147 --- [           main] c.broome.micro.bank.BaseIntegrationTest  : PORT: 0
-2019-02-14 12:34:32.761  INFO 50147 --- [           main] c.b.micro.bank.services.CardService      : CLEANING IN SERVICE
+2019-02-16 17:59:36.693  INFO 84204 --- [           main] c.broome.micro.bank.BaseIntegrationTest  : PORT: 0
+2019-02-16 17:59:36.699  INFO 84204 --- [           main] c.b.micro.bank.services.CardService      : CLEANING IN SERVICE
 Hibernate: select card0_.card_number as card_num1_0_, card0_.account_number as account_2_0_, card0_.blocked as blocked3_0_, card0_.pin_code as pin_code4_0_, card0_.user_id as user_id5_0_ from card card0_
 Hibernate: delete from card where card_number=?
-2019-02-14 12:34:32.764  INFO 50147 --- [           main] c.b.micro.bank.helper.RestCommunication  : NEWPORT: 50304
-2019-02-14 12:34:32.774  INFO 50147 --- [o-auto-1-exec-8] c.b.m.bank.controller.CardController     : POST: Creating a new card
+2019-02-16 17:59:36.704  INFO 84204 --- [           main] c.b.m.bank.helper.CardIntegrationTest    : NEWPORT: 52758
+2019-02-16 17:59:36.711  INFO 84204 --- [o-auto-1-exec-8] c.b.m.bank.controller.CardController     : POST: Creating a new card
+2019-02-16 17:59:36.711  INFO 84204 --- [o-auto-1-exec-8] c.b.m.bank.controller.CardController     : header in cardcontroller: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsInVzZXJJZCI6IjEiLCJleHAiOjE1NTExMTcyNDV9.rpnO6mjtxmoOFDzC_yE-D8sgQJZz8BaKEvVSrNwiz3St_Q05Y05z-Ixf0TdtI4Avm9t04oqbWkQxb5r4x19VbQ
+2019-02-16 17:59:36.712  INFO 84204 --- [o-auto-1-exec-8] c.b.m.bank.controller.CardController     : stripped header: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsInVzZXJJZCI6IjEiLCJleHAiOjE1NTExMTcyNDV9.rpnO6mjtxmoOFDzC_yE-D8sgQJZz8BaKEvVSrNwiz3St_Q05Y05z-Ixf0TdtI4Avm9t04oqbWkQxb5r4x19VbQ
 Hibernate: insert into card (account_number, blocked, pin_code, user_id, card_number) values (?, ?, ?, ?, ?)
-2019-02-14 12:34:32.777  INFO 50147 --- [           main] c.b.micro.bank.helper.RestCommunication  : NEWPORT: 50304
-2019-02-14 12:34:32.780  INFO 50147 --- [o-auto-1-exec-9] c.b.m.bank.controller.CardController     : GETTING ALL CARDS
+2019-02-16 17:59:36.717  INFO 84204 --- [           main] c.b.m.bank.helper.CardIntegrationTest    : NEWPORT: 52758
+2019-02-16 17:59:36.720  INFO 84204 --- [o-auto-1-exec-9] c.b.m.bank.controller.CardController     : GETTING ALL CARDS
+2019-02-16 17:59:36.720  INFO 84204 --- [o-auto-1-exec-9] c.b.m.bank.controller.CardController     : header in cardcontroller: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsInVzZXJJZCI6IjEiLCJleHAiOjE1NTExMTcyNDV9.rpnO6mjtxmoOFDzC_yE-D8sgQJZz8BaKEvVSrNwiz3St_Q05Y05z-Ixf0TdtI4Avm9t04oqbWkQxb5r4x19VbQ
+2019-02-16 17:59:36.720  INFO 84204 --- [o-auto-1-exec-9] c.b.m.bank.controller.CardController     : stripped header: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsInVzZXJJZCI6IjEiLCJleHAiOjE1NTExMTcyNDV9.rpnO6mjtxmoOFDzC_yE-D8sgQJZz8BaKEvVSrNwiz3St_Q05Y05z-Ixf0TdtI4Avm9t04oqbWkQxb5r4x19VbQ
 Hibernate: select card0_.card_number as card_num1_0_, card0_.account_number as account_2_0_, card0_.blocked as blocked3_0_, card0_.pin_code as pin_code4_0_, card0_.user_id as user_id5_0_ from card card0_ where card0_.user_id=?
-2019-02-14 12:34:32.782  INFO 50147 --- [o-auto-1-exec-9] c.b.micro.bank.services.CardService      : CARDNUMBER: 123461 PIN: 1234
-2019-02-14 12:34:32.784  INFO 50147 --- [           main] c.b.micro.bank.helper.RestCommunication  : got cards:[pinCode;1234
-accountNumber;37730001
-userId:1
-blocked:false
-cardNumber123461]
-2019-02-14 12:34:32.784  INFO 50147 --- [           main] c.b.micro.bank.helper.RestCommunication  : NEWPORT: 50304
-2019-02-14 12:34:32.789  INFO 50147 --- [-auto-1-exec-10] c.b.m.bank.controller.CardController     : BLOCKING CARD id1,cardNumber123461,accnumber37730001
+2019-02-16 17:59:36.724  INFO 84204 --- [o-auto-1-exec-9] c.b.micro.bank.services.CardService      : CARDNUMBER: 123461 PIN: 1234
+2019-02-16 17:59:36.726  INFO 84204 --- [           main] c.b.m.bank.helper.CardIntegrationTest    : got cards:1
+2019-02-16 17:59:36.726  INFO 84204 --- [           main] c.b.m.bank.helper.CardIntegrationTest    : NEWPORT: 52758
+2019-02-16 17:59:36.730  INFO 84204 --- [-auto-1-exec-10] c.b.m.bank.controller.CardController     : header in cardcontroller: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsInVzZXJJZCI6IjEiLCJleHAiOjE1NTExMTcyNDV9.rpnO6mjtxmoOFDzC_yE-D8sgQJZz8BaKEvVSrNwiz3St_Q05Y05z-Ixf0TdtI4Avm9t04oqbWkQxb5r4x19VbQ
+2019-02-16 17:59:36.730  INFO 84204 --- [-auto-1-exec-10] c.b.m.bank.controller.CardController     : stripped header: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsInVzZXJJZCI6IjEiLCJleHAiOjE1NTExMTcyNDV9.rpnO6mjtxmoOFDzC_yE-D8sgQJZz8BaKEvVSrNwiz3St_Q05Y05z-Ixf0TdtI4Avm9t04oqbWkQxb5r4x19VbQ
+2019-02-16 17:59:36.732  INFO 84204 --- [-auto-1-exec-10] c.b.m.bank.controller.CardController     : BLOCKING CARD id1,cardNumber123461,accnumber37730001
 Hibernate: select card0_.card_number as card_num1_0_, card0_.account_number as account_2_0_, card0_.blocked as blocked3_0_, card0_.pin_code as pin_code4_0_, card0_.user_id as user_id5_0_ from card card0_ where card0_.user_id=? and card0_.card_number=? and card0_.account_number=?
 Hibernate: update card set account_number=?, blocked=?, pin_code=?, user_id=? where card_number=?
-2019-02-14 12:34:32.794  INFO 50147 --- [           main] c.b.micro.bank.helper.RestCommunication  : NEWPORT: 50304
-2019-02-14 12:34:32.796  INFO 50147 --- [o-auto-1-exec-1] c.b.m.bank.controller.CardController     : GETTING ALL CARDS
+2019-02-16 17:59:36.738  INFO 84204 --- [           main] c.b.m.bank.helper.CardIntegrationTest    : NEWPORT: 52758
+2019-02-16 17:59:36.741  INFO 84204 --- [o-auto-1-exec-1] c.b.m.bank.controller.CardController     : GETTING ALL CARDS
+2019-02-16 17:59:36.742  INFO 84204 --- [o-auto-1-exec-1] c.b.m.bank.controller.CardController     : header in cardcontroller: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsInVzZXJJZCI6IjEiLCJleHAiOjE1NTExMTcyNDV9.rpnO6mjtxmoOFDzC_yE-D8sgQJZz8BaKEvVSrNwiz3St_Q05Y05z-Ixf0TdtI4Avm9t04oqbWkQxb5r4x19VbQ
+2019-02-16 17:59:36.742  INFO 84204 --- [o-auto-1-exec-1] c.b.m.bank.controller.CardController     : stripped header: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsInVzZXJJZCI6IjEiLCJleHAiOjE1NTExMTcyNDV9.rpnO6mjtxmoOFDzC_yE-D8sgQJZz8BaKEvVSrNwiz3St_Q05Y05z-Ixf0TdtI4Avm9t04oqbWkQxb5r4x19VbQ
 Hibernate: select card0_.card_number as card_num1_0_, card0_.account_number as account_2_0_, card0_.blocked as blocked3_0_, card0_.pin_code as pin_code4_0_, card0_.user_id as user_id5_0_ from card card0_ where card0_.user_id=?
-2019-02-14 12:34:32.798  INFO 50147 --- [o-auto-1-exec-1] c.b.micro.bank.services.CardService      : CARDNUMBER: 123461 PIN: 1234
-2019-02-14 12:34:32.800  INFO 50147 --- [           main] c.b.micro.bank.helper.RestCommunication  : got cards:[pinCode;1234
-accountNumber;37730001
-userId:1
-blocked:true
-cardNumber123461]
+2019-02-16 17:59:36.747  INFO 84204 --- [o-auto-1-exec-1] c.b.micro.bank.services.CardService      : CARDNUMBER: 123461 PIN: 1234
+2019-02-16 17:59:36.749  INFO 84204 --- [           main] c.b.m.bank.helper.CardIntegrationTest    : got cards:1
     Given user 1 have a blocked card                       # CardStepDefinitions.haveABlockedCard(String)
-2019-02-14 12:34:32.801  INFO 50147 --- [           main] c.b.micro.bank.helper.RestCommunication  : NEWPORT: 50304
-2019-02-14 12:34:32.804  INFO 50147 --- [o-auto-1-exec-2] c.b.m.bank.controller.CardController     : GETTING ALL CARDS
+2019-02-16 17:59:36.750  INFO 84204 --- [           main] c.b.m.bank.helper.CardIntegrationTest    : NEWPORT: 52758
+2019-02-16 17:59:36.752  INFO 84204 --- [o-auto-1-exec-2] c.b.m.bank.controller.CardController     : GETTING ALL CARDS
+2019-02-16 17:59:36.752  INFO 84204 --- [o-auto-1-exec-2] c.b.m.bank.controller.CardController     : header in cardcontroller: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsInVzZXJJZCI6IjEiLCJleHAiOjE1NTExMTcyNDV9.rpnO6mjtxmoOFDzC_yE-D8sgQJZz8BaKEvVSrNwiz3St_Q05Y05z-Ixf0TdtI4Avm9t04oqbWkQxb5r4x19VbQ
+2019-02-16 17:59:36.753  INFO 84204 --- [o-auto-1-exec-2] c.b.m.bank.controller.CardController     : stripped header: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsInVzZXJJZCI6IjEiLCJleHAiOjE1NTExMTcyNDV9.rpnO6mjtxmoOFDzC_yE-D8sgQJZz8BaKEvVSrNwiz3St_Q05Y05z-Ixf0TdtI4Avm9t04oqbWkQxb5r4x19VbQ
 Hibernate: select card0_.card_number as card_num1_0_, card0_.account_number as account_2_0_, card0_.blocked as blocked3_0_, card0_.pin_code as pin_code4_0_, card0_.user_id as user_id5_0_ from card card0_ where card0_.user_id=?
-2019-02-14 12:34:32.806  INFO 50147 --- [o-auto-1-exec-2] c.b.micro.bank.services.CardService      : CARDNUMBER: 123461 PIN: 1234
-2019-02-14 12:34:32.808  INFO 50147 --- [           main] c.b.micro.bank.helper.RestCommunication  : got cards:[pinCode;1234
-accountNumber;37730001
-userId:1
-blocked:true
-cardNumber123461]
+2019-02-16 17:59:36.756  INFO 84204 --- [o-auto-1-exec-2] c.b.micro.bank.services.CardService      : CARDNUMBER: 123461 PIN: 1234
+2019-02-16 17:59:36.757  INFO 84204 --- [           main] c.b.m.bank.helper.CardIntegrationTest    : got cards:1
+2019-02-16 17:59:36.757  INFO 84204 --- [           main] c.broome.micro.bank.CardStepDefinitions  : CARDS IS NOT NULL
     And user 1 have 1 card                                 # CardStepDefinitions.userHaveCards(String,int)
-2019-02-14 12:34:32.809  INFO 50147 --- [           main] c.b.micro.bank.helper.RestCommunication  : NEWPORT: 50304
-2019-02-14 12:34:32.811  INFO 50147 --- [o-auto-1-exec-3] c.b.m.bank.controller.CardController     : GETTING ALL CARDS
+2019-02-16 17:59:36.758  INFO 84204 --- [           main] c.b.m.bank.helper.CardIntegrationTest    : NEWPORT: 52758
+2019-02-16 17:59:36.761  INFO 84204 --- [o-auto-1-exec-3] c.b.m.bank.controller.CardController     : GETTING ALL CARDS
+2019-02-16 17:59:36.761  INFO 84204 --- [o-auto-1-exec-3] c.b.m.bank.controller.CardController     : header in cardcontroller: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsInVzZXJJZCI6IjEiLCJleHAiOjE1NTExMTcyNDV9.rpnO6mjtxmoOFDzC_yE-D8sgQJZz8BaKEvVSrNwiz3St_Q05Y05z-Ixf0TdtI4Avm9t04oqbWkQxb5r4x19VbQ
+2019-02-16 17:59:36.761  INFO 84204 --- [o-auto-1-exec-3] c.b.m.bank.controller.CardController     : stripped header: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsInVzZXJJZCI6IjEiLCJleHAiOjE1NTExMTcyNDV9.rpnO6mjtxmoOFDzC_yE-D8sgQJZz8BaKEvVSrNwiz3St_Q05Y05z-Ixf0TdtI4Avm9t04oqbWkQxb5r4x19VbQ
 Hibernate: select card0_.card_number as card_num1_0_, card0_.account_number as account_2_0_, card0_.blocked as blocked3_0_, card0_.pin_code as pin_code4_0_, card0_.user_id as user_id5_0_ from card card0_ where card0_.user_id=?
-2019-02-14 12:34:32.813  INFO 50147 --- [o-auto-1-exec-3] c.b.micro.bank.services.CardService      : CARDNUMBER: 123461 PIN: 1234
-2019-02-14 12:34:32.815  INFO 50147 --- [           main] c.b.micro.bank.helper.RestCommunication  : got cards:[pinCode;1234
-accountNumber;37730001
-userId:1
-blocked:true
-cardNumber123461]
-2019-02-14 12:34:32.815  INFO 50147 --- [           main] c.broome.micro.bank.CardStepDefinitions  : CARD 37730001 is blocked: true
+2019-02-16 17:59:36.764  INFO 84204 --- [o-auto-1-exec-3] c.b.micro.bank.services.CardService      : CARDNUMBER: 123461 PIN: 1234
+2019-02-16 17:59:36.765  INFO 84204 --- [           main] c.b.m.bank.helper.CardIntegrationTest    : got cards:1
+2019-02-16 17:59:36.766  INFO 84204 --- [           main] c.broome.micro.bank.CardStepDefinitions  : CARD 37730001 is blocked: true
     And user 1 card is blocked                             # CardStepDefinitions.theCardIsBlocked(String)
-2019-02-14 12:34:32.816  INFO 50147 --- [           main] c.b.micro.bank.helper.RestCommunication  : NEWPORT: 50304
-2019-02-14 12:34:32.819  INFO 50147 --- [o-auto-1-exec-4] c.b.m.bank.controller.CardController     : GETTING ALL CARDS
+2019-02-16 17:59:36.767  INFO 84204 --- [           main] c.b.m.bank.helper.CardIntegrationTest    : NEWPORT: 52758
+2019-02-16 17:59:36.769  INFO 84204 --- [o-auto-1-exec-4] c.b.m.bank.controller.CardController     : GETTING ALL CARDS
+2019-02-16 17:59:36.770  INFO 84204 --- [o-auto-1-exec-4] c.b.m.bank.controller.CardController     : header in cardcontroller: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsInVzZXJJZCI6IjEiLCJleHAiOjE1NTExMTcyNDV9.rpnO6mjtxmoOFDzC_yE-D8sgQJZz8BaKEvVSrNwiz3St_Q05Y05z-Ixf0TdtI4Avm9t04oqbWkQxb5r4x19VbQ
+2019-02-16 17:59:36.770  INFO 84204 --- [o-auto-1-exec-4] c.b.m.bank.controller.CardController     : stripped header: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsInVzZXJJZCI6IjEiLCJleHAiOjE1NTExMTcyNDV9.rpnO6mjtxmoOFDzC_yE-D8sgQJZz8BaKEvVSrNwiz3St_Q05Y05z-Ixf0TdtI4Avm9t04oqbWkQxb5r4x19VbQ
 Hibernate: select card0_.card_number as card_num1_0_, card0_.account_number as account_2_0_, card0_.blocked as blocked3_0_, card0_.pin_code as pin_code4_0_, card0_.user_id as user_id5_0_ from card card0_ where card0_.user_id=?
-2019-02-14 12:34:32.820  INFO 50147 --- [o-auto-1-exec-4] c.b.micro.bank.services.CardService      : CARDNUMBER: 123461 PIN: 1234
-2019-02-14 12:34:32.822  INFO 50147 --- [           main] c.b.micro.bank.helper.RestCommunication  : got cards:[pinCode;1234
-accountNumber;37730001
-userId:1
-blocked:true
-cardNumber123461]
-2019-02-14 12:34:32.822  INFO 50147 --- [           main] c.broome.micro.bank.CardStepDefinitions  : CardPin 1234 actual pin 123461 cardNr {}1234
-2019-02-14 12:34:32.822  INFO 50147 --- [           main] c.b.micro.bank.helper.RestCommunication  : NEWPORT: 50304
-2019-02-14 12:34:32.834  INFO 50147 --- [o-auto-1-exec-5] c.b.micro.bank.services.CardService      : Starting to process transaction
+2019-02-16 17:59:36.773  INFO 84204 --- [o-auto-1-exec-4] c.b.micro.bank.services.CardService      : CARDNUMBER: 123461 PIN: 1234
+2019-02-16 17:59:36.774  INFO 84204 --- [           main] c.b.m.bank.helper.CardIntegrationTest    : got cards:1
+2019-02-16 17:59:36.775  INFO 84204 --- [           main] c.broome.micro.bank.CardStepDefinitions  : CardPin 1234 actual pin 123461 cardNr {}1234
+2019-02-16 17:59:36.775  INFO 84204 --- [           main] c.b.m.bank.helper.CardIntegrationTest    : NEWPORT: 52758
+2019-02-16 17:59:36.798  INFO 84204 --- [o-auto-1-exec-5] c.b.micro.bank.services.CardService      : Starting to process transaction
 Hibernate: select card0_.card_number as card_num1_0_, card0_.account_number as account_2_0_, card0_.blocked as blocked3_0_, card0_.pin_code as pin_code4_0_, card0_.user_id as user_id5_0_ from card card0_ where card0_.card_number=? and card0_.pin_code=?
-2019-02-14 12:34:32.836  INFO 50147 --- [o-auto-1-exec-5] c.b.micro.bank.services.CardService      : Found card with pincode 1234 and cardNr 123461 
-2019-02-14 12:34:32.836  INFO 50147 --- [o-auto-1-exec-5] c.b.micro.bank.services.CardService      : pin is oK
-2019-02-14 12:34:32.836  INFO 50147 --- [o-auto-1-exec-5] c.b.micro.bank.services.CardService      : RETURNING TRANSACTION
-2019-02-14 12:34:32.836  INFO 50147 --- [o-auto-1-exec-5] c.b.micro.bank.services.CardService      : Card is blocked
-2019-02-14 12:34:32.838  INFO 50147 --- [           main] c.broome.micro.bank.CardStepDefinitions  : ISBLOCKED: true
-2019-02-14 12:34:32.838  INFO 50147 --- [           main] c.broome.micro.bank.CardStepDefinitions  : ISCANCELED: false
-2019-02-14 12:34:32.838  INFO 50147 --- [           main] c.broome.micro.bank.CardStepDefinitions  : RETURNING true
+2019-02-16 17:59:36.800  INFO 84204 --- [o-auto-1-exec-5] c.b.micro.bank.services.CardService      : Found card with pincode 1234 and cardNr 123461 
+2019-02-16 17:59:36.800  INFO 84204 --- [o-auto-1-exec-5] c.b.micro.bank.services.CardService      : pin is oK
+2019-02-16 17:59:36.800  INFO 84204 --- [o-auto-1-exec-5] c.b.micro.bank.services.CardService      : RETURNING TRANSACTION
+2019-02-16 17:59:36.800  INFO 84204 --- [o-auto-1-exec-5] c.b.micro.bank.services.CardService      : Card is blocked
+2019-02-16 17:59:36.802  INFO 84204 --- [           main] c.broome.micro.bank.CardStepDefinitions  : ISBLOCKED: true
+2019-02-16 17:59:36.802  INFO 84204 --- [           main] c.broome.micro.bank.CardStepDefinitions  : ISCANCELED: false
+2019-02-16 17:59:36.802  INFO 84204 --- [           main] c.broome.micro.bank.CardStepDefinitions  : RETURNING true
     Then user 1 pays 50 with pin 1234 and its not approved # CardStepDefinitions.payNotApproved(String,int,String)
-2019-02-14 12:34:32.839  INFO 50147 --- [           main] .b.t.c.SpringBootTestContextBootstrapper : Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.broome.micro.bank.CardStepDefinitions], using SpringBootContextLoader
-2019-02-14 12:34:32.841  INFO 50147 --- [           main] o.s.t.c.support.AbstractContextLoader    : Could not detect default resource locations for test class [com.broome.micro.bank.CardStepDefinitions]: no resource found for suffixes {-context.xml, Context.groovy}.
-2019-02-14 12:34:32.841  INFO 50147 --- [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.broome.micro.bank.CardStepDefinitions]: CardStepDefinitions does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-2019-02-14 12:34:32.844  INFO 50147 --- [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.broome.micro.bank.CardServiceApplication for test class com.broome.micro.bank.CardStepDefinitions
-2019-02-14 12:34:32.845  INFO 50147 --- [           main] .b.t.c.SpringBootTestContextBootstrapper : Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
-2019-02-14 12:34:32.846  INFO 50147 --- [           main] .b.t.c.SpringBootTestContextBootstrapper : Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@48ba37dc, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@322f84fd, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@113cc14d, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@10bcbbed, org.springframework.test.context.support.DirtiesContextTestExecutionListener@9a16af1, org.springframework.test.context.transaction.TransactionalTestExecutionListener@47e70f54, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@30a6984c, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@45302e66, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@47c422d3, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@382608d0, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@3c468360, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@7841c990]
+2019-02-16 17:59:36.806  INFO 84204 --- [           main] .b.t.c.SpringBootTestContextBootstrapper : Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.broome.micro.bank.CardStepDefinitions], using SpringBootContextLoader
+2019-02-16 17:59:36.808  INFO 84204 --- [           main] o.s.t.c.support.AbstractContextLoader    : Could not detect default resource locations for test class [com.broome.micro.bank.CardStepDefinitions]: no resource found for suffixes {-context.xml, Context.groovy}.
+2019-02-16 17:59:36.808  INFO 84204 --- [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.broome.micro.bank.CardStepDefinitions]: CardStepDefinitions does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2019-02-16 17:59:36.811  INFO 84204 --- [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.broome.micro.bank.CardServiceApplication for test class com.broome.micro.bank.CardStepDefinitions
+2019-02-16 17:59:36.813  INFO 84204 --- [           main] .b.t.c.SpringBootTestContextBootstrapper : Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+2019-02-16 17:59:36.815  INFO 84204 --- [           main] .b.t.c.SpringBootTestContextBootstrapper : Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@5114c8a1, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@24d73c51, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@3b95fce9, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@f26cd76, org.springframework.test.context.support.DirtiesContextTestExecutionListener@78805df3, org.springframework.test.context.transaction.TransactionalTestExecutionListener@65a8c306, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@71ce19ee, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@48ba37dc, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@322f84fd, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@113cc14d, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@10bcbbed, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@9a16af1]
 
   Scenario: Paying with wrong pin                          # src/test/resources/features/card.feature:39
-2019-02-14 12:34:32.847  INFO 50147 --- [           main] c.broome.micro.bank.BaseIntegrationTest  : PORT: 0
-2019-02-14 12:34:32.855  INFO 50147 --- [           main] c.b.micro.bank.services.CardService      : CLEANING IN SERVICE
+2019-02-16 17:59:36.817  INFO 84204 --- [           main] c.broome.micro.bank.BaseIntegrationTest  : PORT: 0
+2019-02-16 17:59:36.824  INFO 84204 --- [           main] c.b.micro.bank.services.CardService      : CLEANING IN SERVICE
 Hibernate: select card0_.card_number as card_num1_0_, card0_.account_number as account_2_0_, card0_.blocked as blocked3_0_, card0_.pin_code as pin_code4_0_, card0_.user_id as user_id5_0_ from card card0_
 Hibernate: delete from card where card_number=?
-2019-02-14 12:34:32.860  INFO 50147 --- [           main] c.b.micro.bank.helper.RestCommunication  : NEWPORT: 50304
-2019-02-14 12:34:32.867  INFO 50147 --- [o-auto-1-exec-6] c.b.m.bank.controller.CardController     : POST: Creating a new card
+2019-02-16 17:59:36.830  INFO 84204 --- [           main] c.b.m.bank.helper.CardIntegrationTest    : NEWPORT: 52758
+2019-02-16 17:59:36.841  INFO 84204 --- [o-auto-1-exec-6] c.b.m.bank.controller.CardController     : POST: Creating a new card
+2019-02-16 17:59:36.841  INFO 84204 --- [o-auto-1-exec-6] c.b.m.bank.controller.CardController     : header in cardcontroller: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsInVzZXJJZCI6IjEiLCJleHAiOjE1NTExMTcyNDV9.rpnO6mjtxmoOFDzC_yE-D8sgQJZz8BaKEvVSrNwiz3St_Q05Y05z-Ixf0TdtI4Avm9t04oqbWkQxb5r4x19VbQ
+2019-02-16 17:59:36.842  INFO 84204 --- [o-auto-1-exec-6] c.b.m.bank.controller.CardController     : stripped header: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsInVzZXJJZCI6IjEiLCJleHAiOjE1NTExMTcyNDV9.rpnO6mjtxmoOFDzC_yE-D8sgQJZz8BaKEvVSrNwiz3St_Q05Y05z-Ixf0TdtI4Avm9t04oqbWkQxb5r4x19VbQ
 Hibernate: insert into card (account_number, blocked, pin_code, user_id, card_number) values (?, ?, ?, ?, ?)
     Given user 1 have a card                               # CardStepDefinitions.haveACard(String)
-2019-02-14 12:34:32.871  INFO 50147 --- [           main] c.broome.micro.bank.CardStepDefinitions  : SHOULD RETURN GOOD TRANSACTION balance 200
+2019-02-16 17:59:36.848  INFO 84204 --- [           main] c.broome.micro.bank.CardStepDefinitions  : SHOULD RETURN GOOD TRANSACTION balance 200
     And the card have balance 200                          # CardStepDefinitions.theCardHaveBalance(int)
-2019-02-14 12:34:32.873  INFO 50147 --- [           main] c.b.micro.bank.helper.RestCommunication  : NEWPORT: 50304
-2019-02-14 12:34:32.876  INFO 50147 --- [o-auto-1-exec-7] c.b.m.bank.controller.CardController     : GETTING ALL CARDS
+2019-02-16 17:59:36.849  INFO 84204 --- [           main] c.b.m.bank.helper.CardIntegrationTest    : NEWPORT: 52758
+2019-02-16 17:59:36.852  INFO 84204 --- [o-auto-1-exec-7] c.b.m.bank.controller.CardController     : GETTING ALL CARDS
+2019-02-16 17:59:36.852  INFO 84204 --- [o-auto-1-exec-7] c.b.m.bank.controller.CardController     : header in cardcontroller: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsInVzZXJJZCI6IjEiLCJleHAiOjE1NTExMTcyNDV9.rpnO6mjtxmoOFDzC_yE-D8sgQJZz8BaKEvVSrNwiz3St_Q05Y05z-Ixf0TdtI4Avm9t04oqbWkQxb5r4x19VbQ
+2019-02-16 17:59:36.852  INFO 84204 --- [o-auto-1-exec-7] c.b.m.bank.controller.CardController     : stripped header: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsInVzZXJJZCI6IjEiLCJleHAiOjE1NTExMTcyNDV9.rpnO6mjtxmoOFDzC_yE-D8sgQJZz8BaKEvVSrNwiz3St_Q05Y05z-Ixf0TdtI4Avm9t04oqbWkQxb5r4x19VbQ
 Hibernate: select card0_.card_number as card_num1_0_, card0_.account_number as account_2_0_, card0_.blocked as blocked3_0_, card0_.pin_code as pin_code4_0_, card0_.user_id as user_id5_0_ from card card0_ where card0_.user_id=?
-2019-02-14 12:34:32.878  INFO 50147 --- [o-auto-1-exec-7] c.b.micro.bank.services.CardService      : CARDNUMBER: 123462 PIN: 1234
-2019-02-14 12:34:32.880  INFO 50147 --- [           main] c.b.micro.bank.helper.RestCommunication  : got cards:[pinCode;1234
-accountNumber;37730001
-userId:1
-blocked:false
-cardNumber123462]
-2019-02-14 12:34:32.880  INFO 50147 --- [           main] c.broome.micro.bank.CardStepDefinitions  : CardPin 4321 actual pin 123462 cardNr {}1234
-2019-02-14 12:34:32.880  INFO 50147 --- [           main] c.b.micro.bank.helper.RestCommunication  : NEWPORT: 50304
-2019-02-14 12:34:32.889  INFO 50147 --- [o-auto-1-exec-8] c.b.micro.bank.services.CardService      : Starting to process transaction
+2019-02-16 17:59:36.856  INFO 84204 --- [o-auto-1-exec-7] c.b.micro.bank.services.CardService      : CARDNUMBER: 123462 PIN: 1234
+2019-02-16 17:59:36.858  INFO 84204 --- [           main] c.b.m.bank.helper.CardIntegrationTest    : got cards:1
+2019-02-16 17:59:36.858  INFO 84204 --- [           main] c.broome.micro.bank.CardStepDefinitions  : CardPin 4321 actual pin 123462 cardNr {}1234
+2019-02-16 17:59:36.858  INFO 84204 --- [           main] c.b.m.bank.helper.CardIntegrationTest    : NEWPORT: 52758
+2019-02-16 17:59:36.869  INFO 84204 --- [o-auto-1-exec-8] c.b.micro.bank.services.CardService      : Starting to process transaction
 Hibernate: select card0_.card_number as card_num1_0_, card0_.account_number as account_2_0_, card0_.blocked as blocked3_0_, card0_.pin_code as pin_code4_0_, card0_.user_id as user_id5_0_ from card card0_ where card0_.card_number=? and card0_.pin_code=?
-2019-02-14 12:34:32.890  INFO 50147 --- [o-auto-1-exec-8] c.b.micro.bank.services.CardService      : Found card with pincode null and cardNr 0 
-2019-02-14 12:34:32.890  INFO 50147 --- [o-auto-1-exec-8] c.b.micro.bank.services.CardService      : pin is oK
-2019-02-14 12:34:32.891  INFO 50147 --- [o-auto-1-exec-8] c.b.micro.bank.services.CardService      : RETURNING TRANSACTION
-2019-02-14 12:34:32.892  INFO 50147 --- [           main] c.broome.micro.bank.CardStepDefinitions  : ISBLOCKED: false
-2019-02-14 12:34:32.893  INFO 50147 --- [           main] c.broome.micro.bank.CardStepDefinitions  : ISCANCELED: true
-2019-02-14 12:34:32.893  INFO 50147 --- [           main] c.broome.micro.bank.CardStepDefinitions  : RETURNING true
+2019-02-16 17:59:36.871  INFO 84204 --- [o-auto-1-exec-8] c.b.micro.bank.services.CardService      : Found card with pincode null and cardNr 0 
+2019-02-16 17:59:36.871  INFO 84204 --- [o-auto-1-exec-8] c.b.micro.bank.services.CardService      : pin is oK
+2019-02-16 17:59:36.871  INFO 84204 --- [o-auto-1-exec-8] c.b.micro.bank.services.CardService      : RETURNING TRANSACTION
+2019-02-16 17:59:36.873  INFO 84204 --- [           main] c.broome.micro.bank.CardStepDefinitions  : ISBLOCKED: false
+2019-02-16 17:59:36.873  INFO 84204 --- [           main] c.broome.micro.bank.CardStepDefinitions  : ISCANCELED: true
+2019-02-16 17:59:36.873  INFO 84204 --- [           main] c.broome.micro.bank.CardStepDefinitions  : RETURNING true
     Then user 1 pays 50 with pin 4321 and its not approved # CardStepDefinitions.payNotApproved(String,int,String)
-2019-02-14 12:34:32.894  INFO 50147 --- [           main] .b.t.c.SpringBootTestContextBootstrapper : Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.broome.micro.bank.CardStepDefinitions], using SpringBootContextLoader
-2019-02-14 12:34:32.895  INFO 50147 --- [           main] o.s.t.c.support.AbstractContextLoader    : Could not detect default resource locations for test class [com.broome.micro.bank.CardStepDefinitions]: no resource found for suffixes {-context.xml, Context.groovy}.
-2019-02-14 12:34:32.895  INFO 50147 --- [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.broome.micro.bank.CardStepDefinitions]: CardStepDefinitions does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-2019-02-14 12:34:32.898  INFO 50147 --- [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.broome.micro.bank.CardServiceApplication for test class com.broome.micro.bank.CardStepDefinitions
-2019-02-14 12:34:32.899  INFO 50147 --- [           main] .b.t.c.SpringBootTestContextBootstrapper : Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
-2019-02-14 12:34:32.900  INFO 50147 --- [           main] .b.t.c.SpringBootTestContextBootstrapper : Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@5c04ec8, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@e5f05f8, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@5a88849, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@36ce0bc2, org.springframework.test.context.support.DirtiesContextTestExecutionListener@317fa5dd, org.springframework.test.context.transaction.TransactionalTestExecutionListener@477906cf, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@65234a9, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@4004bfba, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@c19bb2a, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@3599b18, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@143900a6, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@712594f4]
+2019-02-16 17:59:36.875  INFO 84204 --- [           main] .b.t.c.SpringBootTestContextBootstrapper : Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.broome.micro.bank.CardStepDefinitions], using SpringBootContextLoader
+2019-02-16 17:59:36.875  INFO 84204 --- [           main] o.s.t.c.support.AbstractContextLoader    : Could not detect default resource locations for test class [com.broome.micro.bank.CardStepDefinitions]: no resource found for suffixes {-context.xml, Context.groovy}.
+2019-02-16 17:59:36.876  INFO 84204 --- [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.broome.micro.bank.CardStepDefinitions]: CardStepDefinitions does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2019-02-16 17:59:36.879  INFO 84204 --- [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.broome.micro.bank.CardServiceApplication for test class com.broome.micro.bank.CardStepDefinitions
+2019-02-16 17:59:36.880  INFO 84204 --- [           main] .b.t.c.SpringBootTestContextBootstrapper : Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+2019-02-16 17:59:36.881  INFO 84204 --- [           main] .b.t.c.SpringBootTestContextBootstrapper : Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@36ce0bc2, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@317fa5dd, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@477906cf, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@65234a9, org.springframework.test.context.support.DirtiesContextTestExecutionListener@4004bfba, org.springframework.test.context.transaction.TransactionalTestExecutionListener@c19bb2a, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@3599b18, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@143900a6, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@712594f4, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@30a4a111, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@7f6a6d46, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@238a7e3d]
 
   Scenario: Paying with a card with not enough funds       # src/test/resources/features/card.feature:44
-2019-02-14 12:34:32.901  INFO 50147 --- [           main] c.broome.micro.bank.BaseIntegrationTest  : PORT: 0
-2019-02-14 12:34:32.909  INFO 50147 --- [           main] c.b.micro.bank.services.CardService      : CLEANING IN SERVICE
+2019-02-16 17:59:36.883  INFO 84204 --- [           main] c.broome.micro.bank.BaseIntegrationTest  : PORT: 0
+2019-02-16 17:59:36.890  INFO 84204 --- [           main] c.b.micro.bank.services.CardService      : CLEANING IN SERVICE
 Hibernate: select card0_.card_number as card_num1_0_, card0_.account_number as account_2_0_, card0_.blocked as blocked3_0_, card0_.pin_code as pin_code4_0_, card0_.user_id as user_id5_0_ from card card0_
 Hibernate: delete from card where card_number=?
-2019-02-14 12:34:32.913  INFO 50147 --- [           main] c.b.micro.bank.helper.RestCommunication  : NEWPORT: 50304
-2019-02-14 12:34:32.923  INFO 50147 --- [o-auto-1-exec-9] c.b.m.bank.controller.CardController     : POST: Creating a new card
+2019-02-16 17:59:36.894  INFO 84204 --- [           main] c.b.m.bank.helper.CardIntegrationTest    : NEWPORT: 52758
+2019-02-16 17:59:36.902  INFO 84204 --- [o-auto-1-exec-9] c.b.m.bank.controller.CardController     : POST: Creating a new card
+2019-02-16 17:59:36.902  INFO 84204 --- [o-auto-1-exec-9] c.b.m.bank.controller.CardController     : header in cardcontroller: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsInVzZXJJZCI6IjEiLCJleHAiOjE1NTExMTcyNDV9.rpnO6mjtxmoOFDzC_yE-D8sgQJZz8BaKEvVSrNwiz3St_Q05Y05z-Ixf0TdtI4Avm9t04oqbWkQxb5r4x19VbQ
+2019-02-16 17:59:36.903  INFO 84204 --- [o-auto-1-exec-9] c.b.m.bank.controller.CardController     : stripped header: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsInVzZXJJZCI6IjEiLCJleHAiOjE1NTExMTcyNDV9.rpnO6mjtxmoOFDzC_yE-D8sgQJZz8BaKEvVSrNwiz3St_Q05Y05z-Ixf0TdtI4Avm9t04oqbWkQxb5r4x19VbQ
 Hibernate: insert into card (account_number, blocked, pin_code, user_id, card_number) values (?, ?, ?, ?, ?)
     Given user 1 have a card                               # CardStepDefinitions.haveACard(String)
-2019-02-14 12:34:32.928  INFO 50147 --- [           main] c.broome.micro.bank.CardStepDefinitions  : SHOULD RETURN BAD TRANSACTION balance 0
+2019-02-16 17:59:36.909  INFO 84204 --- [           main] c.broome.micro.bank.CardStepDefinitions  : SHOULD RETURN BAD TRANSACTION balance 0
     And the card have balance 0                            # CardStepDefinitions.theCardHaveBalance(int)
-2019-02-14 12:34:32.929  INFO 50147 --- [           main] c.b.micro.bank.helper.RestCommunication  : NEWPORT: 50304
-2019-02-14 12:34:32.932  INFO 50147 --- [-auto-1-exec-10] c.b.m.bank.controller.CardController     : GETTING ALL CARDS
+2019-02-16 17:59:36.911  INFO 84204 --- [           main] c.b.m.bank.helper.CardIntegrationTest    : NEWPORT: 52758
+2019-02-16 17:59:36.914  INFO 84204 --- [-auto-1-exec-10] c.b.m.bank.controller.CardController     : GETTING ALL CARDS
+2019-02-16 17:59:36.914  INFO 84204 --- [-auto-1-exec-10] c.b.m.bank.controller.CardController     : header in cardcontroller: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsInVzZXJJZCI6IjEiLCJleHAiOjE1NTExMTcyNDV9.rpnO6mjtxmoOFDzC_yE-D8sgQJZz8BaKEvVSrNwiz3St_Q05Y05z-Ixf0TdtI4Avm9t04oqbWkQxb5r4x19VbQ
+2019-02-16 17:59:36.914  INFO 84204 --- [-auto-1-exec-10] c.b.m.bank.controller.CardController     : stripped header: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsInVzZXJJZCI6IjEiLCJleHAiOjE1NTExMTcyNDV9.rpnO6mjtxmoOFDzC_yE-D8sgQJZz8BaKEvVSrNwiz3St_Q05Y05z-Ixf0TdtI4Avm9t04oqbWkQxb5r4x19VbQ
 Hibernate: select card0_.card_number as card_num1_0_, card0_.account_number as account_2_0_, card0_.blocked as blocked3_0_, card0_.pin_code as pin_code4_0_, card0_.user_id as user_id5_0_ from card card0_ where card0_.user_id=?
-2019-02-14 12:34:32.934  INFO 50147 --- [-auto-1-exec-10] c.b.micro.bank.services.CardService      : CARDNUMBER: 123463 PIN: 1234
-2019-02-14 12:34:32.936  INFO 50147 --- [           main] c.b.micro.bank.helper.RestCommunication  : got cards:[pinCode;1234
-accountNumber;37730001
-userId:1
-blocked:false
-cardNumber123463]
-2019-02-14 12:34:32.936  INFO 50147 --- [           main] c.broome.micro.bank.CardStepDefinitions  : CardPin 1234 actual pin 123463 cardNr {}1234
-2019-02-14 12:34:32.936  INFO 50147 --- [           main] c.b.micro.bank.helper.RestCommunication  : NEWPORT: 50304
-2019-02-14 12:34:32.950  INFO 50147 --- [o-auto-1-exec-1] c.b.micro.bank.services.CardService      : Starting to process transaction
+2019-02-16 17:59:36.918  INFO 84204 --- [-auto-1-exec-10] c.b.micro.bank.services.CardService      : CARDNUMBER: 123463 PIN: 1234
+2019-02-16 17:59:36.919  INFO 84204 --- [           main] c.b.m.bank.helper.CardIntegrationTest    : got cards:1
+2019-02-16 17:59:36.920  INFO 84204 --- [           main] c.broome.micro.bank.CardStepDefinitions  : CardPin 1234 actual pin 123463 cardNr {}1234
+2019-02-16 17:59:36.920  INFO 84204 --- [           main] c.b.m.bank.helper.CardIntegrationTest    : NEWPORT: 52758
+2019-02-16 17:59:36.930  INFO 84204 --- [o-auto-1-exec-1] c.b.micro.bank.services.CardService      : Starting to process transaction
 Hibernate: select card0_.card_number as card_num1_0_, card0_.account_number as account_2_0_, card0_.blocked as blocked3_0_, card0_.pin_code as pin_code4_0_, card0_.user_id as user_id5_0_ from card card0_ where card0_.card_number=? and card0_.pin_code=?
-2019-02-14 12:34:32.952  INFO 50147 --- [o-auto-1-exec-1] c.b.micro.bank.services.CardService      : Found card with pincode 1234 and cardNr 123463 
-2019-02-14 12:34:32.952  INFO 50147 --- [o-auto-1-exec-1] c.b.micro.bank.services.CardService      : pin is oK
-2019-02-14 12:34:32.952  INFO 50147 --- [o-auto-1-exec-1] c.b.micro.bank.services.CardService      : RETURNING TRANSACTION
-2019-02-14 12:34:32.952  INFO 50147 --- [o-auto-1-exec-1] c.b.micro.bank.services.CardService      : card 123463 is not blocked
-2019-02-14 12:34:32.954  INFO 50147 --- [           main] c.broome.micro.bank.CardStepDefinitions  : ISBLOCKED: false
-2019-02-14 12:34:32.955  INFO 50147 --- [           main] c.broome.micro.bank.CardStepDefinitions  : ISCANCELED: true
-2019-02-14 12:34:32.955  INFO 50147 --- [           main] c.broome.micro.bank.CardStepDefinitions  : RETURNING true
+2019-02-16 17:59:36.932  INFO 84204 --- [o-auto-1-exec-1] c.b.micro.bank.services.CardService      : Found card with pincode 1234 and cardNr 123463 
+2019-02-16 17:59:36.932  INFO 84204 --- [o-auto-1-exec-1] c.b.micro.bank.services.CardService      : pin is oK
+2019-02-16 17:59:36.933  INFO 84204 --- [o-auto-1-exec-1] c.b.micro.bank.services.CardService      : RETURNING TRANSACTION
+2019-02-16 17:59:36.933  INFO 84204 --- [o-auto-1-exec-1] c.b.micro.bank.services.CardService      : card 123463 is not blocked
+2019-02-16 17:59:36.935  INFO 84204 --- [           main] c.broome.micro.bank.CardStepDefinitions  : ISBLOCKED: false
+2019-02-16 17:59:36.935  INFO 84204 --- [           main] c.broome.micro.bank.CardStepDefinitions  : ISCANCELED: true
+2019-02-16 17:59:36.935  INFO 84204 --- [           main] c.broome.micro.bank.CardStepDefinitions  : RETURNING true
     Then user 1 pays 50 with pin 1234 and its not approved # CardStepDefinitions.payNotApproved(String,int,String)
 
 9 Scenarios (9 passed)
 28 Steps (28 passed)
-0m12.378s
+0m13.138s
 
-[INFO] Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 12.916 s - in com.broome.micro.bank.CardCucumberIntegrationTest
-2019-02-14 12:34:33.164  INFO 50147 --- [       Thread-7] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application CARD-SERVICE with eureka with status DOWN
-2019-02-14 12:34:33.164  WARN 50147 --- [       Thread-7] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1550144073164, current=DOWN, previous=UP]
-2019-02-14 12:34:33.164  INFO 50147 --- [nfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_CARD-SERVICE/192.168.43.177:card-service:0: registering service...
-2019-02-14 12:34:33.167 ERROR 50147 --- [nfoReplicator-0] c.n.d.s.t.d.RedirectingEurekaHttpClient  : Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://localhost:8761/eureka/}
+[INFO] Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 13.736 s - in com.broome.micro.bank.CardCucumberIntegrationTest
+[INFO] Running com.broome.micro.bank.helper.CardIntegrationTest
+[WARNING] Tests run: 1, Failures: 0, Errors: 0, Skipped: 1, Time elapsed: 0.001 s - in com.broome.micro.bank.helper.CardIntegrationTest
+2019-02-16 17:59:37.138  INFO 84204 --- [       Thread-7] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application CARD-SERVICE with eureka with status DOWN
+2019-02-16 17:59:37.139  WARN 84204 --- [       Thread-7] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1550336377139, current=DOWN, previous=UP]
+2019-02-16 17:59:37.139  INFO 84204 --- [nfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_CARD-SERVICE/192.168.43.177:card-service:0: registering service...
+2019-02-16 17:59:37.142 ERROR 84204 --- [nfoReplicator-0] c.n.d.s.t.d.RedirectingEurekaHttpClient  : Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://localhost:8761/eureka/}
 
 com.sun.jersey.api.client.ClientHandlerException: java.net.ConnectException: Connection refused (Connection refused)
 	at com.sun.jersey.client.apache4.ApacheHttpClient4Handler.handle(ApacheHttpClient4Handler.java:187) ~[jersey-apache-client4-1.19.1.jar:1.19.1]
@@ -854,8 +855,8 @@ Caused by: java.net.ConnectException: Connection refused (Connection refused)
 	at com.sun.jersey.client.apache4.ApacheHttpClient4Handler.handle(ApacheHttpClient4Handler.java:173) ~[jersey-apache-client4-1.19.1.jar:1.19.1]
 	... 30 common frames omitted
 
-2019-02-14 12:34:33.168  WARN 50147 --- [nfoReplicator-0] c.n.d.s.t.d.RetryableEurekaHttpClient    : Request execution failed with message: java.net.ConnectException: Connection refused (Connection refused)
-2019-02-14 12:34:33.169  WARN 50147 --- [nfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_CARD-SERVICE/192.168.43.177:card-service:0 - registration failed Cannot execute request on any known server
+2019-02-16 17:59:37.142  WARN 84204 --- [nfoReplicator-0] c.n.d.s.t.d.RetryableEurekaHttpClient    : Request execution failed with message: java.net.ConnectException: Connection refused (Connection refused)
+2019-02-16 17:59:37.142  WARN 84204 --- [nfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_CARD-SERVICE/192.168.43.177:card-service:0 - registration failed Cannot execute request on any known server
 
 com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
 	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:112) ~[eureka-client-1.9.8.jar:1.9.8]
@@ -874,8 +875,7 @@ com.netflix.discovery.shared.transport.TransportException: Cannot execute reques
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_144]
 	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_144]
 
-2019-02-14 12:34:33.169  INFO 50147 --- [       Thread-7] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
-2019-02-14 12:34:33.169  WARN 50147 --- [nfoReplicator-0] c.n.discovery.InstanceInfoReplicator     : There was a problem with the instance info replicator
+2019-02-16 17:59:37.143  WARN 84204 --- [nfoReplicator-0] c.n.discovery.InstanceInfoReplicator     : There was a problem with the instance info replicator
 
 com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
 	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:112) ~[eureka-client-1.9.8.jar:1.9.8]
@@ -894,14 +894,15 @@ com.netflix.discovery.shared.transport.TransportException: Cannot execute reques
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_144]
 	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_144]
 
-2019-02-14 12:34:33.172  INFO 50147 --- [       Thread-7] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2019-02-14 12:34:33.172  INFO 50147 --- [       Thread-7] .SchemaDropperImpl$DelayedDropActionImpl : HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2019-02-16 17:59:37.143  INFO 84204 --- [       Thread-7] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-02-16 17:59:37.146  INFO 84204 --- [       Thread-7] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2019-02-16 17:59:37.147  INFO 84204 --- [       Thread-7] .SchemaDropperImpl$DelayedDropActionImpl : HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
 Hibernate: drop table card if exists
 Hibernate: drop sequence if exists seq
-2019-02-14 12:34:33.181  INFO 50147 --- [       Thread-7] o.s.b.f.support.DisposableBeanAdapter    : Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLException: Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-197]
-2019-02-14 12:34:33.182  INFO 50147 --- [       Thread-7] com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
-2019-02-14 12:34:36.183  INFO 50147 --- [       Thread-7] com.netflix.discovery.DiscoveryClient    : Unregistering ...
-2019-02-14 12:34:36.188 ERROR 50147 --- [       Thread-7] c.n.d.s.t.d.RedirectingEurekaHttpClient  : Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://localhost:8761/eureka/}
+2019-02-16 17:59:37.156  INFO 84204 --- [       Thread-7] o.s.b.f.support.DisposableBeanAdapter    : Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLException: Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-197]
+2019-02-16 17:59:37.157  INFO 84204 --- [       Thread-7] com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
+2019-02-16 17:59:40.161  INFO 84204 --- [       Thread-7] com.netflix.discovery.DiscoveryClient    : Unregistering ...
+2019-02-16 17:59:40.164 ERROR 84204 --- [       Thread-7] c.n.d.s.t.d.RedirectingEurekaHttpClient  : Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://localhost:8761/eureka/}
 
 com.sun.jersey.api.client.ClientHandlerException: java.net.ConnectException: Connection refused (Connection refused)
 	at com.sun.jersey.client.apache4.ApacheHttpClient4Handler.handle(ApacheHttpClient4Handler.java:187) ~[jersey-apache-client4-1.19.1.jar:1.19.1]
@@ -966,8 +967,8 @@ Caused by: java.net.ConnectException: Connection refused (Connection refused)
 	at com.sun.jersey.client.apache4.ApacheHttpClient4Handler.handle(ApacheHttpClient4Handler.java:173) ~[jersey-apache-client4-1.19.1.jar:1.19.1]
 	... 42 common frames omitted
 
-2019-02-14 12:34:36.189  WARN 50147 --- [       Thread-7] c.n.d.s.t.d.RetryableEurekaHttpClient    : Request execution failed with message: java.net.ConnectException: Connection refused (Connection refused)
-2019-02-14 12:34:36.189 ERROR 50147 --- [       Thread-7] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_CARD-SERVICE/192.168.43.177:card-service:0 - de-registration failedCannot execute request on any known server
+2019-02-16 17:59:40.165  WARN 84204 --- [       Thread-7] c.n.d.s.t.d.RetryableEurekaHttpClient    : Request execution failed with message: java.net.ConnectException: Connection refused (Connection refused)
+2019-02-16 17:59:40.165 ERROR 84204 --- [       Thread-7] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_CARD-SERVICE/192.168.43.177:card-service:0 - de-registration failedCannot execute request on any known server
 
 com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
 	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:112) ~[eureka-client-1.9.8.jar:1.9.8]
@@ -998,17 +999,17 @@ com.netflix.discovery.shared.transport.TransportException: Cannot execute reques
 	at org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:1011) [spring-context-5.1.4.RELEASE.jar:5.1.4.RELEASE]
 	at org.springframework.context.support.AbstractApplicationContext$1.run(AbstractApplicationContext.java:931) [spring-context-5.1.4.RELEASE.jar:5.1.4.RELEASE]
 
-2019-02-14 12:34:36.208  INFO 50147 --- [       Thread-7] com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient
-2019-02-14 12:34:36.208  INFO 50147 --- [       Thread-7] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2019-02-14 12:34:36.219  INFO 50147 --- [       Thread-7] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2019-02-16 17:59:40.178  INFO 84204 --- [       Thread-7] com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient
+2019-02-16 17:59:40.183  INFO 84204 --- [       Thread-7] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2019-02-16 17:59:40.193  INFO 84204 --- [       Thread-7] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
 [INFO] 
 [INFO] Results:
 [INFO] 
-[INFO] Tests run: 9, Failures: 0, Errors: 0, Skipped: 0
+[WARNING] Tests run: 10, Failures: 0, Errors: 0, Skipped: 1
 [INFO] 
 [INFO] ------------------------------------------------------------------------
 [INFO] BUILD SUCCESS
 [INFO] ------------------------------------------------------------------------
-[INFO] Total time: 23.768 s
-[INFO] Finished at: 2019-02-14T12:34:38+01:00
+[INFO] Total time: 25.009 s
+[INFO] Finished at: 2019-02-16T17:59:42+01:00
 [INFO] ------------------------------------------------------------------------

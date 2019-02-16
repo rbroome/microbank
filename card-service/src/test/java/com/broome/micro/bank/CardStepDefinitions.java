@@ -13,7 +13,7 @@ import org.slf4j.LoggerFactory;
 
 import com.broome.micro.bank.domain.Card;
 import com.broome.micro.bank.dto.TransactionDTO;
-import com.broome.micro.bank.helper.RestCommunication;
+import com.broome.micro.bank.helper.CardIntegrationTest;
 
 import cucumber.api.java.Before;
 import cucumber.api.java.en.Given;
@@ -21,7 +21,7 @@ import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 
 @Ignore
-public class CardStepDefinitions extends RestCommunication{
+public class CardStepDefinitions extends CardIntegrationTest{
 
 	private final Logger log = LoggerFactory.getLogger(CardStepDefinitions.class);
 	private static final String OK_ACCOUNT = "37730001";
@@ -69,6 +69,10 @@ public class CardStepDefinitions extends RestCommunication{
 	@Then("^user (.+) have (\\d+) card$")
 	public void userHaveCards(final String userId, final int quantity) {
 		List<Card> cards = getCardsForUser(userId);
+		if(cards == null )
+			log.info("CARDS IS NULL");
+		else
+			log.info("CARDS IS NOT NULL");
 		assertThat(cards.size()).isEqualTo(quantity);
 	}
 
