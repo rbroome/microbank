@@ -12,10 +12,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.broome.micro.bank.accountservice.domain.Account;
+import com.broome.micro.bank.accountservice.dto.AuthorizeAmountResponseDTO;
 import com.broome.micro.bank.accountservice.dto.BlockCardDTO;
 import com.broome.micro.bank.accountservice.dto.CardDTO;
 import com.broome.micro.bank.accountservice.dto.CreateCardDTO;
 import com.broome.micro.bank.accountservice.dto.TransactionDTO;
+import com.broome.micro.bank.accountservice.exception.AccountNotFoundException;
 import com.broome.micro.bank.accountservice.repo.AccountRepository;
 import com.broome.micro.bank.accountservice.restclient.CardClient;
 import com.broome.micro.bank.accountservice.restclient.TransactionClient;
@@ -23,11 +25,12 @@ import com.broome.micro.bank.accountservice.restclient.TransactionClient;
 @Service
 public class AccountService {
 
-	private static final Logger LOGGER = LoggerFactory.getLogger(AccountService.class);
+	private static final Logger log = LoggerFactory.getLogger(AccountService.class);
+	private static Long internalAccountStart = 37730000L;
 
 	AccountRepository accountRepository;
 	@Autowired
-	TransactionClient transactionClient;
+	private TransactionClient transactionClient;
 	@Autowired
 	CardClient cardClient;
 
@@ -36,15 +39,19 @@ public class AccountService {
 		this.accountRepository = accountRepository;
 	}
 
-	public List<Account> getAccountsForUser(Long user) {
+	public List<Account> getAccountsForUser(String user) {
 		return accountRepository.findByUserId(user).orElse(Collections.emptyList());
 	}
 
-	public Account getAccount(Long user, Long accountNumber) {
+	public Account getAccount(String user, Long accountNumber) {
 		Optional<Account> account = accountRepository.findByUserIdAndAccountNumber(user, accountNumber);
-		Account acc = account.orElseThrow(() -> new NoSuchElementException());
+		Account acc = account.orElseThrow(() -> new AccountNotFoundException());
 		calculatePendingAmount(acc);
 		return acc;
+	}
+	
+	public Account saveAccount(Account account) {
+		return accountRepository.save(account);
 	}
 
 	private BigDecimal calculatePendingAmount(Account account) {
@@ -62,7 +69,7 @@ public class AccountService {
 				.reduce(BigDecimal.ZERO, BigDecimal::add);
 
 		BigDecimal delta = amountTo.subtract(amount);
-		LOGGER.info("Amount: " + delta);
+		log.info("Amount: " + delta);
 		account.setPendingAmount(delta);
 		accountRepository.save(account);
 		return delta;
@@ -88,7 +95,7 @@ public class AccountService {
 		return transactionClient.getTransactions(account.getAccountNumber().toString());
 	}
 
-	public Account addAccount(Long userId, String name) {
+	public Account addAccount(String userId, String name) {
 		Account a = new Account(userId, name);
 		return accountRepository.save(a);
 	}
@@ -97,16 +104,32 @@ public class AccountService {
 		return accountRepository.findById(accountNumber).orElseThrow(() -> new NoSuchElementException());
 	}
 
-	public boolean isAmountApproved(BigDecimal amount, Long accountNumber) {
+	public AuthorizeAmountResponseDTO isAmountApproved(BigDecimal amount, Long accountNumber) {
+		AuthorizeAmountResponseDTO response = new AuthorizeAmountResponseDTO();
 		//TODO: remove, just to test for being able to adding amounts to accounts
-		if(accountNumber == 123)
-			return true;
+		if(isExternalAccount(accountNumber)) {
+			return handleExternalAuthorization();
+		}
+			
 		Account account = getAccount(accountNumber);
 		BigDecimal pending = calculatePendingAmount(account);
 
 		BigDecimal total = account.getAmount().add(pending).subtract(amount);
-		return total.compareTo(BigDecimal.ZERO) > -1;
+		response.setAllowed(total.compareTo(BigDecimal.ZERO) > -1);
+		return response;
 
+	}
+	
+	private AuthorizeAmountResponseDTO handleExternalAuthorization() {
+		//Just return true here so we can have any
+		//Movements between accounts
+		AuthorizeAmountResponseDTO response = new AuthorizeAmountResponseDTO();
+		response.setAllowed(true);
+		return response;
+	}
+	
+	private boolean isExternalAccount(Long accountnumber) {
+		return accountnumber <= internalAccountStart;
 	}
 	
 	public CardDTO createCardForAccount(CardDTO card) {
@@ -123,5 +146,9 @@ public class AccountService {
 		blockCard.setCardNumber(cardNumber);
 		blockCard.setUserId(userId);
 		return cardClient.blockCard(blockCard);
+	}
+	
+	public void removeEverything() {
+		accountRepository.deleteAll();
 	}
 }

@@ -18,7 +18,7 @@ public class Account {
 	private long accountNumber;
 	
 	@Column
-	private Long userId;
+	private String userId;
 	@Column
 	private BigDecimal amount;
 	@Column
@@ -28,7 +28,7 @@ public class Account {
 	
 	public Account() {}
 	
-	public Account(long userId, String name) {
+	public Account(String userId, String name) {
 		super();
 		this.userId = userId;
 		this.name = name;
@@ -46,11 +46,11 @@ public class Account {
 		this.accountNumber = accountNumber;
 	}
 
-	public long getUserId() {
+	public String getUserId() {
 		return userId;
 	}
 
-	public void setUserId(long userId) {
+	public void setUserId(String userId) {
 		this.userId = userId;
 	}
 
