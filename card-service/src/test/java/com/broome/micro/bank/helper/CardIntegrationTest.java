@@ -12,7 +12,9 @@ import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.client.RestTemplate;
 
 import com.broome.micro.bank.BaseIntegrationTest;
@@ -21,7 +23,10 @@ import com.broome.micro.bank.dto.BlockCardDTO;
 import com.broome.micro.bank.dto.CardPaymentDTO;
 import com.broome.micro.bank.dto.TransactionDTO;
 import com.broome.micro.bank.restclient.TransactionClient;
+import com.broome.micro.bank.restclient.UserClient;
 import com.broome.micro.bank.services.CardService;
+import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.Mockito.when;
 
 @Ignore
 public class CardIntegrationTest extends BaseIntegrationTest{
@@ -44,6 +49,9 @@ public class CardIntegrationTest extends BaseIntegrationTest{
 	@Autowired
 	private CardService cardService;
 	
+	@Autowired
+	private UserClient userClient;
+	
 	public CardIntegrationTest() {
 		restTemplate = new RestTemplate();
 	}
@@ -51,6 +59,11 @@ public class CardIntegrationTest extends BaseIntegrationTest{
 	
 	public void clean() {
 		cardService.removeEverything();
+		ResponseEntity<String> resp = ResponseEntity.status(HttpStatus.CREATED)
+				.contentType(MediaType.APPLICATION_JSON)
+				.header("Authorization", "Bearer "+OK_HEADER_AUTH)
+				.body("");
+		when(userClient.login(any())).thenReturn(resp);
 	}
 	
 	public Card addCard(String userId,String accountNumber) {

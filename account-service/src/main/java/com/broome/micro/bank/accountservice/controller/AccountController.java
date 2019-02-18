@@ -69,9 +69,10 @@ public class AccountController {
 	}
 
 	@RequestMapping(path = "/accounts/{accountId}/transactions")
-	public List<TransactionDTO> getTransactionsForAccount(@PathVariable(value = "accountId") long accountId) {
+	public List<TransactionDTO> getTransactionsForAccount(@RequestHeader(value = "Authorization") String auth,@PathVariable(value = "accountId") long accountId) {
 		// Get UserId From UserAuth Service then get account:
-		Account account = accountService.getAccount("", accountId);
+		String userId = getUserIdFromHeader(auth);
+		Account account = accountService.getAccount(userId, accountId);
 
 		return accountService.getTransactionsForAccount(account);
 	}

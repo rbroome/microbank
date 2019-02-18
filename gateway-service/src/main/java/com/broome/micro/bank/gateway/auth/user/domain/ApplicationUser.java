@@ -12,6 +12,7 @@ public class ApplicationUser {
     private long userId;
     private String username;
     private String password;
+    private boolean system;
     public long getUserId() {
         return userId;
     }
@@ -27,4 +28,10 @@ public class ApplicationUser {
     public void setPassword(String password) {
         this.password = password;
     }
+	public boolean isSystem() {
+		return system;
+	}
+	public void setSystem(boolean system) {
+		this.system = system;
+	}
 }

@@ -31,15 +31,14 @@ public class Transaction {
 	
 	public Transaction() {}
 	
-	public Transaction(String fromAccount, String toAccount, BigDecimal amount, String message, TransactionType type,
-			Date date) {
+	public Transaction(String fromAccount, String toAccount, BigDecimal amount, String message, TransactionType type) {
 		super();
 		this.fromAccount = fromAccount;
 		this.toAccount = toAccount;
 		this.amount = amount;
 		this.message = message;
 		this.type = type;
-		this.date = date;
+		this.date = new Date();
 	}
 
 	public long getTransactionid() {

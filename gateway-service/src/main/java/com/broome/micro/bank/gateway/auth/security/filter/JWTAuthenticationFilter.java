@@ -53,12 +53,15 @@ public class JWTAuthenticationFilter extends UsernamePasswordAuthenticationFilte
 			Authentication authResult) throws IOException, ServletException {
 		
 		String sub = ((User)authResult.getPrincipal()).getUsername();
+		
 		String userId = String.valueOf(userService.getUserIdByName(sub));
+		boolean isSystem = userService.isSystemUser(Long.valueOf(userId));
 		Date expirationDate = new Date(System.currentTimeMillis()+EXPIRATION_TIME);
 		
 		String token = Jwts.builder()
 				.setSubject(sub)
 				.claim("userId", userId)
+				.claim("system", isSystem)
 				.setExpiration(expirationDate)
 				.signWith(SignatureAlgorithm.HS512, SECRET)
 				.compact();

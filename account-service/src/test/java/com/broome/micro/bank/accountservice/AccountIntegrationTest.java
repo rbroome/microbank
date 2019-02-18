@@ -15,6 +15,7 @@ import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 
@@ -23,6 +24,7 @@ import com.broome.micro.bank.accountservice.dto.AccountDTO;
 import com.broome.micro.bank.accountservice.dto.AuthorizeAmountDTO;
 import com.broome.micro.bank.accountservice.dto.AuthorizeAmountResponseDTO;
 import com.broome.micro.bank.accountservice.restclient.TransactionClient;
+import com.broome.micro.bank.accountservice.restclient.UserClient;
 import com.broome.micro.bank.accountservice.service.AccountService;
 
 import cucumber.api.java.Before;
@@ -40,13 +42,21 @@ public class AccountIntegrationTest extends BaseIntegrationTest{
 	@Autowired
 	private AccountService service;
 	
+	@Autowired
+	UserClient userClient;
+	
 	
 	public AccountIntegrationTest() {
 
 	}
 	
-	public void clean() {
+	public void init() {
 		service.removeEverything();
+		ResponseEntity<String> resp = ResponseEntity.status(HttpStatus.CREATED)
+				.contentType(MediaType.APPLICATION_JSON)
+				.header("Authorization", "Bearer "+OK_HEADER_AUTH)
+				.body("");
+		when(userClient.login(any())).thenReturn(resp);
 	}
 	
 	public ResponseEntity<Account>createAccount(String userId,String name) {
@@ -83,7 +93,7 @@ public class AccountIntegrationTest extends BaseIntegrationTest{
 		return restTemplate().exchange(getEndpoint()+"/"+accountNumber,HttpMethod.GET,entity,Account.class);
 	}
 	private void setUpTransactionClient() {
-		when(transactionClient.getTransactions(any())).thenReturn(new ArrayList<>());
+		when(transactionClient.getTransactions(any(),any())).thenReturn(new ArrayList<>());
 	}
 	
 	public ResponseEntity<AuthorizeAmountResponseDTO> authAmount(String accountnumber,int amount){

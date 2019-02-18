@@ -10,6 +10,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.web.client.RestTemplate;
 
 import com.broome.micro.bank.restclient.TransactionClient;
+import com.broome.micro.bank.restclient.UserClient;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
@@ -25,6 +26,8 @@ public abstract class BaseIntegrationTest {
 	
 	@MockBean
 	TransactionClient client;
+	@MockBean
+	UserClient userClient;
 
 	public BaseIntegrationTest() {
 			port();

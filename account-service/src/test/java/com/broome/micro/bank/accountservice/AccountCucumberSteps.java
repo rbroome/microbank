@@ -25,7 +25,7 @@ public class AccountCucumberSteps extends AccountIntegrationTest{
 	
 	@Before
 	public void init() {
-		clean();
+		super.init();
 	}
 	
 	@Given("user (.+) have an account")

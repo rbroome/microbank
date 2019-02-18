@@ -11,6 +11,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.web.client.RestTemplate;
 
 import com.broome.micro.bank.accountservice.restclient.TransactionClient;
+import com.broome.micro.bank.accountservice.restclient.UserClient;
 import com.broome.micro.bank.accountservice.service.AccountService;
 
 @RunWith(SpringRunner.class)
@@ -24,6 +25,9 @@ public abstract class BaseIntegrationTest {
 	private RestTemplate restTemplate;
 	@MockBean
 	TransactionClient transactionClient;
+	
+	@MockBean
+	UserClient userClient;
 
 	@LocalServerPort
 	protected int port;

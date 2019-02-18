@@ -12,9 +12,11 @@ import org.springframework.stereotype.Service;
 
 import com.broome.micro.bank.domain.Card;
 import com.broome.micro.bank.dto.CardPaymentDTO;
+import com.broome.micro.bank.dto.LoginDto;
 import com.broome.micro.bank.dto.TransactionDTO;
 import com.broome.micro.bank.repo.CardRepository;
 import com.broome.micro.bank.restclient.TransactionClient;
+import com.broome.micro.bank.restclient.UserClient;
 
 @Service
 public class CardService {
@@ -22,6 +24,8 @@ public class CardService {
 	private CardRepository cardRepository;
 	@Autowired
 	private TransactionClient transactionClient;
+	@Autowired
+	private UserClient userClient;
 
 	private static final Logger LOGGER = LoggerFactory.getLogger(CardService.class);
 
@@ -85,13 +89,18 @@ public class CardService {
 			return transaction;
 		}else if (card.getBlocked() == false) {
 			LOGGER.info("card {} is not blocked",cardPayment.getCardNumber());
-			TransactionDTO response = transactionClient.addTransaction(transaction);
+			String auth = getToken();
+			TransactionDTO response = transactionClient.addTransaction(auth,transaction);
 			return response;
 		}else{
 			LOGGER.info("Card is blocked");
 			transaction.setStatus("BLOCKED");
 			return transaction;
 		}
+	}
+	private String getToken() {
+		String auth = userClient.login(new LoginDto("sysadmin", "password")).getHeaders().get("Authorization").get(0);
+		return auth;
 	}
 
 	private TransactionDTO createTransaction(CardPaymentDTO cardPayment, String accountNumber) {

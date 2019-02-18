@@ -43,7 +43,7 @@ public class CardStepDefinitions extends CardIntegrationTest{
 	
 	@Before
 	public void init() {
-		clean();
+		super.clean();
 	}
 
 	@Given("^user (.+) have a card$")
@@ -105,11 +105,11 @@ public class CardStepDefinitions extends CardIntegrationTest{
 	public void theCardHaveBalance(final int balance) {
 		if(balance >0) {
 			log.info("SHOULD RETURN GOOD TRANSACTION balance {}",balance);
-			when(client.addTransaction(any())).thenReturn(okTransaction(new BigDecimal(balance)));
+			when(client.addTransaction(any(),any())).thenReturn(okTransaction(new BigDecimal(balance)));
 		}
 		else {
 			log.info("SHOULD RETURN BAD TRANSACTION balance {}",balance);
-			when(client.addTransaction(any())).thenReturn(nokTransaction(new BigDecimal(balance)));
+			when(client.addTransaction(any(),any())).thenReturn(nokTransaction(new BigDecimal(balance)));
 		}
 
 	}
