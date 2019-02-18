@@ -7,7 +7,6 @@ public class AuthorizeAmountDTO {
 	public BigDecimal amount;
 	
 	public AuthorizeAmountDTO() {
-		// TODO Auto-generated constructor stub
 	}
 
 	public BigDecimal getAmount() {

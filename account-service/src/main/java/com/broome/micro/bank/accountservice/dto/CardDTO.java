@@ -11,10 +11,6 @@ public class CardDTO {
 	
 	private String accountNumber;
 	
-	
-	private String userId;
-	
-	
 	private Boolean blocked;
 	
 	public CardDTO() {
@@ -22,10 +18,9 @@ public class CardDTO {
 	}
 	
 
-	public CardDTO(String accountNumber, String userId) {
+	public CardDTO(String accountNumber) {
 		super();
 		this.accountNumber = accountNumber;
-		this.userId = userId;
 	}
 
 
@@ -52,14 +47,6 @@ public class CardDTO {
 
 	public void setAccountNumber(String accountNumber) {
 		this.accountNumber = accountNumber;
-	}
-
-	public String getUserId() {
-		return userId;
-	}
-
-	public void setUserId(String userId) {
-		this.userId = userId;
 	}
 
 	public Boolean getBlocked() {

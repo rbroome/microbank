@@ -100,19 +100,17 @@ public class AccountController {
 	}
 
 	@RequestMapping(value = "/accounts/{accountNumber}/createCard", method = RequestMethod.POST)
-	public CardDTO createCardForAccount(@PathVariable String accountNumber, @RequestBody CreateCardDTO card) {
-		CardDTO newCard = new CardDTO();
-		newCard.setAccountNumber(accountNumber);
-		newCard.setBlocked(false);
-		newCard.setPinCode(card.getPinCode());
-		newCard.setUserId(card.getUserId());
-		return accountService.createCardForAccount(newCard);
+	public CardDTO createCardForAccount(@RequestHeader(value = "Authorization") String auth,@PathVariable long accountNumber, @RequestBody CreateCardDTO card) {
+		String userId = getUserIdFromHeader(auth);
+		Account account = accountService.getAccount(userId, accountNumber);
+		card.setAccountNumber(account.getAccountNumber());
+		return accountService.createCardForAccount(card);
 	}
 
 	@RequestMapping(path = "/accounts/{accountNumber}/blockCard", method = RequestMethod.PATCH)
-	public String blockCard(@PathVariable String accountNumber, @RequestBody BlockCardDTO blockCard) {
+	public String blockCard(@PathVariable long accountNumber, @RequestBody BlockCardDTO blockCard) {
 
-		return accountService.blockCardForAccount(accountNumber, blockCard.getUserId(), blockCard.getCardNumber());
+		return accountService.blockCardForAccount(accountNumber, blockCard.getCardNumber());
 	}
 
 	private String getUserIdFromHeader(String header) {

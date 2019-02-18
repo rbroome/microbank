@@ -10,6 +10,9 @@ import java.util.List;
 import org.junit.Ignore;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.client.HttpClientErrorException;
 
 import com.broome.micro.bank.domain.Card;
 import com.broome.micro.bank.dto.TransactionDTO;
@@ -24,8 +27,8 @@ import cucumber.api.java.en.When;
 public class CardStepDefinitions extends CardIntegrationTest{
 
 	private final Logger log = LoggerFactory.getLogger(CardStepDefinitions.class);
-	private static final String OK_ACCOUNT = "37730001";
-	private static final String NOK_ACCOUNT = "";
+	private static final long OK_ACCOUNT = 37730001;
+	private static final long NOK_ACCOUNT = 0;
 
 	private static final String OK_PIN = "1234";
 	private static final String OK_CARD = "123456";
@@ -63,7 +66,13 @@ public class CardStepDefinitions extends CardIntegrationTest{
 
 	@When("^the user (.+) adds a card with bad account$")
 	public void userAddsACardWithBadAccount(final String userId) {
-		addCard(userId, NOK_ACCOUNT);
+		ResponseEntity<Card> response = null;
+		try {
+				response = addCard(userId, NOK_ACCOUNT);
+		}catch(HttpClientErrorException e) {
+			assertThat(e.getStatusCode()).isEqualTo(HttpStatus.FORBIDDEN);
+		}
+		assertThat(response).isNull();
 	}
 
 	@Then("^user (.+) have (\\d+) card$")

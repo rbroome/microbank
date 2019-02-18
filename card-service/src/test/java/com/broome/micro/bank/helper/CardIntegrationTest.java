@@ -32,7 +32,7 @@ import static org.mockito.Mockito.when;
 public class CardIntegrationTest extends BaseIntegrationTest{
 	
 	private static final Logger log = LoggerFactory.getLogger(CardIntegrationTest.class);
-	static final String OK_ACCOUNT = "37730001";
+	static final long OK_ACCOUNT = 37730001;
 	private static String OK_HEADER_AUTH="eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsInVzZXJJZCI6IjEiLCJleHAiOjE1NTExMTcyNDV9.rpnO6mjtxmoOFDzC_yE-D8sgQJZz8BaKEvVSrNwiz3St_Q05Y05z-Ixf0TdtI4Avm9t04oqbWkQxb5r4x19VbQ";
 	private static String BAD_HEADER_AUTH="eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsInVzZXJJZCI6IjEiLCJleHAiOjE1N2222yNDV9.rpnO6mjtxmoOFDzC_yE-D8sgQJZz8BaKEvVSrNwiz3St_Q05Y05z-Ixf0TdtI4Avm9t04oqbWkQxb1bQ";
 
@@ -66,12 +66,12 @@ public class CardIntegrationTest extends BaseIntegrationTest{
 		when(userClient.login(any())).thenReturn(resp);
 	}
 	
-	public Card addCard(String userId,String accountNumber) {
+	public ResponseEntity<Card> addCard(String userId,long accountNumber) {
 		Card card = new Card();
 		
 		card.setAccountNumber(accountNumber);
 		HttpEntity<Card> entity = setHeaders(card,userId);
-		Card returnedCard = restTemplate.exchange(cardsEndpoint(), HttpMethod.POST,entity,Card.class).getBody();
+		ResponseEntity<Card> returnedCard = restTemplate.exchange(cardsEndpoint(), HttpMethod.POST,entity,Card.class);
 		return returnedCard;
 		
 	}
@@ -100,7 +100,7 @@ public class CardIntegrationTest extends BaseIntegrationTest{
 		return null;
 	}
 	public Card blockCard(String userId,long cardNumber) {
-		BlockCardDTO blockCard = new BlockCardDTO(String.valueOf(cardNumber), userId, OK_ACCOUNT);
+		BlockCardDTO blockCard = new BlockCardDTO(String.valueOf(cardNumber), OK_ACCOUNT);
 		HttpEntity<BlockCardDTO> entity = setHeaders(blockCard, userId);
 		restTemplate.exchange(cardsEndpoint()+"/block", HttpMethod.PUT,entity,Card.class);
 		List<Card> cards = getCardsForUser(userId);

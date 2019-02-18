@@ -5,6 +5,7 @@
 /Users/robin/tutorial/microbank/card-service/src/main/java/com/broome/micro/bank/dto/LoginDto.java
 /Users/robin/tutorial/microbank/card-service/src/main/java/com/broome/micro/bank/dto/BlockCardDTO.java
 /Users/robin/tutorial/microbank/card-service/src/main/java/com/broome/micro/bank/services/CardService.java
+/Users/robin/tutorial/microbank/card-service/src/main/java/com/broome/micro/bank/dto/CreateCardDTO.java
 /Users/robin/tutorial/microbank/card-service/src/main/java/com/broome/micro/bank/dto/CardPaymentDTO.java
 /Users/robin/tutorial/microbank/card-service/src/main/java/com/broome/micro/bank/domain/Card.java
 /Users/robin/tutorial/microbank/card-service/src/main/java/com/broome/micro/bank/dto/TransactionDTO.java

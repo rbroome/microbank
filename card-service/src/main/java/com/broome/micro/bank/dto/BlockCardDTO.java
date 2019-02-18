@@ -3,13 +3,11 @@ package com.broome.micro.bank.dto;
 public class BlockCardDTO {
 	
 	String cardNumber;
-	String userId;
-	String accountNumber;
+	long accountNumber;
 	
 	public BlockCardDTO() {}
-	public BlockCardDTO(String cardNumber,String userId,String accountNumber) {
+	public BlockCardDTO(String cardNumber,long accountNumber) {
 		this.cardNumber = cardNumber;
-		this.userId = userId;
 		this.accountNumber = accountNumber;
 		
 	}
@@ -20,16 +18,11 @@ public class BlockCardDTO {
 		this.cardNumber = cardNumber;
 		
 	}
-	public String getUserId() {
-		return userId;
-	}
-	public void setUserId(String userId) {
-		this.userId = userId;
-	}
-	public String getAccountNumber() {
+	
+	public long getAccountNumber() {
 		return accountNumber;
 	}
-	public void setAccountNumber(String accountNumber) {
+	public void setAccountNumber(long accountNumber) {
 		this.accountNumber = accountNumber;
 	}
 	

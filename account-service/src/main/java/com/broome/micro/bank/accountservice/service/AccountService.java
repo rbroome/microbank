@@ -154,19 +154,14 @@ public class AccountService {
 		return accountnumber <= internalAccountStart;
 	}
 
-	public CardDTO createCardForAccount(CardDTO card) {
-		CreateCardDTO cardC = new CreateCardDTO();
-		cardC.setPinCode(card.getPinCode());
-		cardC.setUserId(card.getUserId());
-
+	public CardDTO createCardForAccount(CreateCardDTO card) {
 		return cardClient.createCard(card);
 	}
 
-	public String blockCardForAccount(String accountNumber, String userId, String cardNumber) {
+	public String blockCardForAccount(long accountNumber, String cardNumber) {
 		BlockCardDTO blockCard = new BlockCardDTO();
 		blockCard.setAccountNumber(accountNumber);
 		blockCard.setCardNumber(cardNumber);
-		blockCard.setUserId(userId);
 		return cardClient.blockCard(blockCard);
 	}
 

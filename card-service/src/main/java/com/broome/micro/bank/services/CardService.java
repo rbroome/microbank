@@ -8,10 +8,14 @@ import java.util.Optional;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import com.broome.micro.bank.domain.Card;
 import com.broome.micro.bank.dto.CardPaymentDTO;
+import com.broome.micro.bank.dto.CreateCardDTO;
 import com.broome.micro.bank.dto.LoginDto;
 import com.broome.micro.bank.dto.TransactionDTO;
 import com.broome.micro.bank.repo.CardRepository;
@@ -34,18 +38,23 @@ public class CardService {
 		this.cardRepository = cardRepository;
 	}
 
-	public Card createNew(String accountNumber, String userId) throws NoSuchElementException {
-		// Look if user is valid and is owner of account. Otherwise throw exeption
-
-		// TODO: If User is valid and account is owned by user create card.
-		// "Randomly" create a pincode:
-		String pinCode = "1234";
-		if (accountNumber != null && accountNumber.length() > 0)
-			return cardRepository.save(new Card(pinCode, accountNumber, userId, false));
-		return null;
+	public ResponseEntity<Card> createNew(CreateCardDTO card, String userId) throws NoSuchElementException {
+		//TODO: validate with service
+		if(card.getAccountNumber() > 37729999) {
+			Card response = cardRepository.save(new Card(card.getPinCode(), card.getAccountNumber(), userId, false));
+			return ResponseEntity.status(HttpStatus.CREATED)
+					.contentType(MediaType.APPLICATION_JSON)
+					.body(response); 
+		} 
+		else {
+			return ResponseEntity.status(HttpStatus.FORBIDDEN)
+			.contentType(MediaType.APPLICATION_JSON)
+			.body(null);
+		}
+		
 	}
 
-	public void blockCard(String userId, long cardnumber, String accountNumber) {
+	public void blockCard(String userId, long cardnumber, long accountNumber) {
 		// Look if user is owner of card and and account then block it.
 		Card card = verifyCardWithAccountNumber(cardnumber, userId, accountNumber);
 		card.setBlocked(true);
@@ -71,7 +80,7 @@ public class CardService {
 		return card;
 	}
 
-	private Card verifyCardWithAccountNumber(long cardId, String userId, String accountNumber) {
+	private Card verifyCardWithAccountNumber(long cardId, String userId, long accountNumber) {
 		return cardRepository.findByUserIdAndCardNumberAndAccountNumber(userId, cardId, accountNumber)
 				.orElseThrow(() -> new NoSuchElementException());
 	}
@@ -84,7 +93,7 @@ public class CardService {
 		LOGGER.info("Found card with pincode {} and cardNr {} ",card.getPinCode(),card.getCardNumber());
 		LOGGER.info("pin is oK");
 		TransactionDTO transaction = createTransaction(cardPayment, card.getAccountNumber());
-		if(card.getAccountNumber()==null) {
+		if(card.getAccountNumber()==0) {
 			transaction.setStatus("DECLINED");
 			return transaction;
 		}else if (card.getBlocked() == false) {
@@ -103,12 +112,12 @@ public class CardService {
 		return auth;
 	}
 
-	private TransactionDTO createTransaction(CardPaymentDTO cardPayment, String accountNumber) {
+	private TransactionDTO createTransaction(CardPaymentDTO cardPayment, long accountNumber) {
 		TransactionDTO transaction = new TransactionDTO();
 		transaction.setAmount(cardPayment.getAmount());
 
 		transaction.setType("CardTransaction");
-		transaction.setFromAccount(accountNumber);
+		transaction.setFromAccount(String.valueOf(accountNumber));
 		transaction.setMessage("SOME STORE");
 		// Dummy Account
 		transaction.setToAccount("123");

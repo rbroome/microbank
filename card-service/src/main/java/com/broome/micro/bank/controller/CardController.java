@@ -9,6 +9,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.env.Environment;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestHeader;
@@ -19,6 +20,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.broome.micro.bank.domain.Card;
 import com.broome.micro.bank.dto.BlockCardDTO;
 import com.broome.micro.bank.dto.CardPaymentDTO;
+import com.broome.micro.bank.dto.CreateCardDTO;
 import com.broome.micro.bank.dto.PinCodeChangeDTO;
 import com.broome.micro.bank.dto.TransactionDTO;
 import com.broome.micro.bank.services.CardService;
@@ -69,12 +71,11 @@ public class CardController {
 		return cardService.processPayment(cardPayment);
 	}
 	
-	//TODO: remove to only accountnumber.
 	@RequestMapping(path="/cards",method = RequestMethod.POST)
-	public Card createNewCard(@RequestHeader(value="Authorization") String auth,@RequestBody Card card) throws Exception {
+	public ResponseEntity<Card> createNewCard(@RequestHeader(value="Authorization") String auth,@RequestBody CreateCardDTO card) throws Exception {
 		log.info("POST: Creating a new card");
 		String user = getUserIdFromHeader(auth);
-		return cardService.createNew(card.getAccountNumber(), user);
+		return cardService.createNew(card, user);
 	}
 	
 	@RequestMapping(path="/cards",method = RequestMethod.PATCH)
@@ -87,7 +88,7 @@ public class CardController {
 	@RequestMapping(path="/cards/block",method = RequestMethod.PUT)
 	public void block(@RequestHeader(value="Authorization") String auth,@RequestBody BlockCardDTO blockCard) {
 		String user = getUserIdFromHeader(auth);
-		log.info("BLOCKING CARD id{},cardNumber{},accnumber{}",blockCard.getUserId(),blockCard.getCardNumber(),blockCard.getAccountNumber());
+		log.info("BLOCKING CARD id{},cardNumber{},accnumber{}",blockCard.getCardNumber(),blockCard.getAccountNumber());
 		cardService.blockCard(user, Long.valueOf(blockCard.getCardNumber()), blockCard.getAccountNumber());
 		
 	}

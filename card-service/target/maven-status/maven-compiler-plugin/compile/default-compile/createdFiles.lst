@@ -4,6 +4,7 @@ com/broome/micro/bank/controller/CardController.class
 com/broome/micro/bank/CardServiceApplication.class
 com/broome/micro/bank/domain/CardPayment.class
 com/broome/micro/bank/dto/CardPaymentDTO.class
+com/broome/micro/bank/dto/CreateCardDTO.class
 com/broome/micro/bank/repo/CardRepository.class
 com/broome/micro/bank/services/CardService.class
 com/broome/micro/bank/dto/LoginDto.class

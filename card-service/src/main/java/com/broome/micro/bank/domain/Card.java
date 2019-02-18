@@ -20,7 +20,7 @@ public class Card {
 	private String pinCode;
 	
 	@Column
-	private String accountNumber;
+	private long accountNumber;
 	
 	@Column
 	private String userId;
@@ -33,7 +33,7 @@ public class Card {
 	}
 	
 
-	public Card(String pinCode, String accountNumber, String userId, Boolean blocked) {
+	public Card(String pinCode, long accountNumber, String userId, Boolean blocked) {
 		super();
 		this.pinCode = pinCode;
 		this.accountNumber = accountNumber;
@@ -59,11 +59,11 @@ public class Card {
 		this.pinCode = pinCode;
 	}
 
-	public String getAccountNumber() {
+	public long getAccountNumber() {
 		return accountNumber;
 	}
 
-	public void setAccountNumber(String accountNumber) {
+	public void setAccountNumber(long accountNumber) {
 		this.accountNumber = accountNumber;
 	}
 
