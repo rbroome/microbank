@@ -89,11 +89,12 @@ public class AccountController {
 	}
 
 	@RequestMapping(value = "/accounts/{accountNumber}/auth", method = RequestMethod.POST)
-	public AuthorizeAmountResponseDTO authorizeAmount(@PathVariable String accountNumber,
+	@ResponseStatus(HttpStatus.OK)
+	public void authorizeAmount(@PathVariable String accountNumber,
 			@RequestBody AuthorizeAmountDTO trans) throws Exception {
 		Long accNumber = Long.valueOf(accountNumber);
-
-		return accountService.isAmountApproved(trans.getAmount(), accNumber);
+		log.info("POST: auth!!!!");
+		accountService.isAmountApproved(trans.getAmount(), accNumber);
 	}
 
 	@RequestMapping(value = "/accounts/{accountNumber}/transfer", method = RequestMethod.POST)

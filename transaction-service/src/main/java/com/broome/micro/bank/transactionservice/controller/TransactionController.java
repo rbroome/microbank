@@ -1,6 +1,5 @@
 package com.broome.micro.bank.transactionservice.controller;
 
-import java.util.Date;
 import java.util.List;
 
 import org.slf4j.Logger;
@@ -8,22 +7,24 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.env.Environment;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.broome.micro.bank.transactionservice.domain.Transaction;
-import com.broome.micro.bank.transactionservice.domain.TransactionType;
 import com.broome.micro.bank.transactionservice.dto.CommitTransactionResponseDTO;
 import com.broome.micro.bank.transactionservice.dto.TransactionDTO;
 import com.broome.micro.bank.transactionservice.exception.NotAllowedException;
 import com.broome.micro.bank.transactionservice.services.TransactionService;
 
+import feign.FeignException;
 import io.jsonwebtoken.Jwts;
 
 
@@ -43,22 +44,14 @@ public class TransactionController {
 	@Autowired
 	TransactionService transactionService;
 	
-	@RequestMapping("/transactions")
-	public List<Transaction> getTransactions() {
-		
-		//TODO: REMOVE???
-		return transactionService.getTransactions("1234");
-	}
-	
-	@RequestMapping(value= "/transactions",method = RequestMethod.POST)
-	public ResponseEntity<TransactionDTO> addTransaction(@RequestHeader(value = "Authorization") String auth,@RequestBody TransactionDTO t){
-		log.info("POST transaction");
+	@PostMapping(value= "/transactions")
+	@ResponseStatus(HttpStatus.CREATED)
+	public TransactionDTO addTransaction(@RequestHeader(value = "Authorization") String auth,@RequestBody TransactionDTO t) throws FeignException{
 		isSystemUser(auth);
-		log.info("isSystemUser");
 		return transactionService.addTransaction(t);
 	}
 	
-	@RequestMapping(path = "/transactions/{accountId}")
+	@GetMapping(path = "/transactions/{accountId}")
 	public List<Transaction> getTransactionsForAccount(@RequestHeader(value = "Authorization") String auth,@PathVariable(value = "accountId") String accountId) {
 		isSystemUser(auth);
 		return transactionService.getTransactions(accountId);
@@ -67,7 +60,7 @@ public class TransactionController {
 	
 	
 	//TEMP
-	@RequestMapping(path = "/transactions/{accountId}/commit")
+	@GetMapping(path = "/transactions/{accountId}/commit")
 	public CommitTransactionResponseDTO commitForAccount(@RequestHeader(value = "Authorization") String auth,@PathVariable(value = "accountId") String accountId) {
 		//Only system should be able to do this
 		isSystemUser(auth);

@@ -4,10 +4,10 @@ import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.when;
 
 import java.math.BigDecimal;
-import java.util.Date;
 import java.util.List;
 
 import org.junit.Ignore;
+import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.HttpEntity;
@@ -17,15 +17,17 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 
-import com.broome.micro.bank.transactionservice.domain.Transaction;
 import com.broome.micro.bank.transactionservice.domain.TransactionStatus;
 import com.broome.micro.bank.transactionservice.domain.TransactionType;
 import com.broome.micro.bank.transactionservice.dto.AuthorizeAmountResponseDTO;
 import com.broome.micro.bank.transactionservice.dto.CommitTransactionResponseDTO;
 import com.broome.micro.bank.transactionservice.dto.TransactionDTO;
+import com.broome.micro.bank.transactionservice.exception.NotAllowedException;
 import com.broome.micro.bank.transactionservice.restclient.AccountClient;
 import com.broome.micro.bank.transactionservice.restclient.UserClient;
 import com.broome.micro.bank.transactionservice.services.TransactionService;
+
+import feign.Response;
 
 @Ignore
 public class TransactionIntegrationTest extends BaseIntegrationTest {
@@ -49,8 +51,9 @@ public class TransactionIntegrationTest extends BaseIntegrationTest {
 				.contentType(MediaType.APPLICATION_JSON)
 				.header("Authorization", "Bearer "+SYSTEM_HEADER)
 				.body("");
-				
+			
 				when(userClient.login(any())).thenReturn(resp);
+				
 	}
 
 	protected TransactionDTO addTransactionFromService(String accountNumber, String toAccount, int amount, String status) {
@@ -58,14 +61,17 @@ public class TransactionIntegrationTest extends BaseIntegrationTest {
 		
 		autorizeAllTransactions(true);
 		return transactionService.addTransactionWithStatus(accountNumber, toAccount, new BigDecimal(amount), message,
-				TransactionType.CardTransaction,TransactionStatus.valueOf(status)).getBody();
+				TransactionType.CardTransaction,TransactionStatus.valueOf(status));
 
 	}
 	
 	private void autorizeAllTransactions(boolean isAllowed) {
-		AuthorizeAmountResponseDTO auth = new AuthorizeAmountResponseDTO();
-		auth.setAllowed(isAllowed);
-		when(client.authorizeAmount(any(),any(), any())).thenReturn(auth);
+		Mockito.reset(client);
+		if(isAllowed)
+			when(client.authorizeAmount(any(),any())).thenReturn("");
+		else {
+			when(client.authorizeAmount(any(),any())).thenThrow(new NotAllowedException());
+		}
 	}
 	
 	protected ResponseEntity<List<TransactionDTO>> getTransactionsForAccount(String accountNumber, String userId) {

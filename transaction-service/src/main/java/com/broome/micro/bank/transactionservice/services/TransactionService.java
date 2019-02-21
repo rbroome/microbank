@@ -13,18 +13,23 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
+import org.springframework.web.client.HttpClientErrorException;
 
 import com.broome.micro.bank.transactionservice.domain.Transaction;
 import com.broome.micro.bank.transactionservice.domain.TransactionStatus;
 import com.broome.micro.bank.transactionservice.domain.TransactionType;
+import com.broome.micro.bank.transactionservice.dto.AuthorizeAmountDTO;
 import com.broome.micro.bank.transactionservice.dto.AuthorizeAmountResponseDTO;
 import com.broome.micro.bank.transactionservice.dto.CommitTransactionResponseDTO;
 import com.broome.micro.bank.transactionservice.dto.LoginDto;
 import com.broome.micro.bank.transactionservice.dto.TransactionDTO;
+import com.broome.micro.bank.transactionservice.exception.NotAllowedException;
 import com.broome.micro.bank.transactionservice.helper.TransactionHelper;
 import com.broome.micro.bank.transactionservice.repo.TransactionRepository;
 import com.broome.micro.bank.transactionservice.restclient.AccountClient;
 import com.broome.micro.bank.transactionservice.restclient.UserClient;
+
+import feign.FeignException;
 
 @Service
 public class TransactionService {
@@ -33,7 +38,7 @@ public class TransactionService {
 
 	@Autowired
 	private AccountClient accountClient;
-	
+
 	@Autowired
 	private UserClient userClient;
 
@@ -53,85 +58,49 @@ public class TransactionService {
 				.orElse(new ArrayList<Transaction>());
 		finalList.addAll(transactions);
 		finalList.addAll(transactionTo);
-		
-		log.info("YFound {} ({}+{})transaction for account \"{}\"", finalList.size(), transactions.size(),
-				transactionTo.size(), accountNumber);
 
-		
 		return finalList;
 	}
 
-	public ResponseEntity<TransactionDTO> addTransaction(TransactionDTO transaction) {
-		
-		log.info("trying to add transaction from {} to {} with {}",transaction.getFromAccount(),transaction.getToAccount(),transaction.getAmount());
-		ResponseEntity<TransactionDTO> trans = addTransactionWithStatus(transaction.getFromAccount(), transaction.getToAccount(),
+	public TransactionDTO addTransaction(TransactionDTO transaction) {
+		log.info("trying to add transaction from {} to {} with {}", transaction.getFromAccount(),
+				transaction.getToAccount(), transaction.getAmount());
+
+		return addTransactionWithStatus(transaction.getFromAccount(), transaction.getToAccount(),
 				transaction.getAmount(), transaction.getMessage(), TransactionType.valueOf(transaction.getType()),
 				TransactionStatus.PENDING);
-
-		return trans;
 	}
 
 	public TransactionDTO addTransaction(String fromAccount, String toAccount, BigDecimal amount, String message,
 			TransactionType type) {
-		TransactionDTO trans = addTransactionWithStatus(fromAccount, toAccount, amount, message, type,
-				TransactionStatus.PENDING).getBody();
-
-		return trans;
+		return addTransactionWithStatus(fromAccount, toAccount, amount, message, type, TransactionStatus.PENDING);
 	}
 
-	public ResponseEntity<TransactionDTO> addTransactionWithStatus(String fromAccount, String toAccount, BigDecimal amount, String message,
-			TransactionType type, TransactionStatus status) {
+	public TransactionDTO addTransactionWithStatus(String fromAccount, String toAccount, BigDecimal amount,
+			String message, TransactionType type, TransactionStatus status) {
 		Transaction tr = new Transaction(fromAccount, toAccount, amount, message, type);
 		// Check if transaction is possible
-		AuthorizeAmountResponseDTO auth = checkTransactionAllowed(tr);
-
+		checkTransactionAllowed(tr);
 		tr.setStatus(status);
-		
-		if(auth.isAllowed()) {
-			TransactionDTO transaction = TransactionHelper.fromTransaction(transactionRepository.save(tr));
-			log.info("Transaction completed with status: "+transaction.getStatus());
-			return ResponseEntity.status(HttpStatus.CREATED)
-			.contentType(MediaType.APPLICATION_JSON)
-			.body(transaction);
-		}else {
-			log.info("transaction is not allowd");
-			return ResponseEntity.status(HttpStatus.FORBIDDEN)
-			.contentType(MediaType.APPLICATION_JSON)
-			.body(null);
-		}
+
+		return TransactionHelper.fromTransaction(transactionRepository.save(tr));
 
 	}
-	
 
-	public AuthorizeAmountResponseDTO checkTransactionAllowed(Transaction transaction) {
-		
+	public void checkTransactionAllowed(Transaction transaction) {
 		String authToken = getToken();
-		log.info("authorize transaction from {} to {} with:{} ",transaction.getFromAccount(),transaction.getToAccount(),transaction.getAmount());
-		AuthorizeAmountResponseDTO auth = accountClient.authorizeAmount(authToken,transaction.getFromAccount(),
-				convertToDTO(transaction));
 
-		// For test, not needed
-		if (transaction.getFromAccount().equalsIgnoreCase("123")) {
-			log.info("Authorized: true");
-			auth.setAllowed(true);
-			return auth;
-		}
-		log.info("Authorized: "+auth.isAllowed());
-		return auth;
-		
+		AuthorizeAmountDTO dto = new AuthorizeAmountDTO();
+		dto.setAmount(transaction.getAmount());
+		accountClient.authorizeAmount(transaction.getFromAccount(), dto);
+
 	}
-	
+
 	private String getToken() {
 		String auth = userClient.login(new LoginDto("sysadmin", "password")).getHeaders().get("Authorization").get(0);
 		return auth;
 	}
 
-	private TransactionDTO convertToDTO(Transaction transaction) {
-		TransactionDTO dto = new TransactionDTO(transaction.getFromAccount(), transaction.getToAccount(),
-				transaction.getAmount(), transaction.getMessage(), transaction.getType().name(), transaction.getDate());
-
-		return dto;
-	}
 
 	// Used to simulate that transactions is commited, should be done by a "job"
 	public CommitTransactionResponseDTO commitTransaction(String accountNumber) {

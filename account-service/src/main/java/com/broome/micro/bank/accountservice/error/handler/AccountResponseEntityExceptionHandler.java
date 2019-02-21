@@ -12,6 +12,7 @@ import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExcep
 
 import com.broome.micro.bank.accountservice.error.ErrorDetails;
 import com.broome.micro.bank.accountservice.error.exception.AccountNotFoundException;
+import com.broome.micro.bank.accountservice.error.exception.NotAllowedException;
 import com.broome.micro.bank.accountservice.error.exception.UserNotFoundException;
 import com.broome.micro.bank.accountservice.error.exception.WrongInputException;
 
@@ -37,6 +38,12 @@ public class AccountResponseEntityExceptionHandler extends ResponseEntityExcepti
 	    ErrorDetails errorDetails = new ErrorDetails(new Date(), ex.getMessage(),
 	        request.getDescription(false));
 	    return new ResponseEntity<>(errorDetails, HttpStatus.BAD_REQUEST);
+	  }
+	 @ExceptionHandler(NotAllowedException.class)
+	  public final ResponseEntity<ErrorDetails> handleNotAllowedException(NotAllowedException ex, WebRequest request) {
+	    ErrorDetails errorDetails = new ErrorDetails(new Date(), ex.getMessage(),
+	        request.getDescription(false));
+	    return new ResponseEntity<>(errorDetails, HttpStatus.FORBIDDEN);
 	  }
 	
 	 @ExceptionHandler(Exception.class)

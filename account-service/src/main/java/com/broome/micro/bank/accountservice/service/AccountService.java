@@ -24,6 +24,7 @@ import com.broome.micro.bank.accountservice.dto.card.CreateCardDTO;
 import com.broome.micro.bank.accountservice.dto.transaction.TransactionDTO;
 import com.broome.micro.bank.accountservice.dto.user.LoginDto;
 import com.broome.micro.bank.accountservice.error.exception.AccountNotFoundException;
+import com.broome.micro.bank.accountservice.error.exception.NotAllowedException;
 import com.broome.micro.bank.accountservice.helper.AccountHelper;
 import com.broome.micro.bank.accountservice.repo.AccountRepository;
 import com.broome.micro.bank.accountservice.restclient.CardClient;
@@ -130,22 +131,25 @@ public class AccountService {
 		return accountRepository.findById(accountNumber).orElseThrow(() -> new NoSuchElementException());
 	}
 
-	public AuthorizeAmountResponseDTO isAmountApproved(BigDecimal amount, Long accountNumber) {
+	public void isAmountApproved(BigDecimal amount, Long accountNumber) throws NotAllowedException {
 		AuthorizeAmountResponseDTO response = new AuthorizeAmountResponseDTO();
 
 		log.info("Authorize accountnumner {} and amount {}", accountNumber, amount);
 		if (isExternalAccount(accountNumber)) {
 			log.info("external authorization");
-			return handleExternalAuthorization();
+			return;
 		}
-
-		Account account = getAccount(accountNumber);
+		isInternalAmountApproved(amount, accountNumber);
+	}
+	
+	private void isInternalAmountApproved(BigDecimal amount, Long accountNumber) throws NotAllowedException {
+		Account account = accountRepository.findById(accountNumber).orElseThrow(() -> new NotAllowedException());
 		BigDecimal pending = calculatePendingAmount(account);
 
 		BigDecimal total = account.getAmount().add(pending).subtract(amount);
-		response.setAllowed(total.compareTo(BigDecimal.ZERO) > -1);
-		return response;
-
+		boolean isAllowed = (total.compareTo(BigDecimal.ZERO) > -1);
+		if(!isAllowed)
+			throw new NotAllowedException();
 	}
 
 	private AuthorizeAmountResponseDTO handleExternalAuthorization() {
