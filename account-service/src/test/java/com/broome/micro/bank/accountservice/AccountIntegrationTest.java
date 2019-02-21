@@ -20,9 +20,9 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 
 import com.broome.micro.bank.accountservice.domain.Account;
-import com.broome.micro.bank.accountservice.dto.AccountDTO;
-import com.broome.micro.bank.accountservice.dto.AuthorizeAmountDTO;
-import com.broome.micro.bank.accountservice.dto.AuthorizeAmountResponseDTO;
+import com.broome.micro.bank.accountservice.dto.account.AccountDTO;
+import com.broome.micro.bank.accountservice.dto.account.AuthorizeAmountDTO;
+import com.broome.micro.bank.accountservice.dto.account.AuthorizeAmountResponseDTO;
 import com.broome.micro.bank.accountservice.restclient.TransactionClient;
 import com.broome.micro.bank.accountservice.restclient.UserClient;
 import com.broome.micro.bank.accountservice.service.AccountService;

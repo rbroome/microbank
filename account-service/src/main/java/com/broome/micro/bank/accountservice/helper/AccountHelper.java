@@ -1,7 +1,7 @@
 package com.broome.micro.bank.accountservice.helper;
 
 import com.broome.micro.bank.accountservice.domain.Account;
-import com.broome.micro.bank.accountservice.dto.AccountDTO;
+import com.broome.micro.bank.accountservice.dto.account.AccountDTO;
 
 public class AccountHelper {
 	

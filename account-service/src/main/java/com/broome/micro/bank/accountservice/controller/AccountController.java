@@ -15,18 +15,21 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.broome.micro.bank.accountservice.domain.Account;
-import com.broome.micro.bank.accountservice.dto.AccountDTO;
-import com.broome.micro.bank.accountservice.dto.AuthorizeAmountDTO;
-import com.broome.micro.bank.accountservice.dto.AuthorizeAmountResponseDTO;
-import com.broome.micro.bank.accountservice.dto.BlockCardDTO;
-import com.broome.micro.bank.accountservice.dto.CardBlockedDTO;
-import com.broome.micro.bank.accountservice.dto.CardDTO;
-import com.broome.micro.bank.accountservice.dto.CreateCardDTO;
-import com.broome.micro.bank.accountservice.dto.TransactionDTO;
-import com.broome.micro.bank.accountservice.dto.TransferBetweenAccountsDTO;
+import com.broome.micro.bank.accountservice.dto.account.AccountDTO;
+import com.broome.micro.bank.accountservice.dto.account.AuthorizeAmountDTO;
+import com.broome.micro.bank.accountservice.dto.account.AuthorizeAmountResponseDTO;
+import com.broome.micro.bank.accountservice.dto.account.TransferBetweenAccountsDTO;
+import com.broome.micro.bank.accountservice.dto.card.CardBlockedDTO;
+import com.broome.micro.bank.accountservice.dto.card.CardDTO;
+import com.broome.micro.bank.accountservice.dto.card.CreateCardDTO;
+import com.broome.micro.bank.accountservice.dto.transaction.TransactionDTO;
+import com.broome.micro.bank.accountservice.error.exception.AccountNotFoundException;
+import com.broome.micro.bank.accountservice.error.exception.UserNotFoundException;
+import com.broome.micro.bank.accountservice.helper.AccountHelper;
 import com.broome.micro.bank.accountservice.service.AccountService;
 
 import io.jsonwebtoken.Jwts;
@@ -47,49 +50,42 @@ public class AccountController {
 	@Autowired
 	AccountService accountService;
 
-	@RequestMapping("/accounts")
-	public List<Account> getAccounts(@RequestHeader(value = "Authorization") String auth) {
+	@GetMapping("/accounts")
+	public List<AccountDTO> getAccounts(@RequestHeader(value = "Authorization") String auth) throws AccountNotFoundException, UserNotFoundException {
 		String userId = getUserIdFromHeader(auth);
 		return accountService.getAccountsForUser(userId);
-
 	}
 
+	// Used to "simulate" that transaction are commited.
 	@RequestMapping("/commit")
 	public String commitTransactions() {
-
 		accountService.commitTransactions();
-
 		return "Transactions commited";
 	}
 
-	@RequestMapping(path = "/accounts/{accountId}")
-	public ResponseEntity<AccountDTO> getAccount(@RequestHeader(value = "Authorization") String auth,
-			@PathVariable(value = "accountId") long accountId) {
+	@GetMapping(path = "/accounts/{accountId}")
+	public AccountDTO getAccount(@RequestHeader(value = "Authorization") String auth,
+			@PathVariable(value = "accountId") long accountId) throws AccountNotFoundException, UserNotFoundException {
 		String userId = getUserIdFromHeader(auth);
-		AccountDTO account = accountService.getAccount(userId, accountId);
-
-		return ResponseEntity.status(HttpStatus.OK).contentType(MediaType.APPLICATION_JSON).body(account);
+		return accountService.getAccount(userId, accountId);
 	}
 
-	@RequestMapping(path = "/accounts/{accountId}/transactions")
+	@GetMapping(path = "/accounts/{accountId}/transactions")
 	public List<TransactionDTO> getTransactionsForAccount(@RequestHeader(value = "Authorization") String auth,
-			@PathVariable(value = "accountId") long accountId) {
+			@PathVariable(value = "accountId") long accountId) throws AccountNotFoundException, UserNotFoundException {
 		// Get UserId From UserAuth Service then get account:
 		String userId = getUserIdFromHeader(auth);
 		AccountDTO account = accountService.getAccount(userId, accountId);
 
-		return accountService.getTransactionsForAccount(account);
+		return accountService.getTransactionsForAccount(userId,account);
 	}
 
 	@RequestMapping(value = "/accounts", method = RequestMethod.POST)
-	public ResponseEntity<Account> addAccount(@RequestHeader(value = "Authorization") String auth,
+	@ResponseStatus(HttpStatus.CREATED)
+	public AccountDTO addAccount(@RequestHeader(value = "Authorization") String auth,
 			@RequestBody AccountDTO acc) throws Exception {
-
-		// get user from Auth then add account:
 		String userId = getUserIdFromHeader(auth);
-		Account account = accountService.addAccount(userId, acc.getName());
-
-		return ResponseEntity.status(HttpStatus.CREATED).contentType(MediaType.APPLICATION_JSON).body(account);
+		return accountService.addAccount(userId, acc.getName());
 	}
 
 	@RequestMapping(value = "/accounts/{accountNumber}/auth", method = RequestMethod.POST)
@@ -98,7 +94,6 @@ public class AccountController {
 		Long accNumber = Long.valueOf(accountNumber);
 
 		return accountService.isAmountApproved(trans.getAmount(), accNumber);
-
 	}
 
 	@RequestMapping(value = "/accounts/{accountNumber}/transfer", method = RequestMethod.POST)
@@ -106,45 +101,47 @@ public class AccountController {
 			@PathVariable Long accountNumber, @RequestBody TransferBetweenAccountsDTO transfer) throws Exception {
 		log.info("Trying to transfer between {} and {}", accountNumber, transfer.getToAccount());
 		if (accountNumber < 37730000) {
+			//Simulate a transfer from external account..
 			log.info("External authorization..");
 			return accountService.transferAmount(transfer, String.valueOf(accountNumber));
 		} else {
 			String userId = getUserIdFromHeader(auth);
 			AccountDTO account = accountService.getAccount(userId, accountNumber);
-			return accountService.transferAmount( transfer, String.valueOf(account.getAccountNumber()));
+			return accountService.transferAmount(transfer, String.valueOf(account.getAccountNumber()));
 		}
-
 	}
 
 	@RequestMapping(value = "/accounts/{accountNumber}/cards", method = RequestMethod.POST)
 	public ResponseEntity<CardDTO> createCardForAccount(@RequestHeader(value = "Authorization") String auth,
-			@PathVariable long accountNumber, @RequestBody CreateCardDTO card) {
+			@PathVariable long accountNumber, @RequestBody CreateCardDTO card) throws AccountNotFoundException, UserNotFoundException {
 		String userId = getUserIdFromHeader(auth);
 		AccountDTO account = accountService.getAccount(userId, accountNumber);
 		card.setAccountNumber(account.getAccountNumber());
 		ResponseEntity<CardDTO> response = accountService.createCardForAccount(card, auth);
-		log.info("Response is null: {}", response==null);
-		
+		log.info("Response is null: {}", response == null);
+
 		return accountService.createCardForAccount(card, auth);
 	}
 
 	@RequestMapping(path = "/accounts/{accountNumber}/cards/{cardNumber}", method = RequestMethod.PATCH)
-	public ResponseEntity<CardDTO> blockCard(@RequestHeader("Authorization") String token, @PathVariable long accountNumber,@PathVariable String cardNumber,
-			@RequestBody CardBlockedDTO blockCard) {
+	public ResponseEntity<CardDTO> blockCard(@RequestHeader("Authorization") String token,
+			@PathVariable long accountNumber, @PathVariable String cardNumber, @RequestBody CardBlockedDTO blockCard) throws AccountNotFoundException, UserNotFoundException {
 		String userId = getUserIdFromHeader(token);
 		AccountDTO account = accountService.getAccount(userId, accountNumber);
-		ResponseEntity<CardDTO> response = accountService.blockCardForAccount(account, cardNumber, token);
-		log.info("Response is null: {}", response==null);
-		if(response!=null) {
-			log.info("body is null {}", response.getBody()==null);
-		}
-		return response;
+		return accountService.blockCardForAccount(account, cardNumber, token);
 	}
 
-	private String getUserIdFromHeader(String header) {
-
-		String userId = (String) Jwts.parser().setSigningKey(SECRET).parseClaimsJws(header.replaceAll(TOKEN_PREFIX, ""))
-				.getBody().get("userId");
+	private String getUserIdFromHeader(String header) throws UserNotFoundException {
+		String userId = null;
+		try {
+			userId = (String) Jwts.parser().setSigningKey(SECRET).parseClaimsJws(header.replaceAll(TOKEN_PREFIX, ""))
+					.getBody().get("userId");
+		} catch (Exception e) {
+			throw new UserNotFoundException("User not allowed");
+		}
+		if(userId.equals("0") || userId.isEmpty()) {
+			throw new UserNotFoundException("User not allowed");
+		}
 
 		return userId;
 	}

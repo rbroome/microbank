@@ -5,7 +5,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
-import com.broome.micro.bank.accountservice.dto.LoginDto;
+import com.broome.micro.bank.accountservice.dto.user.LoginDto;
 
 @FeignClient("gateway")
 public interface UserClient {

@@ -11,7 +11,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.client.HttpClientErrorException;
 
 import com.broome.micro.bank.accountservice.domain.Account;
-import com.broome.micro.bank.accountservice.dto.AuthorizeAmountResponseDTO;
+import com.broome.micro.bank.accountservice.dto.account.AuthorizeAmountResponseDTO;
 
 import cucumber.api.java.Before;
 import cucumber.api.java.en.Given;

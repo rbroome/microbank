@@ -14,16 +14,16 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import com.broome.micro.bank.accountservice.domain.Account;
-import com.broome.micro.bank.accountservice.dto.AccountDTO;
-import com.broome.micro.bank.accountservice.dto.AuthorizeAmountResponseDTO;
-import com.broome.micro.bank.accountservice.dto.BlockCardDTO;
-import com.broome.micro.bank.accountservice.dto.CardBlockedDTO;
-import com.broome.micro.bank.accountservice.dto.CardDTO;
-import com.broome.micro.bank.accountservice.dto.CreateCardDTO;
-import com.broome.micro.bank.accountservice.dto.LoginDto;
-import com.broome.micro.bank.accountservice.dto.TransactionDTO;
-import com.broome.micro.bank.accountservice.dto.TransferBetweenAccountsDTO;
-import com.broome.micro.bank.accountservice.exception.AccountNotFoundException;
+import com.broome.micro.bank.accountservice.dto.account.AccountDTO;
+import com.broome.micro.bank.accountservice.dto.account.AuthorizeAmountResponseDTO;
+import com.broome.micro.bank.accountservice.dto.account.TransferBetweenAccountsDTO;
+import com.broome.micro.bank.accountservice.dto.card.BlockCardDTO;
+import com.broome.micro.bank.accountservice.dto.card.CardBlockedDTO;
+import com.broome.micro.bank.accountservice.dto.card.CardDTO;
+import com.broome.micro.bank.accountservice.dto.card.CreateCardDTO;
+import com.broome.micro.bank.accountservice.dto.transaction.TransactionDTO;
+import com.broome.micro.bank.accountservice.dto.user.LoginDto;
+import com.broome.micro.bank.accountservice.error.exception.AccountNotFoundException;
 import com.broome.micro.bank.accountservice.helper.AccountHelper;
 import com.broome.micro.bank.accountservice.repo.AccountRepository;
 import com.broome.micro.bank.accountservice.restclient.CardClient;
@@ -36,29 +36,28 @@ public class AccountService {
 	private static final Logger log = LoggerFactory.getLogger(AccountService.class);
 	private static Long internalAccountStart = 37730000L;
 
-	AccountRepository accountRepository;
+	@Autowired
+	private AccountRepository accountRepository;
 	@Autowired
 	private TransactionClient transactionClient;
 	@Autowired
-	CardClient cardClient;
+	private CardClient cardClient;
 	@Autowired
-	UserClient userClient;
+	private UserClient userClient;
 
-	@Autowired
-	public AccountService(AccountRepository accountRepository) {
-		this.accountRepository = accountRepository;
+	public List<AccountDTO> getAccountsForUser(String user) throws AccountNotFoundException {
+		List<Account> accounts = accountRepository.findByUserId(user)
+				.orElseThrow(() -> new AccountNotFoundException("No accounts found for user: " + user));
+		List<AccountDTO> dtos = accounts.stream().map(account -> AccountHelper.from(account))
+				.collect(Collectors.toList());
+		return dtos;
 	}
 
-	public List<Account> getAccountsForUser(String user) {
-		return accountRepository.findByUserId(user).orElse(Collections.emptyList());
-	}
-
-	public AccountDTO getAccount(String user, Long accountNumber) {
+	public AccountDTO getAccount(String user, Long accountNumber) throws AccountNotFoundException {
 		Optional<Account> account = accountRepository.findByUserIdAndAccountNumber(user, accountNumber);
-		Account acc = account.orElseThrow(() -> new AccountNotFoundException());
+		Account acc = account.orElseThrow(() -> new AccountNotFoundException("hoho"));
 		calculatePendingAmount(acc);
-		
-		
+
 		return AccountHelper.from(acc);
 	}
 
@@ -74,6 +73,7 @@ public class AccountService {
 	private BigDecimal calculatePendingAmount(Account account) {
 
 		String auth = getToken();
+		// Todo: get pending transaction from specific account
 		List<TransactionDTO> transactions = transactionClient.getTransactions(auth,
 				account.getAccountNumber().toString());
 
@@ -109,24 +109,21 @@ public class AccountService {
 
 	}
 
-	public List<TransactionDTO> getTransactionsForAccount(AccountDTO account) {
+	public List<TransactionDTO> getTransactionsForAccount(String userId, AccountDTO accountDto)
+			throws AccountNotFoundException {
 		// Verify user and account then:
 		// getUserIdFromToken(token)
-		boolean isAllowed = getAccountsForUser("").stream()
-				.filter(acc -> acc.getAccountNumber() == account.getAccountNumber()).collect(Collectors.toList())
-				.size() == 1;
 
-		if (isAllowed) {
-			String auth = getToken();
-			return transactionClient.getTransactions(auth, account.getAccountNumber().toString());
-		}else {
-			return Collections.emptyList();
-		}
+		AccountDTO account = getAccount(userId, accountDto.getAccountNumber());
+
+		String auth = getToken();
+		return transactionClient.getTransactions(auth, account.getAccountNumber().toString());
+
 	}
 
-	public Account addAccount(String userId, String name) {
+	public AccountDTO addAccount(String userId, String name) {
 		Account a = new Account(userId, name);
-		return accountRepository.save(a);
+		return AccountHelper.from(accountRepository.save(a));
 	}
 
 	private Account getAccount(Long accountNumber) {
@@ -135,8 +132,8 @@ public class AccountService {
 
 	public AuthorizeAmountResponseDTO isAmountApproved(BigDecimal amount, Long accountNumber) {
 		AuthorizeAmountResponseDTO response = new AuthorizeAmountResponseDTO();
-		
-		log.info("Authorize accountnumner {} and amount {}",accountNumber,amount);
+
+		log.info("Authorize accountnumner {} and amount {}", accountNumber, amount);
 		if (isExternalAccount(accountNumber)) {
 			log.info("external authorization");
 			return handleExternalAuthorization();
@@ -163,19 +160,19 @@ public class AccountService {
 		return accountnumber <= internalAccountStart;
 	}
 
-	public ResponseEntity<CardDTO> createCardForAccount(CreateCardDTO card,String token) {
-		return cardClient.createCard(token,card);
+	public ResponseEntity<CardDTO> createCardForAccount(CreateCardDTO card, String token) {
+		return cardClient.createCard(token, card);
 	}
 
-	public ResponseEntity<CardDTO> blockCardForAccount(AccountDTO account, String cardNumber,String auth) {
+	public ResponseEntity<CardDTO> blockCardForAccount(AccountDTO account, String cardNumber, String auth) {
 		BlockCardDTO blockCard = new BlockCardDTO();
 		blockCard.setAccountNumber(account.getAccountNumber());
 		blockCard.setCardNumber(cardNumber);
 		log.info("blocking card from account-service");
-		return cardClient.blockCard(auth,blockCard);
+		return cardClient.blockCard(auth, blockCard);
 	}
-	
-	public ResponseEntity<TransactionDTO> transferAmount(TransferBetweenAccountsDTO transfer,String fromAccount){
+
+	public ResponseEntity<TransactionDTO> transferAmount(TransferBetweenAccountsDTO transfer, String fromAccount) {
 		TransactionDTO transaction = new TransactionDTO();
 		transaction.setAmount(transfer.getAmount());
 		transaction.setMessage(transfer.getMessage());

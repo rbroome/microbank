@@ -7,9 +7,9 @@ import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.broome.micro.bank.accountservice.dto.BlockCardDTO;
-import com.broome.micro.bank.accountservice.dto.CardDTO;
-import com.broome.micro.bank.accountservice.dto.CreateCardDTO;
+import com.broome.micro.bank.accountservice.dto.card.BlockCardDTO;
+import com.broome.micro.bank.accountservice.dto.card.CardDTO;
+import com.broome.micro.bank.accountservice.dto.card.CreateCardDTO;
 
 @FeignClient("card-service")
 public interface CardClient {

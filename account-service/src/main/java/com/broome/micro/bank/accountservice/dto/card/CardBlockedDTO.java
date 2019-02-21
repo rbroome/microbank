@@ -1,4 +1,4 @@
-package com.broome.micro.bank.accountservice.dto;
+package com.broome.micro.bank.accountservice.dto.card;
 
 public class CardBlockedDTO {
 	

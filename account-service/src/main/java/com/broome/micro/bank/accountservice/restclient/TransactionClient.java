@@ -10,8 +10,8 @@ import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.broome.micro.bank.accountservice.dto.AuthorizeAmountResponseDTO;
-import com.broome.micro.bank.accountservice.dto.TransactionDTO;
+import com.broome.micro.bank.accountservice.dto.account.AuthorizeAmountResponseDTO;
+import com.broome.micro.bank.accountservice.dto.transaction.TransactionDTO;
 
 @FeignClient("transaction-service")
 public interface TransactionClient {
