@@ -1,7 +1,7 @@
+/Users/robin/tutorial/microbank/card-service/src/main/java/com/broome/micro/bank/dto/ChangePinDTO.java
 /Users/robin/tutorial/microbank/card-service/src/main/java/com/broome/micro/bank/controller/CardController.java
 /Users/robin/tutorial/microbank/card-service/src/main/java/com/broome/micro/bank/restclient/TransactionClient.java
 /Users/robin/tutorial/microbank/card-service/src/main/java/com/broome/micro/bank/domain/CardPayment.java
-/Users/robin/tutorial/microbank/card-service/src/main/java/com/broome/micro/bank/dto/PinCodeChangeDTO.java
 /Users/robin/tutorial/microbank/card-service/src/main/java/com/broome/micro/bank/dto/LoginDto.java
 /Users/robin/tutorial/microbank/card-service/src/main/java/com/broome/micro/bank/dto/BlockCardDTO.java
 /Users/robin/tutorial/microbank/card-service/src/main/java/com/broome/micro/bank/services/CardService.java

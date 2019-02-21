@@ -9,7 +9,7 @@ public class CardDTO {
 	private String pinCode;
 	
 	
-	private String accountNumber;
+	private long accountNumber;
 	
 	private Boolean blocked;
 	
@@ -18,7 +18,7 @@ public class CardDTO {
 	}
 	
 
-	public CardDTO(String accountNumber) {
+	public CardDTO(long accountNumber) {
 		super();
 		this.accountNumber = accountNumber;
 	}
@@ -41,13 +41,14 @@ public class CardDTO {
 		this.pinCode = pinCode;
 	}
 
-	public String getAccountNumber() {
+	public long getAccountNumber() {
 		return accountNumber;
 	}
 
-	public void setAccountNumber(String accountNumber) {
+	public void setAccountNumber(long accountNumber) {
 		this.accountNumber = accountNumber;
 	}
+	
 
 	public Boolean getBlocked() {
 		return blocked;

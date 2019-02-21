@@ -1,0 +1,181 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ----------------< com.broome.micro.bank:end2end-tests >-----------------
+[INFO] Building end2end-tests 0.0.1-SNAPSHOT
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ end2end-tests ---
+[INFO] Deleting /Users/robin/tutorial/microbank/end2end-tests/target
+[INFO] 
+[INFO] --- maven-resources-plugin:3.1.0:resources (default-resources) @ end2end-tests ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] Copying 0 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.0:compile (default-compile) @ end2end-tests ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 12 source files to /Users/robin/tutorial/microbank/end2end-tests/target/classes
+[INFO] 
+[INFO] --- maven-resources-plugin:3.1.0:testResources (default-testResources) @ end2end-tests ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.0:testCompile (default-testCompile) @ end2end-tests ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 4 source files to /Users/robin/tutorial/microbank/end2end-tests/target/test-classes
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.22.1:test (default-test) @ end2end-tests ---
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running com.broome.micro.bank.end2endtests.End2endTestsApplicationTests
+14:06:10.026 [main] DEBUG org.springframework.test.context.junit4.SpringJUnit4ClassRunner - SpringJUnit4ClassRunner constructor called with [class com.broome.micro.bank.end2endtests.End2endTestsApplicationTests]
+14:06:10.035 [main] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating CacheAwareContextLoaderDelegate from class [org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate]
+14:06:10.054 [main] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating BootstrapContext using constructor [public org.springframework.test.context.support.DefaultBootstrapContext(java.lang.Class,org.springframework.test.context.CacheAwareContextLoaderDelegate)]
+14:06:10.108 [main] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating TestContextBootstrapper for test class [com.broome.micro.bank.end2endtests.End2endTestsApplicationTests] from class [org.springframework.boot.test.context.SpringBootTestContextBootstrapper]
+14:06:10.146 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.broome.micro.bank.end2endtests.End2endTestsApplicationTests], using SpringBootContextLoader
+14:06:10.154 [main] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [com.broome.micro.bank.end2endtests.End2endTestsApplicationTests]: class path resource [com/broome/micro/bank/end2endtests/End2endTestsApplicationTests-context.xml] does not exist
+14:06:10.155 [main] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [com.broome.micro.bank.end2endtests.End2endTestsApplicationTests]: class path resource [com/broome/micro/bank/end2endtests/End2endTestsApplicationTestsContext.groovy] does not exist
+14:06:10.156 [main] INFO org.springframework.test.context.support.AbstractContextLoader - Could not detect default resource locations for test class [com.broome.micro.bank.end2endtests.End2endTestsApplicationTests]: no resource found for suffixes {-context.xml, Context.groovy}.
+14:06:10.157 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.broome.micro.bank.end2endtests.End2endTestsApplicationTests]: End2endTestsApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+14:06:10.280 [main] DEBUG org.springframework.test.context.support.ActiveProfilesUtils - Could not find an 'annotation declaring class' for annotation type [org.springframework.test.context.ActiveProfiles] and class [com.broome.micro.bank.end2endtests.End2endTestsApplicationTests]
+14:06:10.561 [main] DEBUG org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider - Identified candidate component class: file [/Users/robin/tutorial/microbank/end2end-tests/target/classes/com/broome/micro/bank/end2endtests/End2endTestsApplication.class]
+14:06:10.571 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.broome.micro.bank.end2endtests.End2endTestsApplication for test class com.broome.micro.bank.end2endtests.End2endTestsApplicationTests
+14:06:10.864 [main] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - @TestExecutionListeners is not present for class [com.broome.micro.bank.end2endtests.End2endTestsApplicationTests]: using defaults.
+14:06:10.870 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+14:06:10.891 [main] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Skipping candidate TestExecutionListener [org.springframework.test.context.transaction.TransactionalTestExecutionListener] due to a missing dependency. Specify custom listener classes or make the default listener classes and their required dependencies available. Offending class: [org/springframework/transaction/interceptor/TransactionAttributeSource]
+14:06:10.892 [main] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Skipping candidate TestExecutionListener [org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener] due to a missing dependency. Specify custom listener classes or make the default listener classes and their required dependencies available. Offending class: [org/springframework/transaction/interceptor/TransactionAttribute]
+14:06:10.893 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@62150f9e, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@1a451d4d, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@7fa98a66, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@15ff3e9e, org.springframework.test.context.support.DirtiesContextTestExecutionListener@5fdcaa40, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@6dc17b83, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@5e0826e7, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@32eff876, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@8dbdac1, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@6e20b53a]
+14:06:10.920 [main] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [com.broome.micro.bank.end2endtests.End2endTestsApplicationTests]
+14:06:10.921 [main] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [com.broome.micro.bank.end2endtests.End2endTestsApplicationTests]
+14:06:10.930 [main] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [com.broome.micro.bank.end2endtests.End2endTestsApplicationTests]
+14:06:10.931 [main] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [com.broome.micro.bank.end2endtests.End2endTestsApplicationTests]
+14:06:10.933 [main] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [com.broome.micro.bank.end2endtests.End2endTestsApplicationTests]
+14:06:10.934 [main] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [com.broome.micro.bank.end2endtests.End2endTestsApplicationTests]
+14:06:10.960 [main] DEBUG org.springframework.test.context.support.AbstractDirtiesContextTestExecutionListener - Before test class: context [DefaultTestContext@59309333 testClass = End2endTestsApplicationTests, testInstance = [null], testMethod = [null], testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@5876a9af testClass = End2endTestsApplicationTests, locations = '{}', classes = '{class com.broome.micro.bank.end2endtests.End2endTestsApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@3dfc5fb8, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@7e2d773b, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@26a7b76d, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@50d0686], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -> true]], class annotated with @DirtiesContext [false] with mode [null].
+14:06:10.961 [main] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [com.broome.micro.bank.end2endtests.End2endTestsApplicationTests]
+14:06:10.962 [main] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [com.broome.micro.bank.end2endtests.End2endTestsApplicationTests]
+14:06:11.003 [main] DEBUG org.springframework.test.context.support.TestPropertySourceUtils - Adding inlined properties to environment: {spring.jmx.enabled=false, org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true, server.port=-1}
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::        (v2.1.3.RELEASE)
+
+2019-02-21 14:06:11.794  INFO 42850 --- [           main] c.b.m.b.e.End2endTestsApplicationTests   : Starting End2endTestsApplicationTests on Robins-MacBook-Pro.local with PID 42850 (started by robin in /Users/robin/tutorial/microbank/end2end-tests)
+2019-02-21 14:06:11.796  INFO 42850 --- [           main] c.b.m.b.e.End2endTestsApplicationTests   : No active profile set, falling back to default profiles: default
+2019-02-21 14:06:15.374  INFO 42850 --- [           main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-02-21 14:06:15.924  INFO 42850 --- [           main] c.b.m.b.e.End2endTestsApplicationTests   : Started End2endTestsApplicationTests in 4.899 seconds (JVM running for 6.786)
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 6.548 s - in com.broome.micro.bank.end2endtests.End2endTestsApplicationTests
+[INFO] Running com.broome.micro.bank.end2endtests.testutils.MicrobankCucumberIntegrationTest
+Feature: End 2 End testing for the whole Micro Bank
+
+  Scenario: It should be possible to sign up with the application # src/test/resources/features/end2end.feature:3
+    When user signs up with username test and password secret     # MicrobankStepdefinitions.user_signs_up_with_username_test_and_password_secret(String,String)
+    Then status 201 is returned                                   # MicrobankStepdefinitions.ok_is_returned(Integer)
+
+  Scenario: It should be possible to login to the application  # src/test/resources/features/end2end.feature:7
+    Given user signs up with username test and password secret # MicrobankStepdefinitions.user_signs_up_with_username_test_and_password_secret(String,String)
+    When user logs in with username test and password secret   # MicrobankStepdefinitions.user_logs_in_with_username_test_and_password_secret(String,String)
+    Then token is returned                                     # MicrobankStepdefinitions.token_is_returned()
+    And status 200 is returned                                 # MicrobankStepdefinitions.ok_is_returned(Integer)
+
+  Scenario: It should be possible to create an account         # src/test/resources/features/end2end.feature:13
+    Given user signs up with username test and password secret # MicrobankStepdefinitions.user_signs_up_with_username_test_and_password_secret(String,String)
+    And user logs in with username test and password secret    # MicrobankStepdefinitions.user_logs_in_with_username_test_and_password_secret(String,String)
+    When user creates an account                               # MicrobankStepdefinitions.user_creates_an_account()
+    Then status 201 is returned                                # MicrobankStepdefinitions.ok_is_returned(Integer)
+    And 1 accouns exists                                       # MicrobankStepdefinitions.accouns_exists(Integer)
+
+  Scenario: If signed in it should be possible to check the balance of an account. # src/test/resources/features/end2end.feature:20
+    Given user signs up with username test and password secret                     # MicrobankStepdefinitions.user_signs_up_with_username_test_and_password_secret(String,String)
+    And user logs in with username test and password secret                        # MicrobankStepdefinitions.user_logs_in_with_username_test_and_password_secret(String,String)
+    And user creates an account                                                    # MicrobankStepdefinitions.user_creates_an_account()
+    Then user gets his account and can see the balance                             # MicrobankStepdefinitions.user_gets_his_account_and_can_see_the_balance()
+    And status 200 is returned                                                     # MicrobankStepdefinitions.ok_is_returned(Integer)
+
+  Scenario: If signed in it should be possible to see the transactions made to and from that account. # src/test/resources/features/end2end.feature:27
+    Given user signs up with username test and password secret                                        # MicrobankStepdefinitions.user_signs_up_with_username_test_and_password_secret(String,String)
+    And user logs in with username test and password secret                                           # MicrobankStepdefinitions.user_logs_in_with_username_test_and_password_secret(String,String)
+    And user creates an account                                                                       # MicrobankStepdefinitions.user_creates_an_account()
+    Then user gets his transactions and can see them                                                  # MicrobankStepdefinitions.user_gets_his_transactions_and_can_see_them()
+    And status 200 is returned                                                                        # MicrobankStepdefinitions.ok_is_returned(Integer)
+
+  Scenario: If signed in it should be possible to transfer money from one account to another account. # src/test/resources/features/end2end.feature:34
+    Given user signs up with username test and password secret                                        # MicrobankStepdefinitions.user_signs_up_with_username_test_and_password_secret(String,String)
+    And user logs in with username test and password secret                                           # MicrobankStepdefinitions.user_logs_in_with_username_test_and_password_secret(String,String)
+    And user creates an account                                                                       # MicrobankStepdefinitions.user_creates_an_account()
+    And user creates an account                                                                       # MicrobankStepdefinitions.user_creates_an_account()
+    And user have 500 on all his accounts                                                             # MicrobankStepdefinitions.addAmountToAccounts(Integer)
+    Then user can transfer money bewteen his accounts                                                 # MicrobankStepdefinitions.user_can_transfer_money_bewteen_his_accounts()
+
+  Scenario: If signed in it should be possible to add a card to an account. # src/test/resources/features/end2end.feature:42
+    Given user signs up with username test and password secret              # MicrobankStepdefinitions.user_signs_up_with_username_test_and_password_secret(String,String)
+    And user logs in with username test and password secret                 # MicrobankStepdefinitions.user_logs_in_with_username_test_and_password_secret(String,String)
+    And user creates an account                                             # MicrobankStepdefinitions.user_creates_an_account()
+    Then user creates a card to that account and its ok                     # MicrobankStepdefinitions.user_creates_a_card_to_that_account_and_its_ok()
+    And status 201 is returned                                              # MicrobankStepdefinitions.ok_is_returned(Integer)
+
+  Scenario: It should be possible to pay with a card if the correct pincode is entered # src/test/resources/features/end2end.feature:49
+    Given user signs up with username test and password secret                         # MicrobankStepdefinitions.user_signs_up_with_username_test_and_password_secret(String,String)
+    And user logs in with username test and password secret                            # MicrobankStepdefinitions.user_logs_in_with_username_test_and_password_secret(String,String)
+    And user creates an account                                                        # MicrobankStepdefinitions.user_creates_an_account()
+    And user creates a card to that account and its ok                                 # MicrobankStepdefinitions.user_creates_a_card_to_that_account_and_its_ok()
+    Then user pays 50 with the correct pincode                                         # MicrobankStepdefinitions.user_pays_with_the_correct_pincode_and_the_transaction_is(Integer)
+    And status 201 is returned                                                         # MicrobankStepdefinitions.ok_is_returned(Integer)
+    And the transaction is PENDING                                                     # MicrobankStepdefinitions.lastTransactionIsStatus(String)
+
+  Scenario: It should not be possible to pay with a card if the wrong pincode is entered # src/test/resources/features/end2end.feature:58
+    Given user signs up with username test and password secret                           # MicrobankStepdefinitions.user_signs_up_with_username_test_and_password_secret(String,String)
+    And user logs in with username test and password secret                              # MicrobankStepdefinitions.user_logs_in_with_username_test_and_password_secret(String,String)
+    And user creates an account                                                          # MicrobankStepdefinitions.user_creates_an_account()
+    And user creates a card to that account and its ok                                   # MicrobankStepdefinitions.user_creates_a_card_to_that_account_and_its_ok()
+    Then user pays 50 with the wrong pincode                                             # MicrobankStepdefinitions.user_pays_with_the_wrong_pincode_and_the_transaction_is_DECLINED(Integer)
+    And status 403 is returned                                                           # MicrobankStepdefinitions.ok_is_returned(Integer)
+
+  Scenario: It should be possible to change the pincode of a card. # src/test/resources/features/end2end.feature:66
+    Given user signs up with username test and password secret     # MicrobankStepdefinitions.user_signs_up_with_username_test_and_password_secret(String,String)
+    And user logs in with username test and password secret        # MicrobankStepdefinitions.user_logs_in_with_username_test_and_password_secret(String,String)
+    And user creates an account                                    # MicrobankStepdefinitions.user_creates_an_account()
+    And user creates a card to that account and its ok             # MicrobankStepdefinitions.user_creates_a_card_to_that_account_and_its_ok()
+    Then user change the pin from 1234 to 4321 and its ok          # MicrobankStepdefinitions.user_change_the_pin_from_to_and_its_ok(String,String)
+    And status 204 is returned                                     # MicrobankStepdefinitions.ok_is_returned(Integer)
+
+  Scenario: It should be possible to block a card              # src/test/resources/features/end2end.feature:74
+    Given user signs up with username test and password secret # MicrobankStepdefinitions.user_signs_up_with_username_test_and_password_secret(String,String)
+    And user logs in with username test and password secret    # MicrobankStepdefinitions.user_logs_in_with_username_test_and_password_secret(String,String)
+    And user creates an account                                # MicrobankStepdefinitions.user_creates_an_account()
+    And user creates a card to that account and its ok         # MicrobankStepdefinitions.user_creates_a_card_to_that_account_and_its_ok()
+    Then user blocks the card and its ok                       # MicrobankStepdefinitions.user_blocks_the_card_and_its_ok()
+    And status 200 is returned                                 # MicrobankStepdefinitions.ok_is_returned(Integer)
+
+  Scenario: It should not be possible to pay with a blocked card # src/test/resources/features/end2end.feature:82
+    Given user signs up with username test and password secret   # MicrobankStepdefinitions.user_signs_up_with_username_test_and_password_secret(String,String)
+    And user logs in with username test and password secret      # MicrobankStepdefinitions.user_logs_in_with_username_test_and_password_secret(String,String)
+    And user creates an account                                  # MicrobankStepdefinitions.user_creates_an_account()
+    And user creates a card to that account and its ok           # MicrobankStepdefinitions.user_creates_a_card_to_that_account_and_its_ok()
+    And user blocks the card and its ok                          # MicrobankStepdefinitions.user_blocks_the_card_and_its_ok()
+    Then user pays 50 with the correct pincode                   # MicrobankStepdefinitions.user_pays_with_the_correct_pincode_and_the_transaction_is(Integer)
+    And status 403 is returned                                   # MicrobankStepdefinitions.ok_is_returned(Integer)
+
+12 Scenarios (12 passed)
+64 Steps (64 passed)
+0m18.198s
+
+[INFO] Tests run: 12, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 18.675 s - in com.broome.micro.bank.end2endtests.testutils.MicrobankCucumberIntegrationTest
+2019-02-21 14:06:35.032  INFO 42850 --- [       Thread-2] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 13, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 34.321 s
+[INFO] Finished at: 2019-02-21T14:06:35+01:00
+[INFO] ------------------------------------------------------------------------

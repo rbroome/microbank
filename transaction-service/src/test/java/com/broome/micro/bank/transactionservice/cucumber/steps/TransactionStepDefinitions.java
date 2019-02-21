@@ -32,7 +32,7 @@ public class TransactionStepDefinitions extends TransactionIntegrationTest {
 
 	@Before
 	public void init() {
-		init();
+		initService();
 	}
 
 	@When("system user asks for transaction for account (.+)")

@@ -24,7 +24,7 @@ import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 
 @Ignore
-public class CardStepDefinitions extends CardIntegrationTest{
+public class CardStepDefinitions extends CardIntegrationTest {
 
 	private final Logger log = LoggerFactory.getLogger(CardStepDefinitions.class);
 	private static final long OK_ACCOUNT = 37730001;
@@ -32,18 +32,16 @@ public class CardStepDefinitions extends CardIntegrationTest{
 
 	private static final String OK_PIN = "1234";
 	private static final String OK_CARD = "123456";
-	
-	private static final String PENDING="PENDING";
+
+	private static final String PENDING = "PENDING";
 	private static final String BLOCKED = "BLOCKED";
 	private static final String DECLINED = "DECLINED";
-	
-	
-	
+
 	public CardStepDefinitions() {
 		super();
-		
+
 	}
-	
+
 	@Before
 	public void init() {
 		super.clean();
@@ -57,7 +55,6 @@ public class CardStepDefinitions extends CardIntegrationTest{
 	@When("^user (.+) list cards$")
 	public void listCards(final String userId) {
 	}
-	
 
 	@When("^the user (.+) adds a card with ok account$")
 	public void userAddsACard(final String userId) {
@@ -68,8 +65,8 @@ public class CardStepDefinitions extends CardIntegrationTest{
 	public void userAddsACardWithBadAccount(final String userId) {
 		ResponseEntity<Card> response = null;
 		try {
-				response = addCard(userId, NOK_ACCOUNT);
-		}catch(HttpClientErrorException e) {
+			response = addCard(userId, NOK_ACCOUNT);
+		} catch (HttpClientErrorException e) {
 			assertThat(e.getStatusCode()).isEqualTo(HttpStatus.FORBIDDEN);
 		}
 		assertThat(response).isNull();
@@ -78,7 +75,7 @@ public class CardStepDefinitions extends CardIntegrationTest{
 	@Then("^user (.+) have (\\d+) card$")
 	public void userHaveCards(final String userId, final int quantity) {
 		List<Card> cards = getCardsForUser(userId);
-		if(cards == null )
+		if (cards == null)
 			log.info("CARDS IS NULL");
 		else
 			log.info("CARDS IS NOT NULL");
@@ -105,20 +102,20 @@ public class CardStepDefinitions extends CardIntegrationTest{
 	@Then("^user (.+) card is blocked$")
 	public void theCardIsBlocked(final String userId) {
 		List<Card> cards = getCardsForUser(userId);
-		cards.forEach(card -> log.info("CARD {} is blocked: {}",card.getAccountNumber(),card.getBlocked()));;
+		cards.forEach(card -> log.info("CARD {} is blocked: {}", card.getAccountNumber(), card.getBlocked()));
+		;
 		cards.stream().forEach(card -> assertThat(card.getBlocked()).isEqualTo(true));
 
 	}
 
 	@Given("^the card have balance (\\d+)$")
 	public void theCardHaveBalance(final int balance) {
-		if(balance >0) {
-			log.info("SHOULD RETURN GOOD TRANSACTION balance {}",balance);
-			when(client.addTransaction(any(),any())).thenReturn(okTransaction(new BigDecimal(balance)));
-		}
-		else {
-			log.info("SHOULD RETURN BAD TRANSACTION balance {}",balance);
-			when(client.addTransaction(any(),any())).thenReturn(nokTransaction(new BigDecimal(balance)));
+		if (balance > 0) {
+			log.info("SHOULD RETURN GOOD TRANSACTION balance {}", balance);
+			when(client.addTransaction(any(), any())).thenReturn(okTransaction(new BigDecimal(balance)));
+		} else {
+			log.info("SHOULD RETURN BAD TRANSACTION balance {}", balance);
+			when(client.addTransaction(any(), any())).thenReturn(nokTransaction(new BigDecimal(balance)));
 		}
 
 	}
@@ -127,45 +124,52 @@ public class CardStepDefinitions extends CardIntegrationTest{
 	public void pay(final String userId, final int amount, final String pin) {
 		List<Card> cards = getCardsForUser(userId);
 		Card card = cards.get(0);
-		TransactionDTO trans = doPayment(userId, new BigDecimal(amount), card.getPinCode(),card.getCardNumber());
-		assertThat(trans).isNotNull();
-		assertThat(trans.getStatus()).isEqualTo(PENDING);
+		
+		ResponseEntity<TransactionDTO> response = null;
+		try {
+			response = doPayment(userId, new BigDecimal(amount), card.getPinCode(), card.getCardNumber());
+		} catch (HttpClientErrorException e) {
+		}
+		
+		assertThat(response).isNotNull();
+		assertThat(response.getBody()).isNotNull();
+		assertThat(response.getBody().getStatus()).isEqualTo(PENDING);
 	}
-	
+
 	@Then("user (.+) pays (\\d+) with pin (.+) and its not approved")
 	public void payNotApproved(final String userId, final int amount, final String pin) {
 		List<Card> cards = getCardsForUser(userId);
 		Card card = cards.get(0);
-		log.info("CardPin {} actual pin {} cardNr {}"+card.getPinCode(),pin,card.getCardNumber());
-		TransactionDTO trans = doPayment(userId, new BigDecimal(amount), pin,card.getCardNumber());
-		assertThat(trans).isNotNull();
-		assertThat(isBlockedOrDeclined(trans)).isTrue();
+		ResponseEntity<TransactionDTO> response = null;
+
+		try {
+			response = doPayment(userId, new BigDecimal(amount), pin, card.getCardNumber());
+		} catch (HttpClientErrorException e) {
+			assertThat(e.getStatusCode()).isEqualTo(HttpStatus.FORBIDDEN);
+		}
+		assertThat(response).isNull();
+
 	}
-	
+
 	private boolean isBlockedOrDeclined(TransactionDTO transaction) {
 		boolean isBlocked = transaction.getStatus().equalsIgnoreCase(BLOCKED);
-		log.info("ISBLOCKED: " +isBlocked);
+		log.info("ISBLOCKED: " + isBlocked);
 		boolean isCanceled = transaction.getStatus().equalsIgnoreCase(DECLINED);
-		log.info("ISCANCELED: "+ isCanceled);
-		log.info("RETURNING "+(isBlocked || isCanceled));
+		log.info("ISCANCELED: " + isCanceled);
+		log.info("RETURNING " + (isBlocked || isCanceled));
 		return (isBlocked || isCanceled);
 	}
-	
 
 	@Given("^user (.+) have a blocked card$")
 	public void haveABlockedCard(final String userId) {
 		addCard(userId, OK_ACCOUNT);
 		blockCardsForUser(userId);
 	}
-	
+
 	private void blockCardsForUser(String userId) {
 		List<Card> cards = getCardsForUser(userId);
-		cards.forEach(card -> blockCard(userId,card.getCardNumber()));
+		cards.forEach(card -> blockCard(userId, card.getCardNumber()));
 	}
-
-
-
-	
 
 	@Given("^have an account$")
 	public void haveAnAccount() {
@@ -178,7 +182,5 @@ public class CardStepDefinitions extends CardIntegrationTest{
 	@Then("^the payment is not approved$")
 	public void declinedPayment() {
 	};
-
-
 
 }

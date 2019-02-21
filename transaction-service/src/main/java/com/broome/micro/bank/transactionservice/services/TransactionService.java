@@ -62,6 +62,8 @@ public class TransactionService {
 	}
 
 	public ResponseEntity<TransactionDTO> addTransaction(TransactionDTO transaction) {
+		
+		log.info("trying to add transaction from {} to {} with {}",transaction.getFromAccount(),transaction.getToAccount(),transaction.getAmount());
 		ResponseEntity<TransactionDTO> trans = addTransactionWithStatus(transaction.getFromAccount(), transaction.getToAccount(),
 				transaction.getAmount(), transaction.getMessage(), TransactionType.valueOf(transaction.getType()),
 				TransactionStatus.PENDING);
@@ -87,10 +89,12 @@ public class TransactionService {
 		
 		if(auth.isAllowed()) {
 			TransactionDTO transaction = TransactionHelper.fromTransaction(transactionRepository.save(tr));
+			log.info("Transaction completed with status: "+transaction.getStatus());
 			return ResponseEntity.status(HttpStatus.CREATED)
 			.contentType(MediaType.APPLICATION_JSON)
 			.body(transaction);
 		}else {
+			log.info("transaction is not allowd");
 			return ResponseEntity.status(HttpStatus.FORBIDDEN)
 			.contentType(MediaType.APPLICATION_JSON)
 			.body(null);
@@ -102,16 +106,17 @@ public class TransactionService {
 	public AuthorizeAmountResponseDTO checkTransactionAllowed(Transaction transaction) {
 		
 		String authToken = getToken();
-		
+		log.info("authorize transaction from {} to {} with:{} ",transaction.getFromAccount(),transaction.getToAccount(),transaction.getAmount());
 		AuthorizeAmountResponseDTO auth = accountClient.authorizeAmount(authToken,transaction.getFromAccount(),
 				convertToDTO(transaction));
 
 		// For test, not needed
 		if (transaction.getFromAccount().equalsIgnoreCase("123")) {
+			log.info("Authorized: true");
 			auth.setAllowed(true);
 			return auth;
 		}
-		
+		log.info("Authorized: "+auth.isAllowed());
 		return auth;
 		
 	}

@@ -1,14 +1,14 @@
-package com.broome.micro.bank.dto;
+package com.broome.micro.bank.end2endtests.dto.cards;
 
-public class PinCodeChangeDTO {
+public class ChangePinDTO {
 	
 	private String pinCode;
 	private String newPincode;
 	private Long cardNumber;
 	
-	public PinCodeChangeDTO() {	}
+	public ChangePinDTO() {	}
 	
-	public PinCodeChangeDTO(String pinCode, String newPincode, Long cardNumber) {
+	public ChangePinDTO(String pinCode, String newPincode, Long cardNumber) {
 		super();
 		this.pinCode = pinCode;
 		this.newPincode = newPincode;

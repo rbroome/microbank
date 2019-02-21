@@ -3,6 +3,8 @@ package com.broome.micro.bank.transactionservice.controller;
 import java.util.Date;
 import java.util.List;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.env.Environment;
 import org.springframework.http.HttpStatus;
@@ -32,6 +34,8 @@ public class TransactionController {
 	// TEMPORRARY!!
 		public static final String SECRET = "SecretKEy";
 		public static final String TOKEN_PREFIX = "Bearer ";
+		
+		private static final Logger log = LoggerFactory.getLogger(TransactionController.class);
 
 	@Autowired
 	Environment env;
@@ -48,8 +52,9 @@ public class TransactionController {
 	
 	@RequestMapping(value= "/transactions",method = RequestMethod.POST)
 	public ResponseEntity<TransactionDTO> addTransaction(@RequestHeader(value = "Authorization") String auth,@RequestBody TransactionDTO t){
+		log.info("POST transaction");
 		isSystemUser(auth);
-		
+		log.info("isSystemUser");
 		return transactionService.addTransaction(t);
 	}
 	

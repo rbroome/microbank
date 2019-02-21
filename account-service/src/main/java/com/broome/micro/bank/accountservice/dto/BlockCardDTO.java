@@ -26,8 +26,5 @@ public class BlockCardDTO {
 		this.accountNumber = accountNumber;
 	}
 	
-	
-	
-	
-
 }
+	

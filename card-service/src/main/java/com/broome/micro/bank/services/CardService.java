@@ -39,26 +39,26 @@ public class CardService {
 	}
 
 	public ResponseEntity<Card> createNew(CreateCardDTO card, String userId) throws NoSuchElementException {
-		//TODO: validate with service
-		if(card.getAccountNumber() > 37729999) {
+		// TODO: validate with service
+		if (card.getAccountNumber() > 37729999) {
 			Card response = cardRepository.save(new Card(card.getPinCode(), card.getAccountNumber(), userId, false));
-			return ResponseEntity.status(HttpStatus.CREATED)
-					.contentType(MediaType.APPLICATION_JSON)
-					.body(response); 
-		} 
-		else {
-			return ResponseEntity.status(HttpStatus.FORBIDDEN)
-			.contentType(MediaType.APPLICATION_JSON)
-			.body(null);
+			return ResponseEntity.status(HttpStatus.CREATED).contentType(MediaType.APPLICATION_JSON).body(response);
+		} else {
+			return ResponseEntity.status(HttpStatus.FORBIDDEN).contentType(MediaType.APPLICATION_JSON).body(null);
 		}
-		
+
 	}
 
-	public void blockCard(String userId, long cardnumber, long accountNumber) {
+	public ResponseEntity<Card> blockCard(String userId, long cardnumber, long accountNumber) {
 		// Look if user is owner of card and and account then block it.
 		Card card = verifyCardWithAccountNumber(cardnumber, userId, accountNumber);
 		card.setBlocked(true);
-		cardRepository.save(card);
+		card = cardRepository.save(card);
+		if (card.getCardNumber() == 0)
+			return ResponseEntity.status(HttpStatus.FORBIDDEN).contentType(MediaType.APPLICATION_JSON).body(card);
+
+		LOGGER.info("RETURNING BLOCKED CARD {} and it is blocked:{}", card.getCardNumber(), card.getBlocked());
+		return ResponseEntity.status(HttpStatus.CREATED).contentType(MediaType.APPLICATION_JSON).body(card);
 	}
 
 	public List<Card> findCards(String userId) {
@@ -67,46 +67,51 @@ public class CardService {
 		return cards;
 	}
 
-	public Card updatePincode(long cardNumber, String oldPinCode, String newPinCode) {
-		Card card = null;
-		try {
-			card = verifyCard(cardNumber, oldPinCode);
-			card.setPinCode(newPinCode);
-			cardRepository.save(card);
+	public ResponseEntity<Card> updatePincode(long cardNumber, String oldPinCode, String newPinCode) {
+		Optional<Card> card = verifyCard(cardNumber, oldPinCode);
+		
+		if (card.isPresent()) {
+			card.get().setPinCode(newPinCode);
+			cardRepository.save(card.get());
 
-		} catch (NoSuchElementException e) {
-			LOGGER.info("Tried to update pin, but didnt wrok");
+			return ResponseEntity.status(HttpStatus.NO_CONTENT).contentType(MediaType.APPLICATION_JSON).body(card.get());
+		} else {
+			return ResponseEntity.status(HttpStatus.FORBIDDEN).contentType(MediaType.APPLICATION_JSON).body(null);
 		}
-		return card;
 	}
 
 	private Card verifyCardWithAccountNumber(long cardId, String userId, long accountNumber) {
-		return cardRepository.findByUserIdAndCardNumberAndAccountNumber(userId, cardId, accountNumber)
+		LOGGER.info("Looking for card {} account {} user {}", cardId, accountNumber, userId);
+		Card card = cardRepository.findByUserIdAndCardNumberAndAccountNumber(userId, cardId, accountNumber)
 				.orElseThrow(() -> new NoSuchElementException());
+		LOGGER.info("found card {} account {} user {}", card.getCardNumber(), card.getAccountNumber(),
+				card.getUserId());
+		return card;
 	}
 
-	public TransactionDTO processPayment(CardPaymentDTO cardPayment) {
+	public ResponseEntity<TransactionDTO> processPayment(CardPaymentDTO cardPayment) {
+		// TODO: Fix this method..
 		// Verify pin etc then add the transaction.
-		LOGGER.info("Starting to process transaction");
+		LOGGER.info("Starting to process transaction with card {} and pin {}", cardPayment.getCardNumber(),
+				cardPayment.getPinCode());
 		// Verify pincode
-		Card card = verifyCard(cardPayment.getCardNumber(), cardPayment.getPinCode());
-		LOGGER.info("Found card with pincode {} and cardNr {} ",card.getPinCode(),card.getCardNumber());
-		LOGGER.info("pin is oK");
-		TransactionDTO transaction = createTransaction(cardPayment, card.getAccountNumber());
-		if(card.getAccountNumber()==0) {
-			transaction.setStatus("DECLINED");
-			return transaction;
-		}else if (card.getBlocked() == false) {
-			LOGGER.info("card {} is not blocked",cardPayment.getCardNumber());
-			String auth = getToken();
-			TransactionDTO response = transactionClient.addTransaction(auth,transaction);
-			return response;
-		}else{
+		Optional<Card> card = verifyCard(cardPayment.getCardNumber(), cardPayment.getPinCode());
+		
+		if (cardIsValid(card)) {
+			TransactionDTO transaction = createTransaction(cardPayment, card.get().getAccountNumber());
+			TransactionDTO response = transactionClient.addTransaction(getToken(), transaction);
+			return ResponseEntity.status(HttpStatus.CREATED).contentType(MediaType.APPLICATION_JSON).body(response);
+		} else {
 			LOGGER.info("Card is blocked");
-			transaction.setStatus("BLOCKED");
-			return transaction;
+			return ResponseEntity.status(HttpStatus.FORBIDDEN).contentType(MediaType.APPLICATION_JSON).body(null);
 		}
 	}
+	
+	private boolean cardIsValid(Optional<Card> card) {
+		boolean valid = card.isPresent() && (!card.get().getBlocked() && card.get().getAccountNumber() !=0);
+		return valid;
+	}
+
 	private String getToken() {
 		String auth = userClient.login(new LoginDto("sysadmin", "password")).getHeaders().get("Authorization").get(0);
 		return auth;
@@ -126,9 +131,9 @@ public class CardService {
 
 	}
 
-	private Card verifyCard(long cardNumber, String pincode) {
+	private Optional<Card> verifyCard(long cardNumber, String pincode) {
 		Optional<Card> card = cardRepository.findByCardNumberAndPinCode(cardNumber, pincode);
-		return card.orElse(new Card());
+		return card;
 	}
 
 	public void removeEverything() {

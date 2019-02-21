@@ -21,7 +21,7 @@ import com.broome.micro.bank.domain.Card;
 import com.broome.micro.bank.dto.BlockCardDTO;
 import com.broome.micro.bank.dto.CardPaymentDTO;
 import com.broome.micro.bank.dto.CreateCardDTO;
-import com.broome.micro.bank.dto.PinCodeChangeDTO;
+import com.broome.micro.bank.dto.ChangePinDTO;
 import com.broome.micro.bank.dto.TransactionDTO;
 import com.broome.micro.bank.services.CardService;
 
@@ -64,10 +64,9 @@ public class CardController {
 		return cardService.findCards(user);
 	}
 	
-	@RequestMapping(value= "/cards/payment",method = RequestMethod.POST)
-	public TransactionDTO processPayment(@RequestBody CardPaymentDTO cardPayment) throws Exception{
-		//Verify pin and cardnumber then process the transaciont
-		
+	@RequestMapping(value= "/cards/payments",method = RequestMethod.POST)
+	public ResponseEntity<TransactionDTO> processPayment(@RequestBody CardPaymentDTO cardPayment) throws Exception{
+		log.info("trying to make a card payment!");
 		return cardService.processPayment(cardPayment);
 	}
 	
@@ -79,17 +78,20 @@ public class CardController {
 	}
 	
 	@RequestMapping(path="/cards",method = RequestMethod.PATCH)
-	public Card updatePinCode(@RequestBody PinCodeChangeDTO changePin) {
+	public ResponseEntity<Card> updatePinCode(@RequestBody ChangePinDTO changePin) {
 		
 		return cardService.updatePincode(changePin.getCardNumber(), changePin.getPinCode(), changePin.getNewPincode());
 	}
 	
 	//TODO: change dto
 	@RequestMapping(path="/cards/block",method = RequestMethod.PUT)
-	public void block(@RequestHeader(value="Authorization") String auth,@RequestBody BlockCardDTO blockCard) {
+	public ResponseEntity<Card> block(@RequestHeader(value="Authorization") String auth,@RequestBody BlockCardDTO blockCard) {
 		String user = getUserIdFromHeader(auth);
 		log.info("BLOCKING CARD id{},cardNumber{},accnumber{}",blockCard.getCardNumber(),blockCard.getAccountNumber());
-		cardService.blockCard(user, Long.valueOf(blockCard.getCardNumber()), blockCard.getAccountNumber());
+		
+		ResponseEntity<Card> response = cardService.blockCard(user, Long.valueOf(blockCard.getCardNumber()), blockCard.getAccountNumber());
+		log.info("response.body is null: {}",response.getBody()==null);
+		return response;
 		
 	}
 	

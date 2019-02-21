@@ -107,12 +107,12 @@ public class CardIntegrationTest extends BaseIntegrationTest{
 		return cards.get(0);
 	}
 	
-	public TransactionDTO doPayment(String userId,BigDecimal amount,String pin,long cardnumber) {
+	public ResponseEntity<TransactionDTO> doPayment(String userId,BigDecimal amount,String pin,long cardnumber) {
 		
 		
 		CardPaymentDTO payment = new CardPaymentDTO(amount, cardnumber, pin);
-		TransactionDTO trans = restTemplate.postForEntity(cardsEndpoint()+"/payment", payment, TransactionDTO.class).getBody();
-		return trans;
+		ResponseEntity<TransactionDTO> response = restTemplate.postForEntity(cardsEndpoint()+"/payments", payment, TransactionDTO.class);
+		return response;
 		
 	}
 	

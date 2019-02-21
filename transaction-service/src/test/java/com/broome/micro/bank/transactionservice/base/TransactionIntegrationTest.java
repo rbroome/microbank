@@ -43,7 +43,7 @@ public class TransactionIntegrationTest extends BaseIntegrationTest {
 	UserClient userClient;
 
 	
-	public void init() {
+	public void initService() {
 		transactionService.removeEveything();
 		ResponseEntity<String> resp = ResponseEntity.status(HttpStatus.CREATED)
 				.contentType(MediaType.APPLICATION_JSON)

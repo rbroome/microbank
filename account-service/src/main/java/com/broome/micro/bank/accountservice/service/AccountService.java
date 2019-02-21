@@ -10,16 +10,21 @@ import java.util.stream.Collectors;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import com.broome.micro.bank.accountservice.domain.Account;
+import com.broome.micro.bank.accountservice.dto.AccountDTO;
 import com.broome.micro.bank.accountservice.dto.AuthorizeAmountResponseDTO;
 import com.broome.micro.bank.accountservice.dto.BlockCardDTO;
+import com.broome.micro.bank.accountservice.dto.CardBlockedDTO;
 import com.broome.micro.bank.accountservice.dto.CardDTO;
 import com.broome.micro.bank.accountservice.dto.CreateCardDTO;
 import com.broome.micro.bank.accountservice.dto.LoginDto;
 import com.broome.micro.bank.accountservice.dto.TransactionDTO;
+import com.broome.micro.bank.accountservice.dto.TransferBetweenAccountsDTO;
 import com.broome.micro.bank.accountservice.exception.AccountNotFoundException;
+import com.broome.micro.bank.accountservice.helper.AccountHelper;
 import com.broome.micro.bank.accountservice.repo.AccountRepository;
 import com.broome.micro.bank.accountservice.restclient.CardClient;
 import com.broome.micro.bank.accountservice.restclient.TransactionClient;
@@ -48,11 +53,13 @@ public class AccountService {
 		return accountRepository.findByUserId(user).orElse(Collections.emptyList());
 	}
 
-	public Account getAccount(String user, Long accountNumber) {
+	public AccountDTO getAccount(String user, Long accountNumber) {
 		Optional<Account> account = accountRepository.findByUserIdAndAccountNumber(user, accountNumber);
 		Account acc = account.orElseThrow(() -> new AccountNotFoundException());
 		calculatePendingAmount(acc);
-		return acc;
+		
+		
+		return AccountHelper.from(acc);
 	}
 
 	public Account saveAccount(Account account) {
@@ -102,7 +109,7 @@ public class AccountService {
 
 	}
 
-	public List<TransactionDTO> getTransactionsForAccount(Account account) {
+	public List<TransactionDTO> getTransactionsForAccount(AccountDTO account) {
 		// Verify user and account then:
 		// getUserIdFromToken(token)
 		boolean isAllowed = getAccountsForUser("").stream()
@@ -128,8 +135,10 @@ public class AccountService {
 
 	public AuthorizeAmountResponseDTO isAmountApproved(BigDecimal amount, Long accountNumber) {
 		AuthorizeAmountResponseDTO response = new AuthorizeAmountResponseDTO();
-		// TODO: remove, just to test for being able to adding amounts to accounts
+		
+		log.info("Authorize accountnumner {} and amount {}",accountNumber,amount);
 		if (isExternalAccount(accountNumber)) {
+			log.info("external authorization");
 			return handleExternalAuthorization();
 		}
 
@@ -154,15 +163,27 @@ public class AccountService {
 		return accountnumber <= internalAccountStart;
 	}
 
-	public CardDTO createCardForAccount(CreateCardDTO card) {
-		return cardClient.createCard(card);
+	public ResponseEntity<CardDTO> createCardForAccount(CreateCardDTO card,String token) {
+		return cardClient.createCard(token,card);
 	}
 
-	public String blockCardForAccount(long accountNumber, String cardNumber) {
+	public ResponseEntity<CardDTO> blockCardForAccount(AccountDTO account, String cardNumber,String auth) {
 		BlockCardDTO blockCard = new BlockCardDTO();
-		blockCard.setAccountNumber(accountNumber);
+		blockCard.setAccountNumber(account.getAccountNumber());
 		blockCard.setCardNumber(cardNumber);
-		return cardClient.blockCard(blockCard);
+		log.info("blocking card from account-service");
+		return cardClient.blockCard(auth,blockCard);
+	}
+	
+	public ResponseEntity<TransactionDTO> transferAmount(TransferBetweenAccountsDTO transfer,String fromAccount){
+		TransactionDTO transaction = new TransactionDTO();
+		transaction.setAmount(transfer.getAmount());
+		transaction.setMessage(transfer.getMessage());
+		transaction.setToAccount(transfer.getToAccount());
+		transaction.setType("TransferTransaction");
+		transaction.setFromAccount(fromAccount);
+		log.info("sending transfer to transaction service");
+		return transactionClient.addTransaction(getToken(), transaction);
 	}
 
 	public void removeEverything() {
